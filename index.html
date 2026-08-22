@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فن | محرك التجارب الرقمية والأتمتة</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BACKGROUND CANVAS (Matrix Particles & Radiation Dust) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- AMBIENT BACKGROUND GLOWS -->
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="ambient-orb orb-emerald"></div>
+
+  <!-- INTERACTIVE MOUSE RADIATION SPOTLIGHT -->
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- FIXED FLOATING MASTER 3D BOT (الروبوت ثلاثي الأبعاد الحقيقي التفاعلي) -->
+  <div class="master-bot-stage" id="masterBotStage">
+    <div class="bot-energy-field"></div>
+    <div class="bot-dialog-bubble" id="botBubble">
+      <div class="bubble-tag"><i class="fas fa-microchip"></i> منصة فن الذكية</div>
+      <p class="bubble-msg" id="bubbleMsg">مرحباً بك! أنا رفيقك البرمجي، انزل بالسكرول لترى العالم وهو يُبنى قطعة قطعة 👇</p>
+    </div>
+    
+    <!-- Three.js 3D WebGL Canvas -->
+    <div class="bot-3d-wrapper" id="bot3dWrapper">
+      <canvas id="threeBotCanvas"></canvas>
+      <div class="bot-loading-spinner" id="botLoader">
+        <i class="fas fa-circle-notch fa-spin"></i>
+        <span>جاري تحميل مجسم الـ 3D...</span>
+      </div>
+      <div class="bot-thruster"></div>
+    </div>
+  </div>
+
+  <!-- SVG GOOEY FILTER FOR REALTIME LIQUID MERCURY PHYSICS -->
+  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="liquidGooeyFilter" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -11" result="gooey" />
+        <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="nav-folder-capsule" id="navFolder">
+      
+      <!-- Identity Section (Logo & Title) -->
+      <div class="nav-identity">
+        <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+        <div class="identity-info">
+          <span class="site-title">فن البرمجية</span>
+          <span class="site-sub">حلول رقمية وأتمتة</span>
+        </div>
+      </div>
+
+      <!-- Laser Carved Stepper Slot (Recessed Cutout Slot inside the frosted folder) -->
+      <div class="stage-stepper crystal-cutout-stepper" id="stageStepper">
+        <div class="antigravity-rubber-pill" id="rubberPill"></div>
+
+        <a href="#scene1" class="step-indicator active" data-index="0" title="منصة الانطلاق">
+          <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="#scene2" class="step-indicator" data-index="1" title="معمل فلوتر">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+        </a>
+        <a href="#scene3" class="step-indicator" data-index="2" title="متجر المستقبل">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <a href="#scene4" class="step-indicator" data-index="3" title="منصة الويب">
+          <i class="fa-solid fa-laptop-code"></i>
+        </a>
+        <a href="#scene5" class="step-indicator" data-index="4" title="شبكة الأتمتة">
+          <i class="fa-solid fa-network-wired"></i>
+        </a>
+        <a href="#scene6" class="step-indicator" data-index="5" title="محطة التواصل">
+          <i class="fa-regular fa-paper-plane"></i>
+        </a>
+      </div>
+
+      <!-- Action Section (CTA Button) -->
+      <div class="nav-actions">
+        <a href="#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+          <span>طلب مشروع</span>
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================================================================
+       SECTIONS CONTAINER (SEPARATE PINNED STAGES IN DOCUMENT FLOW)
+       ========================================================================= -->
+  <main class="main-sections-flow" id="mainFlow">
+
+    <!-- ==================== SCENE 1: THE CORE LAUNCHPAD ==================== -->
+    <section class="scene-section" id="scene1">
+      <div class="scene-pinned-box">
+        <div class="scene-content center-aligned">
+          
+          <div class="hero-chip laser-border anim-node">
+            <span class="pulse-beacon"></span>
+            <span>نظام البناء البرمجي الحي ثلاثي الأبعاد (Realtime 3D Engine)</span>
+          </div>
+
+          <h1 class="master-hero-title anim-node">
+            نحن لا نكتب أكواداً عادية.. <br>
+            <span class="glow-cyan-text">نحن نبني كيانات برمجية حية</span>
+          </h1>
+
+          <p class="master-hero-desc anim-node">
+            تطبيقات <strong>Flutter</strong> فائقة الرشاقة، <strong>متاجر رقمية</strong> تضاعف التحويل، 
+            <strong>منصات سحابية</strong>، و<strong>روبوتات أتمتة</strong> تحررك من المهام الروتينية.
+          </p>
+
+          <!-- Floating Orbiting Capsules -->
+          <div class="orbiting-capsules anim-node" id="orbitCapsules">
+            <div class="capsule cap-1 glass-element">
+              <i class="fab fa-flutter"></i>
+              <span>تطبيقات فلوتر 60fps</span>
+            </div>
+            <div class="capsule cap-2 glass-element">
+              <i class="fas fa-store"></i>
+              <span>متاجر إلكترونية متكاملة</span>
+            </div>
+            <div class="capsule cap-3 glass-element">
+              <i class="fas fa-code"></i>
+              <span>منصات ويب حديثة</span>
+            </div>
+            <div class="capsule cap-4 glass-element">
+              <i class="fas fa-robot"></i>
+              <span>أنظمة أتمتة ذكية</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SCENE 2: FLUTTER CONSTRUCTOR LAB ==================== -->
+    <section class="scene-section" id="scene2">
+      <div class="scene-pinned-box">
+        <div class="scene-grid-2col">
+          
+          <div class="scene-narrative anim-left">
+            <div class="scene-badge cyan-badge"><i class="fab fa-flutter"></i> معمل هندسة الهواتف</div>
+            <h2 class="scene-heading">بناء تطبيقات فلوتر <br><span class="glow-cyan-text">Native & Ultra-Smooth</span></h2>
+            <p class="scene-paragraph">
+              نجمع أجزاء التطبيق قطعة وراء قطعة: معمارية برمجية صلبة، سرعة استجابة مذهلة 60 إطار في الثانية، ودعم كامل لكافة أنظمة iOS و Android.
+            </p>
+
+            <div class="assembly-specs">
+              <div class="spec-tile glass-element">
+                <i class="fas fa-layer-group"></i>
+                <div>
+                  <strong>Clean Architecture & Bloc</strong>
+                  <span>فصل تام للطبقات وسهولة التوسع المستقبلي</span>
+                </div>
+              </div>
+
+              <div class="spec-tile glass-element">
+                <i class="fas fa-bolt-lightning"></i>
+                <div>
+                  <strong>Realtime Supabase & Firebase</strong>
+                  <span>مزامنة بيانات لحظية وإشعارات فورية دقيقة</span>
+                </div>
+              </div>
+
+              <div class="spec-tile glass-element">
+                <i class="fas fa-cloud-arrow-up"></i>
+                <div>
+                  <strong>جاهزية تامة لمتاجر التطبيقات</strong>
+                  <span>اعتماد كامل لمعايير App Store و Google Play</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Assembling Smartphone -->
+          <div class="device-construction-wrapper anim-right" id="flutterDeviceConstruct">
+            <div class="layer-screen glass-element">
+              <img src="assets/flutter_phone.jpg" alt="Flutter App Screen" class="screen-render">
+              <div class="screen-scanner"></div>
+            </div>
+            <div class="chip-node chip-1 glass-element"><i class="fas fa-mobile-screen"></i> 60 FPS Engine</div>
+            <div class="chip-node chip-2 glass-element"><i class="fab fa-apple"></i> iOS & <i class="fab fa-android"></i> Android</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SCENE 3: E-COMMERCE CONSTRUCTOR ==================== -->
+    <section class="scene-section" id="scene3">
+      <div class="scene-pinned-box">
+        <div class="scene-grid-2col reverse-grid">
+          
+          <!-- Assembling E-Commerce Elements -->
+          <div class="ecom-construction-wrapper anim-left" id="ecomConstruct">
+            <div class="ecom-cart-visual glass-element">
+              <img src="assets/ecommerce_3d.jpg" alt="E-Commerce 3D" class="ecom-render">
+            </div>
+
+            <div class="payment-card-floater card-mada glass-element">
+              <i class="fas fa-credit-card"></i>
+              <span>مدى & Apple Pay</span>
+              <strong>دفع فوري وآمن 100%</strong>
+            </div>
+
+            <div class="payment-card-floater card-stats glass-element">
+              <i class="fas fa-arrow-trend-up"></i>
+              <span>معدل المبيعات</span>
+              <strong>+45% Conversion Rate</strong>
+            </div>
+          </div>
+
+          <div class="scene-narrative anim-right">
+            <div class="scene-badge purple-badge"><i class="fas fa-store"></i> متجر المستقبل</div>
+            <h2 class="scene-heading">متاجر إلكترونية <br><span class="glow-purple-text">تستقطب العملاء وتضاعف أرباحك</span></h2>
+            <p class="scene-paragraph">
+              نصمم متاجر احترافية بمحركات متطورة وسريعة جداً، مع تجربة شراء سلسة تشجع العميل على إتمام الطلب بنقرة واحدة فقط.
+            </p>
+
+            <div class="assembly-specs">
+              <div class="spec-tile glass-element purple-tint">
+                <i class="fas fa-wallet"></i>
+                <div>
+                  <strong>تكامل بوابات الدفع والتقسيط</strong>
+                  <span>ربط رسمي مع ميسر، تابي، تمارا، وباي بال</span>
+                </div>
+              </div>
+
+              <div class="spec-tile glass-element purple-tint">
+                <i class="fas fa-truck-fast"></i>
+                <div>
+                  <strong>الربط الآلي لشركات الشحن</strong>
+                  <span>طباعة البوليصات والتتبع التلقائي للطلبات</span>
+                </div>
+              </div>
+
+              <div class="spec-tile glass-element purple-tint">
+                <i class="fas fa-chart-pie"></i>
+                <div>
+                  <strong>لوحة قيادة وتحليلات مبيعات حية</strong>
+                  <span>متابعة حركة المخزون والعملاء الأكثر ولاءً</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SCENE 4: NEXT-GEN WEB ECOSYSTEM ==================== -->
+    <section class="scene-section" id="scene4">
+      <div class="scene-pinned-box">
+        <div class="scene-content full-width">
+          
+          <div class="scene-header-center anim-node">
+            <div class="scene-badge cyan-badge"><i class="fas fa-code"></i> المنصات السحابية</div>
+            <h2 class="scene-heading">مواقع وتطبيقات ويب <span class="glow-cyan-text">تبني هويتك الرقمية</span></h2>
+            <p class="scene-paragraph">هندسة متقدمة مبنية على أحدث تقنيات Next.js و React لسرعة تحميل فائقة وتوافق مطلق مع محركات البحث.</p>
+          </div>
+
+          <div class="web-matrix-grid anim-node" id="webMatrixGrid">
+            
+            <div class="web-card glass-element">
+              <div class="card-terminal-bar">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="terminal-title">SPA Architecture</span>
+              </div>
+              <div class="card-body">
+                <div class="tech-icon-large"><i class="fab fa-react"></i></div>
+                <h3>تطبيقات ويب فائقة السرعة</h3>
+                <p>لوحات تحكم تفاعلية، منصات SaaS، وتطبيقات إدارة الأعمال متكاملة الصلاحيات.</p>
+                <div class="code-snippet-line"><code>&gt; npm run deploy --fast-edge</code></div>
+              </div>
+            </div>
+
+            <div class="web-card glass-element highlight-border">
+              <div class="card-terminal-bar">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="terminal-title">Google Lighthouse 100/100</span>
+              </div>
+              <div class="card-body">
+                <div class="gauge-meter-wrapper">
+                  <div class="meter-circle">
+                    <span class="meter-val">100</span>
+                    <span class="meter-lbl">Score</span>
+                  </div>
+                </div>
+                <h3>أعلى معايير الـ SEO والأداء</h3>
+                <p>صفحات فائقة السرعة تضمن ظهورك في المراتب الأولى على Google Core Vitals.</p>
+              </div>
+            </div>
+
+            <div class="web-card glass-element">
+              <div class="card-terminal-bar">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="terminal-title">Secure Cloud APIs</span>
+              </div>
+              <div class="card-body">
+                <div class="tech-icon-large"><i class="fas fa-server"></i></div>
+                <h3>سيرفرات سحابية وحماية مشددة</h3>
+                <p>قواعد بيانات موثوقة ونظم توثيق أمنية عالية التحمل (Postgres, Node, Redis).</p>
+                <div class="code-snippet-line"><code>&gt; status: 200 OK | Encrypted</code></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SCENE 5: AUTONOMOUS AI & AUTOMATION ==================== -->
+    <section class="scene-section" id="scene5">
+      <div class="scene-pinned-box">
+        <div class="scene-grid-2col">
+          
+          <div class="scene-narrative anim-left">
+            <div class="scene-badge emerald-badge"><i class="fas fa-robot"></i> مصفوفة الأتمتة والذكاء الاصطناعي</div>
+            <h2 class="scene-heading">أنظمة وروبوتات ذكية <br><span class="glow-emerald-text">تعمل بدلاً منك 24 ساعة</span></h2>
+            <p class="scene-paragraph">
+              نصمم مسارات عمل برمجية (Python, n8n, Webhooks, AI Agents) لربط خدماتك ببعضها وأتمتة الردود، الفواتير، ومزامنة البيانات تلقائياً.
+            </p>
+
+            <div class="neural-pipeline" id="neuralPipeline">
+              <div class="pipeline-node node-1 glass-element">
+                <div class="node-indicator pulse-emerald"></div>
+                <div>
+                  <strong>1. التقاط الحدث اللحظي</strong>
+                  <span>(رسالة واتساب، طلب متجر، إشعار سحابي)</span>
+                </div>
+              </div>
+
+              <div class="neural-wire wire-1"></div>
+
+              <div class="pipeline-node node-2 glass-element">
+                <div class="node-indicator pulse-emerald"></div>
+                <div>
+                  <strong>2. المعالجة بذكاء اصطناعي مخصص</strong>
+                  <span>(تصنيف العميل، تحليل الطلب، تجهيز الرد)</span>
+                </div>
+              </div>
+
+              <div class="neural-wire wire-2"></div>
+
+              <div class="pipeline-node node-3 glass-element">
+                <div class="node-indicator pulse-emerald"></div>
+                <div>
+                  <strong>3. التنفيذ والأرشفة اللحظية</strong>
+                  <span>(إصدار فاتورة، تحديث المخزون، إشعار الفريق)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Neural Core Visual -->
+          <div class="ai-core-wrapper anim-right" id="aiCoreWrapper">
+            <div class="ai-core-visual glass-element">
+              <img src="assets/automation_3d.jpg" alt="AI Neural Core" class="ai-render">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SCENE 6: CONTACT & DOCKING STATION ==================== -->
+    <section class="scene-section" id="scene6">
+      <div class="scene-pinned-box">
+        <div class="scene-content center-aligned">
+          
+          <div class="docking-station-card glass-element anim-node" id="contactDock">
+            <div class="dock-header">
+              <div class="scene-badge cyan-badge"><i class="fas fa-rocket"></i> محطة هبوط البوت والجاهزية</div>
+              <h2 class="scene-heading">جاهز لتحويل فكرتك إلى <br><span class="glow-cyan-text">واقع برمجـي استثنائـي؟</span></h2>
+              <p class="scene-paragraph">
+                دعنا نبدأ في صياغة مشروعك القادم بنفس الدقة والسحر الذي رأيته في هذه الصفحة.
+              </p>
+            </div>
+
+            <!-- Contact Channels Grid -->
+            <div class="contact-channels-grid">
+              <a href="https://wa.me/" target="_blank" class="channel-btn whatsapp-channel glass-element">
+                <i class="fab fa-whatsapp"></i>
+                <div class="channel-info">
+                  <span>محادثة فورية</span>
+                  <strong>تواصل عبر واتساب</strong>
+                </div>
+                <i class="fas fa-arrow-left arrow-peek"></i>
+              </a>
+
+              <a href="mailto:yousf@fan-alelan.com" class="channel-btn email-channel glass-element">
+                <i class="fas fa-envelope"></i>
+                <div class="channel-info">
+                  <span>استفسار أو طلب عرض سعر</span>
+                  <strong>yousf@fan-alelan.com</strong>
+                </div>
+                <i class="fas fa-arrow-left arrow-peek"></i>
+              </a>
+
+              <a href="https://t.me/" target="_blank" class="channel-btn telegram-channel glass-element">
+                <i class="fab fa-telegram"></i>
+                <div class="channel-info">
+                  <span>قناة وسرعة رد</span>
+                  <strong>تواصل عبر تليجرام</strong>
+                </div>
+                <i class="fas fa-arrow-left arrow-peek"></i>
+              </a>
+            </div>
+
+            <!-- Landing Pad for the Bot -->
+            <div class="bot-docking-pad" id="botDockingPad">
+              <div class="pad-ring ring-outer"></div>
+              <div class="pad-ring ring-inner"></div>
+              <span class="pad-status"><i class="fas fa-check-circle"></i> منصة الانطلاق جاهزة 🚀</span>
+            </div>
+
+          </div>
+
+          <!-- FOOTER & DISTINCTIVE SIGNATURE BADGE -->
+          <footer class="cinematic-footer anim-node">
+            <div class="footer-badge-wrapper">
+              <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn" title="تواصل عبر البريد الإلكتروني: yousf@fan-alelan.com">
+                <span class="sig-label">تصميم وتطوير:</span>
+                <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+              </a>
+            </div>
+            <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+          </footer>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Three.js & GLTF Loader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+  <!-- Main App Choreography -->
+  <script src="app.js"></script>
+</body>
+</html>

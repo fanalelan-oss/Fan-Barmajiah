@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المطور الخارق | خبير فلوتر، متاجر إلكترونية، مواقع وأتمتة</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Canvas for Interactive Particles -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Ambient Glowing Blurs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Custom Cursor Glow -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- FLOATING MASTER BOT (The Swimmer Mascot) -->
+  <div class="floating-bot-container" id="floatingBotContainer">
+    <div class="bot-aura"></div>
+    <div class="bot-bubble" id="botSpeechBubble">
+      <span class="bubble-text">مرحباً بك! أنا رفيقك البرمجي، انزل معي لنكتشف السحر 👇</span>
+    </div>
+    <div class="bot-image-wrapper" id="botImageWrapper">
+      <img src="assets/bot_3d.png" alt="Dev Bot" id="activeBotImg" class="bot-main-img">
+      <div class="thruster-fire"></div>
+    </div>
+  </div>
+
+  <!-- FLOATING PARALLAX MICRO-ELEMENTS -->
+  <div class="floating-props" id="floatingProps">
+    <div class="prop prop-flutter" data-speed="1.4"><i class="fab fa-flutter"></i></div>
+    <div class="prop prop-react" data-speed="0.8"><i class="fab fa-react"></i></div>
+    <div class="prop prop-python" data-speed="1.2"><i class="fab fa-python"></i></div>
+    <div class="prop prop-node" data-speed="0.6"><i class="fab fa-node-js"></i></div>
+    <div class="prop prop-code" data-speed="1.5"><i class="fas fa-terminal"></i></div>
+    <div class="prop prop-cart" data-speed="0.9"><i class="fas fa-shopping-bag"></i></div>
+    <div class="prop prop-zap" data-speed="1.1"><i class="fas fa-bolt"></i></div>
+  </div>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="navbar-container" id="navbar">
+    <nav class="navbar glass-card">
+      <div class="nav-brand">
+        <img src="assets/logo.png" alt="عتاد البرمجية" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">عتاد البرمجية</span>
+          <span class="brand-subtitle">حلول رقمية وأتمتة</span>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
+        <li><a href="#flutter" class="nav-link">تطبيقات فلوتر</a></li>
+        <li><a href="#ecommerce" class="nav-link">المتاجر الإلكترونية</a></li>
+        <li><a href="#webdev" class="nav-link">تطوير الويب</a></li>
+        <li><a href="#automation" class="nav-link">أنظمة الأتمتة</a></li>
+        <li><a href="#portfolio" class="nav-link">أعمالي</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="toggleBotBtn" title="تبديل شكل الروبوت المساعد">
+          <i class="fas fa-robot"></i>
+          <span class="tooltip">تبديل البوت</span>
+        </button>
+
+        <a href="#contact" class="btn-primary glow-btn">
+          <span>ابدأ مشروعك</span>
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+    </nav>
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+  </header>
+
+  <!-- MAIN SCROLL CONTAINER -->
+  <main id="main-content">
+
+    <!-- ==================== SECTION 1: HERO ==================== -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-badge glass-pill">
+          <span class="pulse-dot"></span>
+          <span>متاح لتنفيذ المشاريع التقنية الكبرى</span>
+        </div>
+        
+        <h1 class="hero-title">
+          نبني منتجات برمجية <br>
+          <span class="gradient-text glitch-text">تسبح نحو المستقبل</span>
+        </h1>
+
+        <p class="hero-description">
+          مهندس برمجيات متخصص في صياغة <strong>تطبيقات فلوتر فائقة السرعة</strong>، 
+          <strong>متاجر إلكترونية عالية التحويل</strong>، 
+          <strong>منصات ويب متكاملة</strong>، و<strong>روبوتات أتمتة ذكية</strong> توفر آلاف الساعات.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#flutter" class="btn-primary pulse-btn">
+            <span>استكشف عوالم البرمجة</span>
+            <i class="fas fa-angle-double-down"></i>
+          </a>
+          <a href="#contact" class="btn-secondary glass-card">
+            <i class="fab fa-whatsapp"></i>
+            <span>تواصل مباشرة</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-grid">
+          <div class="stat-card glass-card">
+            <h3 class="stat-number" data-target="45">+45</h3>
+            <p class="stat-label">تطبيق ومتجر تم إطلاقه</p>
+          </div>
+          <div class="stat-card glass-card">
+            <h3 class="stat-number" data-target="99">99.8%</h3>
+            <p class="stat-label">دقة ورضا العملاء</p>
+          </div>
+          <div class="stat-card glass-card">
+            <h3 class="stat-number" data-target="1000">+1000</h3>
+            <p class="stat-label">ساعة عمل مؤتمتة شهرياً</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 2: FLUTTER APPS ==================== -->
+    <section class="section flutter-section" id="flutter">
+      <div class="container split-layout">
+        
+        <div class="content-side">
+          <div class="section-tag"><i class="fab fa-flutter"></i> هندسة الهواتف الذكية</div>
+          <h2 class="section-title">تطبيقات فلوتر <span class="gradient-cyan">Native & 60fps</span></h2>
+          <p class="section-desc">
+            تطوير تطبيقات iOS و Android من قاعدة كود واحدة عالية الكفاءة مع معمارية Clean Architecture و Bloc / Riverpod، لضمان استقرار لا يتزعزع وسرعة فائقة.
+          </p>
+
+          <div class="features-list">
+            <div class="feature-item glass-card">
+              <div class="feature-icon cyan-glow"><i class="fas fa-mobile-screen-button"></i></div>
+              <div class="feature-info">
+                <h4>واجهات مستخدم غامرة (Pixel-Perfect)</h4>
+                <p>رسوم متحركة سلسة واستجابة تفاعلية فائقة تمنح المستخدم تجربة استثنائية.</p>
+              </div>
+            </div>
+
+            <div class="feature-item glass-card">
+              <div class="feature-icon cyan-glow"><i class="fas fa-server"></i></div>
+              <div class="feature-info">
+                <h4>ربط API & Realtime WebSockets</h4>
+                <p>تكامل تام مع قواعد البيانات السحابية (Firebase, Supabase, Node, Python).</p>
+              </div>
+            </div>
+
+            <div class="feature-item glass-card">
+              <div class="feature-icon cyan-glow"><i class="fas fa-cloud-arrow-up"></i></div>
+              <div class="feature-info">
+                <h4>نشر احترافي على المتاجر</h4>
+                <p>إدارة الرفع الكامل لـ App Store و Google Play مع إعداد الإشعارات الفورية الدقيقة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-side">
+          <div class="visual-card-3d glass-card tilt-card">
+            <div class="card-glow-edge"></div>
+            <img src="assets/flutter_phone.jpg" alt="Flutter Mobile App" class="showcase-img">
+            <div class="floating-badge top-right glass-pill">
+              <i class="fas fa-microchip"></i> 60 FPS Performance
+            </div>
+            <div class="floating-badge bottom-left glass-pill">
+              <i class="fab fa-apple"></i> iOS & <i class="fab fa-android"></i> Android
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 3: E-COMMERCE ==================== -->
+    <section class="section ecommerce-section" id="ecommerce">
+      <div class="container split-layout reverse-layout">
+        
+        <div class="visual-side">
+          <div class="visual-card-3d glass-card tilt-card purple-theme">
+            <div class="card-glow-edge purple"></div>
+            <img src="assets/ecommerce_3d.jpg" alt="E-Commerce Stores" class="showcase-img">
+            <div class="floating-badge top-left glass-pill purple-badge">
+              <i class="fas fa-chart-line"></i> +40% Conversion Rate
+            </div>
+            <div class="floating-badge bottom-right glass-pill purple-badge">
+              <i class="fas fa-shield-halved"></i> بوابات دفع آمنة 100%
+            </div>
+          </div>
+        </div>
+
+        <div class="content-side">
+          <div class="section-tag purple-tag"><i class="fas fa-bag-shopping"></i> التجارة الإلكترونية</div>
+          <h2 class="section-title">متاجر إلكترونية <span class="gradient-purple">تضاعف مبيعاتك</span></h2>
+          <p class="section-desc">
+            بناء منصات ومتاجر متكاملة مخصصة (Custom E-Commerce / Salla / Zid / Shopify / WooCommerce) مصممة خصيصاً لتسهيل الشراء وتحقيق أعلى معدلات التحويل.
+          </p>
+
+          <div class="features-list">
+            <div class="feature-item glass-card">
+              <div class="feature-icon purple-glow"><i class="fas fa-credit-card"></i></div>
+              <div class="feature-info">
+                <h4>بوابات الدفع والتقسيط (Mada, Apple Pay, Tabby, Tamara)</h4>
+                <p>ربط سلس مع بوابات الدفع المحلية والعالمية مع حماية ضد الاحتيال.</p>
+              </div>
+            </div>
+
+            <div class="feature-item glass-card">
+              <div class="feature-icon purple-glow"><i class="fas fa-boxes-stacked"></i></div>
+              <div class="feature-info">
+                <h4>مزامنة المخزون والشحن التلقائي</h4>
+                <p>ربط بوليصات الشحن (سمسا، أرامكس، سبل) وتتبع الطلبات اللحظي للعملاء.</p>
+              </div>
+            </div>
+
+            <div class="feature-item glass-card">
+              <div class="feature-icon purple-glow"><i class="fas fa-tachograph-digital"></i></div>
+              <div class="feature-info">
+                <h4>لوحة تحكم وتحليلات مالية متطورة</h4>
+                <p>تقارير تفصيلية لسلوك العملاء، المنتجات الأكثر طلباً، ومؤشرات الأرباح الصافية.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 4: WEB DEVELOPMENT ==================== -->
+    <section class="section webdev-section" id="webdev">
+      <div class="container">
+        
+        <div class="section-header-center">
+          <div class="section-tag"><i class="fas fa-code"></i> المنصات والمواقع</div>
+          <h2 class="section-title">مواقع وتطبيقات ويب <span class="gradient-text">عصرية فائقة القوة</span></h2>
+          <p class="section-desc max-w">
+            تصميم وبرمجة منصات ويب سريعة، متوافقة مع محركات البحث SEO، وتعتمد على أحدث أطر العمل مثل React و Next.js و Vue و TailwindCSS.
+          </p>
+        </div>
+
+        <div class="tech-cards-grid">
+          <div class="tech-card glass-card tilt-card">
+            <div class="tech-icon"><i class="fab fa-react"></i></div>
+            <h3>تطبيقات الويب التفاعلية (SPAs)</h3>
+            <p>منصات لوحات تحكم، أنظمة إدارة عملاء CRM، وأنظمة إدارة المهام متعددة المستخدمين.</p>
+            <div class="tech-tags">
+              <span>Next.js</span>
+              <span>React</span>
+              <span>TypeScript</span>
+            </div>
+          </div>
+
+          <div class="tech-card glass-card tilt-card">
+            <div class="tech-icon"><i class="fas fa-gauge-high"></i></div>
+            <h3>سرعة خارقة وأداء 100/100</h3>
+            <p>تحسين سرعة التحميل وتهيئة صفحات الهبوط لتحقيق أعلى تقييمات في Google Core Web Vitals.</p>
+            <div class="tech-tags">
+              <span>SSR / SSG</span>
+              <span>SEO</span>
+              <span>Edge CDN</span>
+            </div>
+          </div>
+
+          <div class="tech-card glass-card tilt-card">
+            <div class="tech-icon"><i class="fas fa-database"></i></div>
+            <h3>بنية برمجية وسيرفرات متينة</h3>
+            <p>قواعد بيانات سريعة، حماية مشددة، وبرمجة خوادم REST و GraphQL عالية التحمل.</p>
+            <div class="tech-tags">
+              <span>PostgreSQL</span>
+              <span>Node.js</span>
+              <span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 5: AUTOMATION ==================== -->
+    <section class="section automation-section" id="automation">
+      <div class="container split-layout">
+        
+        <div class="content-side">
+          <div class="section-tag emerald-tag"><i class="fas fa-robot"></i> الأتمتة والروبوتات البرمجية</div>
+          <h2 class="section-title">أتمتة الأعمال <span class="gradient-emerald">تعمل بدلاً منك 24/7</span></h2>
+          <p class="section-desc">
+            تطوير روبوتات ذكية ومسارات عمل برمجية (Python, n8n, Make, Zapier, Webhooks) للربط بين أنظمتك وإتمام العمليات الروتينية بدون أي تدخل بشري.
+          </p>
+
+          <div class="automation-pipeline glass-card">
+            <div class="pipeline-step">
+              <div class="pipe-node active"><i class="fas fa-bell"></i></div>
+              <div class="pipe-info">
+                <strong>1. التقاط الحدث (Trigger)</strong>
+                <span>طلب جديد، رسالة واتساب، نموذج عميل، أو تغيير في المخزون.</span>
+              </div>
+            </div>
+            <div class="pipe-connector"></div>
+            <div class="pipeline-step">
+              <div class="pipe-node active"><i class="fas fa-brain"></i></div>
+              <div class="pipe-info">
+                <strong>2. المعالجة بالذكاء الاصطناعي (AI Processing)</strong>
+                <span>تحليل الطلب، تصنيف العميل، وإنشاء الردود والتقارير الفورية.</span>
+              </div>
+            </div>
+            <div class="pipe-connector"></div>
+            <div class="pipeline-step">
+              <div class="pipe-node active"><i class="fas fa-check-double"></i></div>
+              <div class="pipe-info">
+                <strong>3. التنفيذ والإشعار اللحظي (Execution)</strong>
+                <span>تحديث قواعد البيانات، إرسال الفاتورة، وإشعار فريق العمل عبر Slack أو Telegram.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-side">
+          <div class="visual-card-3d glass-card tilt-card emerald-theme">
+            <div class="card-glow-edge emerald"></div>
+            <img src="assets/automation_3d.jpg" alt="Automation Core" class="showcase-img">
+            <div class="floating-badge top-right glass-pill emerald-badge">
+              <i class="fas fa-bolt"></i> صفر أخطاء بشرية
+            </div>
+            <div class="floating-badge bottom-left glass-pill emerald-badge">
+              <i class="fas fa-clock"></i> توفير 80% من وقت التشغيل
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 6: PROJECTS SHOWCASE ==================== -->
+    <section class="section portfolio-section" id="portfolio">
+      <div class="container">
+        
+        <div class="section-header-center">
+          <div class="section-tag"><i class="fas fa-layer-group"></i> نماذج الأعمال</div>
+          <h2 class="section-title">أعمال متميزة <span class="gradient-text">تركت أثراً رقمياً</span></h2>
+          <p class="section-desc max-w">مجموعة من المشاريع التي تم تنفيذها بأعلى معايير الجودة والأداء.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          
+          <div class="portfolio-card glass-card tilt-card">
+            <div class="card-media">
+              <img src="assets/flutter_phone.jpg" alt="تطبيق فلوتر">
+              <span class="category-badge">تطبيق فلوتر</span>
+            </div>
+            <div class="card-body">
+              <h3>تطبيق توصيل وخدمات لوجستية فوري</h3>
+              <p>تطبيق هجين فائق السرعة مع تتبع حي للخرائط وإشعارات فورية وبوابات دفع.</p>
+              <div class="card-footer">
+                <span class="tag">Flutter</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Google Maps</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card glass-card tilt-card">
+            <div class="card-media">
+              <img src="assets/ecommerce_3d.jpg" alt="متجر إلكتروني">
+              <span class="category-badge purple">متجر إلكتروني متكامل</span>
+            </div>
+            <div class="card-body">
+              <h3>متجر عتاد للأجهزة والإلكترونيات</h3>
+              <p>متجر ضخم يدعم آلاف المنتجات، مع تكامل مع منصات الدفع والشحن وإدارة الفواتير الضريبية.</p>
+              <div class="card-footer">
+                <span class="tag">Next.js</span>
+                <span class="tag">Shopify Headless</span>
+                <span class="tag">Mada/Apple Pay</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card glass-card tilt-card">
+            <div class="card-media">
+              <img src="assets/automation_3d.jpg" alt="نظام أتمتة">
+              <span class="category-badge emerald">بوت وأتمتة ذكية</span>
+            </div>
+            <div class="card-body">
+              <h3>منظومة أتمتة خدمة العملاء وإدارة الفواتير</h3>
+              <p>سلسلة روبوتات تقوم بالرد الآلي الذكي وربط عمليات الشراء مع المحاسبة بدون تدخل بشري.</p>
+              <div class="card-footer">
+                <span class="tag">Python</span>
+                <span class="tag">n8n / AI Agent</span>
+                <span class="tag">WhatsApp API</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 7: CONTACT / CTA ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-container glass-card">
+        <div class="contact-glow"></div>
+        
+        <div class="contact-header">
+          <div class="section-tag"><i class="fas fa-paper-plane"></i> لنصنع شيئاً عظيماً</div>
+          <h2 class="contact-title">هل لديك فكرة مشروع أو ترغب في أتمتة أعمالك؟</h2>
+          <p class="contact-desc">
+            دعنا نحول فكرتك إلى تطبيق أو متجر أو نظام أتمتة يعمل بكفاءة لا مثيل لها.
+          </p>
+        </div>
+
+        <div class="contact-buttons">
+          <a href="https://wa.me/" target="_blank" class="contact-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <span class="btn-sub">تواصل فوري</span>
+              <strong class="btn-main">عبر واتساب</strong>
+            </div>
+          </a>
+
+          <a href="mailto:contact@atad.dev" class="contact-btn email-btn">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span class="btn-sub">أرسل استفسارك</span>
+              <strong class="btn-main">البريد الإلكتروني</strong>
+            </div>
+          </a>
+
+          <a href="https://t.me/" target="_blank" class="contact-btn telegram-btn">
+            <i class="fab fa-telegram"></i>
+            <div>
+              <span class="btn-sub">محادثة سريعة</span>
+              <strong class="btn-main">عبر تليجرام</strong>
+            </div>
+          </a>
+        </div>
+
+        <div class="bot-landing-target" id="botLandingZone">
+          <div class="landing-ring"></div>
+          <span class="landing-text">محطة هبوط البوت 🚀</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Logo" class="footer-logo">
+        <p>عتاد البرمجية | نصنع تجارب رقمية لا تُنسى</p>
+      </div>
+      <div class="footer-copy">
+        جميع الحقوق محفوظة &copy; 2026. بُنيت بشغف مع مؤثرات التمرير المتطايرة.
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  
+  <!-- VanillaTilt for 3D Cards -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
