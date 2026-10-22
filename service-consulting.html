@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الاستشارات التقنية وهندسة المنتجات الرقمية | فن البرمجية</title>
+  <meta name="description" content="خدمة الاستشارات التقنية المتخصصة ودراسات الجدوى البرمجية وخارطة طريق بناء وتوسيع المنتجات الرقمية للشركات ورواد الأعمال.">
+  <meta name="keywords" content="استشارات تقنية, دراسة جدوى تقنية, استشارات برمجية, معمارية البرمجيات, product consulting, فن البرمجية">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link active" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL CONTAINER -->
+  <main class="page-container-layout service-detail-layout">
+    
+    <!-- Breadcrumb -->
+    <div class="service-breadcrumb">
+      <a href="services.html"><i class="fas fa-arrow-right"></i> العودة لقائمة الخدمات</a>
+      <span>/</span>
+      <span class="current">الاستشارات التقنية وهندسة المنتجات الرقمية</span>
+    </div>
+
+    <!-- Service Hero -->
+    <section class="service-hero-detail">
+      <div class="service-tag gold-tag"><i class="fas fa-chess-knight"></i> Technical Advisory & Strategy</div>
+      <h1 class="service-main-title">
+        الاستشارات التقنية وهندسة المنتجات <br>
+        <span class="glow-gold-text">القرارات البرمجية الصحيحة وخارطة النجاح</span>
+      </h1>
+      <p class="service-main-desc">
+        نقدم لك المشورة الهندسية الحصيفة قبل استثمار أموالك: نحدد التقنيات الأنسب، ونحسب التكاليف الحقيقية، ونرسم خارطة طريق فنية تحمي استثمارك وتضمن نمو مشروعك بثقة.
+      </p>
+
+      <div class="service-hero-actions">
+        <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+          <i class="fas fa-comments"></i>
+          <span>حجز جلسة استشارة تقنية</span>
+        </a>
+        <a href="#features" class="btn-secondary-glass">
+          <span>استعراض محاور الاستشارة</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Metrics Ribbon -->
+    <section class="service-metrics-ribbon glass-element">
+      <div class="metric-item">
+        <strong>-50%</strong>
+        <span>توفير في تكاليف التطوير الخاطئة</span>
+      </div>
+      <div class="metric-item">
+        <strong>100%</strong>
+        <span>وضوح في التكاليف والجدول الزمني</span>
+      </div>
+      <div class="metric-item">
+        <strong>Zero</strong>
+        <span>مفاجآت أو عوائق برمجية مستقبلاً</span>
+      </div>
+      <div class="metric-item">
+        <strong>CTO Level</strong>
+        <span>رؤية واستشارات من خبراء معمارية</span>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution Matrix -->
+    <section class="service-section-block" id="features">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-balance-scale"></i> التحديات والحلول</div>
+        <h2 class="scene-heading">لماذا تفشل 80% من المشاريع الناشئة <span class="glow-gold-text">تقنياً</span>؟</h2>
+      </div>
+
+      <div class="compare-matrix-grid">
+        <div class="compare-card glass-element flaw-card">
+          <div class="compare-badge red-badge"><i class="fas fa-triangle-exclamation"></i> البدء العشوائي بدون دراسة تقنية</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-xmark"></i> اختيار لغات وتقنيات غير مناسبة لحجم النشاط وميزانيته.</li>
+            <li><i class="fas fa-xmark"></i> إهدار الميزانية على مميزات ثانوية لا يحتاجها العميل.</li>
+            <li><i class="fas fa-xmark"></i> الاعتماد على مبرمجين غير مؤهلين يتركون كوداً غير قابل للتطوير.</li>
+            <li><i class="fas fa-xmark"></i> التأخر لأشهر طويلة عن موعد الإطلاق المخطط له.</li>
+          </ul>
+        </div>
+
+        <div class="compare-card glass-element advantage-card">
+          <div class="compare-badge green-badge"><i class="fas fa-circle-check"></i> التخطيط الهندسي مع فن البرمجية</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-check"></i> تحديد التقنيات الأكثر كفاءة وأقلها تكلفة تشغيلية.</li>
+            <li><i class="fas fa-check"></i> بناء المنتج الأولي (MVP) بأسرع وقت وأعلى جودة.</li>
+            <li><i class="fas fa-check"></i> وثيقة متطلبات برمجية مفصلة تحميك عند التعاقد مع أي جهة.</li>
+            <li><i class="fas fa-check"></i> جدول زمني دقيق وإطلاق سريع يضمن التفوق على المنافسين.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consulting Modules -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-compass-drafting"></i> محاور الجلسات الاستشارية</div>
+        <h2 class="scene-heading">ماذا نغطي في <span class="glow-gold-text">الاستشارة الهندسية</span>؟</h2>
+      </div>
+
+      <div class="feature-detail-grid">
+        <div class="feature-box glass-element">
+          <div class="feat-icon gold"><i class="fas fa-lightbulb"></i></div>
+          <h4>تقييم فكرة المشروع والجدوى التقنية</h4>
+          <p>دراسة واقعية لإمكانية تطبيق الفكرة وتحديد التحديات البرمجية وسبل التغلب عليها قبل كتابة الكود.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-diagram-project"></i></div>
+          <h4>هندسة المعمارية واختيار الـ Tech Stack</h4>
+          <p>مفاضلة دقيقة بين لغات البرمجة وقواعد البيانات والسيرفرات لاختيار الأنسب لميزانيتك وتوسعك.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-file-lines"></i></div>
+          <h4>كتابة وثيقة المتطلبات الفنية (BRD / PRD)</h4>
+          <p>إعداد كراسة شروط ومواصفات برمجية واضحة ومحكمة تحميك من أي خلافات فنية أثناء التنفيذ.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon purple"><i class="fas fa-chart-gantt"></i></div>
+          <h4>تخطيط وتحديد المنتج الأولي الأدنى (MVP)</h4>
+          <p>عزل الميزات الأساسية لإطلاق نسختك الأولى بأقل تكلفة وأسرع وقت لاختبار السوق وجذب الاستثمار.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon gold"><i class="fas fa-hand-holding-dollar"></i></div>
+          <h4>حساب التكاليف التشغيلية السحابية (Cloud TCO)</h4>
+          <p>تقدير دقيق لفواتير السيرفرات السحابية وبوابات الدفع والرسائل لمنع أي مفاجآت مالية بعد الإطلاق.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-user-check"></i></div>
+          <h4>خدمة المدير التقني الاستشاري (Fractional CTO)</h4>
+          <p>مرافقة قيادية لمشروعك لمراجعة الأكواد والإشراف الفني وإجراء المقابلات لفرق التطوير لديك.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</div>
+        <h2 class="scene-heading">تساؤلات حول <span class="glow-cyan-text">الاستشارات التقنية</span></h2>
+      </div>
+
+      <div class="faq-accordion-grid">
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل الاستشارة ملزمة بالتعاقد معكم للتطوير؟</h4>
+          <p>أبداً. الجلسة الاستشارية مستقلة تماماً، وتحصل في نهايتها على تقرير فني شامل يمكنك استخدامه مع أي فريق تطوير ترغب به.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل تقدمون اتفاقية عدم إفصاح (NDA) لحماية فكرتي؟</h4>
+          <p>نعم، نلتزم بتوقيع اتفاقية سرية وعدم إفصاح رسمية لحماية فكرتك وبيانات مشروعك بالكامل قبل بدء أي نقاش.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> كيف تتم الجلسة الاستشارية؟</h4>
+          <p>تتم الجلسة عبر اجتماع فيديو مخصص (Google Meet أو Zoom) مع مستشارنا التقني لمناقشة كافة التفاصيل بحرية ووضوح.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project CTA Box -->
+    <section class="about-cta-card glass-element interactive-3d-card">
+      <h2>لديك فكرة أو مشروع وتود اتخاذ القرار التقني السليم؟</h2>
+      <p>احجز جلستك الاستشارية اليوم مع خبير المعمارية البرمجية لوضع خارطة طريق استثمارك الرقمي.</p>
+      <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+        <i class="fas fa-comments"></i>
+        <span>حجز جلسة الاستشارة التقنية الآن</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

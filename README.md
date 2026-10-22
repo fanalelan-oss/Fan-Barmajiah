@@ -1,100 +1,151 @@
 # 🛸 فن البرمجية | Fan Al-Barmajiah
 ### محرك بناء التجارب الرقمية التفاعلية وهندسة الأنظمة الحية 🚀
 
-> **«نحن لا نكتب أكواداً عادية.. نحن نبني كيانات برمجية حية»**
+<div align="center">
+  <img src="assets/logo.png" alt="شعار فن البرمجية" width="130" style="margin-bottom: 15px; filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.4));">
+  <br>
+  
+  [![Status](https://img.shields.io/badge/Status-Active_Production-00f0ff?style=for-the-badge&logo=statuspage)](https://github.com/fanalelan-oss/Fan-Barmajiah)
+  [![Platform](https://img.shields.io/badge/Hosting-Firebase_App_Hosting-ffbe0b?style=for-the-badge&logo=firebase)](https://firebase.google.com/)
+  [![Framework](https://img.shields.io/badge/Architecture-Modular_Static_%26_Node-b026ff?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
+  [![License](https://img.shields.io/badge/License-Proprietary-059669?style=for-the-badge)](https://fan-alelan.com)
+  
+  <p align="center">
+    <strong>«نحن لا نكتب أكواداً عادية.. نحن نبني كيانات برمجية حية»</strong>
+    <br>
+    تجربة ويب سينمائية ثلاثية الأبعاد مبنية بأحدث معايير الـ Creative Web وتصميم الزجاج البلوري مع نظام متكامل لإدارة الخدمات الرقمية والهندسة السحابية.
+  </p>
+</div>
 
 ---
 
-## 🌟 نظرة عامة على المشروع (Overview)
+## 📸 جولة بصرية في المنصة (Visual Showcase)
 
-**فن البرمجية** هو موقع وتجربة ويب تفاعلية ثلاثية الأبعاد تم تطويرها بأحدث تقنيات الويب الحديثة وحركات الـ **Creative Development** السينمائية. يجمع المشروع بين دقة التصميم الزجاجي المعاصر (**Apple iOS Frosted Glass**)، وفيزياء الحركة الحية (**Physics-based Interactions**)، لتقديم واجهة عرض رقمية استثنائية لأحدث حلول البرمجة، تطبيقات الهواتف الذكية، المتاجر الإلكترونية، وأنظمة الأتمتة السحابية.
-
----
-
-## ✨ أبرز المميزات والتقنيات التفاعلية (Key Features)
-
-### 1. 🌌 محاكي النجوم الفضولية الذكي (Curious Cosmic Stars AI Physics)
-- خلفية فضائية مخصصة مرسومة عبر الـ **HTML5 Canvas** تحتوي على نجوم مضيئة تتفاعل بذكاء اصطناعي فيزيائي مع المستخدم.
-- **سلوك الفضول (Curiosity Mode):** عند ثبات الماوس لمدة 3 ثوانٍ، تبدأ النجوم بالسباحة والانجذاب التدريجي الهادئ نحو موقع المؤشر كأنها تستكشف جسماً غريباً.
-- **التفرق الكوني (Smooth Dispersion):** بمجرد تحريك الماوس، تتفرق النجوم وتتناثر بسلاسة لتعود وتملأ كامل أرجاء الشاشة بتوزيع متوازن ومريح للعين.
-
-### 2. 🛸 شريط التنقل بمطاط فضائي مضاد للجاذبية (Anti-Gravity Space-Warp Stepper)
-- شريط علوي موحد بخامة **الزجاج الثلجي المكتبي الفاخر (Frosted Privacy Glass)** مع إشعاع لوني حاد وشفافية فائقة.
-- **مؤشر المطاط الكوني:** عند الانتقال بين أقسام الموقع، يتمدد مؤشر التحديد كشريط مطاطي ناعم يربط الأيقونتين ثم ينكمش بحركة ارتدادية هلامية (Elastic Snap) حول الأيقونة المختارة.
-
-### 3. 🎬 محرك البناء والتفكك السينمائي ثنائي الاتجاه (Bi-Directional GSAP 3D Timelines)
-- جميع الأقسام الستة مبنية بتقنية التجميع التدريجي والتفكك الكامل:
-  - **أثناء النزول (Scroll Down):** تتطاير العناصر والبطاقات من عمق الفضاء ثلاثي الأبعاد لتتجمع وتستقر أمام الزائر، ثم تتفكك لتفسح المجال للقسم التالي.
-  - **أثناء الصعود (Scroll Up):** تعود العناصر للتفكك وإعادة البناء بنفس الدقة والانسيابية ثنائية الاتجاه بدون أي انقطاع.
-
-### 4. 🌊 نظام التمرير فائق الانسيابية (Lenis Smooth Scroll Engine)
-- دمج محرك **Lenis** مع **GSAP ScrollTrigger** لتوفير تجربة تصفح بالغة الفخامة، ناعمة على الشاشات الحديثة والهواتف الذكية.
-
-### 5. 💎 كبسولة التوقيع والهوية المعتمدة (Branding & Signature Badge)
-- هوية رقمية كاملة لـ **«فن البرمجية»**.
-- تذييل تفاعلي يحتوي على كبسولة توقيع ذهبية/نيونية مخصصة:
-  - **تصميم وتطوير: 🪄 فريق فن الإعلان**
-  - زر تفاعلي ينقلك مباشرة للتواصل السريع عبر البريد الرسمي: yousf@fan-alelan.com.
+<div align="center">
+  <table>
+    <tr>
+      <td width="33%" align="center">
+        <img src="assets/flutter_phone.jpg" alt="تطبيقات الجوال فلوتر" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+        <br>
+        <strong>📱 تطبيقات Flutter فائقة الرشاقة</strong>
+      </td>
+      <td width="33%" align="center">
+        <img src="assets/ecommerce_3d.jpg" alt="متاجر إلكترونية حية" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+        <br>
+        <strong>🛍️ متاجر تفاعلية وهندسة تحويل</strong>
+      </td>
+      <td width="33%" align="center">
+        <img src="assets/automation_3d.jpg" alt="الأتمتة والذكاء الاصطناعي" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+        <br>
+        <strong>🤖 روبوتات الأتمتة والذكاء الاصطناعي</strong>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
-## 🛠️ التقنيات والمكتبات المستخدمة (Tech Stack)
+## 🌟 الهيكل المعماري والصفحات المخصصة (Core Architecture)
 
-| التقنية / المكتبة | الاستخدام |
+تتألف المنصة من منظومة صفحات مستقلة تم تصميم كل منها كـ Landing Page متكاملة تدعم السيو والتحويل الرقمي:
+
+```
+Fan-Barmajiah/
+│
+├── 🏠 index.html                    # الواجهة الرئيسية السينمائية ثلاثية الأبعاد
+├── ℹ️ about.html                    # صفحة من نحن وفلسفة البناء البرمجي
+├── 🗂️ services.html                 # دليل الخدمات التفاعلي مع تصفية الفئات (Filter Matrix)
+├── 📝 blog.html                     # منصة المقالات ودراسات الحالة البرمجية
+│
+├── 🚀 صفحات الخدمات التخصصية العميقة:
+│   ├── 📱 service-mobile.html       # تطبيقات الهواتف الذكية (iOS & Android - Flutter 60fps)
+│   ├── 🛒 service-ecommerce.html    # المتاجر والمنظومات التجارية الرقمية عالية الأداء
+│   ├── ☁️ service-cloud-erp.html    # البنية السحابية وهندسة قواعد البيانات وMicroservices
+│   ├── 🤖 service-automation-ai.html # الأتمتة والروبوتات البرمجية والذكاء الاصطناعي
+│   ├── ⚡ service-refactoring.html   # تدقيق الأداء وإعادة هيكلة الأكواد المعقدة
+│   └── 🎯 service-consulting.html   # الاستشارات التقنية والتوجيه المعماري للمشاريع
+│
+├── 🎨 ملفات التصميم والفيزياء:
+│   ├── style.css                    # نظام الأنماط الشامل (Dark & Daylight Themes)
+│   └── app.js                       # محرك الحركات، فيزياء النجوم، وتتبع السكرول
+│
+└── ⚙️ إعدادات النشر السحابي (Deployment & CI/CD):
+    ├── package.json                 # تعريف المشروع واعتمادات خادم Node.js
+    ├── server.js                    # خادم Express المخصص لدعم الروابط النظيفة والأصول
+    ├── apphosting.yaml              # إعدادات Firebase App Hosting و Google Cloud Run
+    └── firebase.json                # إعدادات Firebase Hosting التقليدية
+```
+
+---
+
+## ✨ أبرز المميزات والتقنيات التفاعلية (Key Interactive Features)
+
+### 1. ☀️🌙 نظام المظهر المزدوج وزر التبديل الحر (Dual Theme & Floating Toggle)
+- **الوضع الليلي (Dark Cyberpunk):** خلفية فضائية عميقة بدرجات الكحلي والأسود الزجاجي مع توهجات نيون سيان وبنفسجي وذهبي.
+- **الوضع النهاري (Daylight Clean):** تصميم بلوري أبيض نقي متناسق بالكامل (Linear/Vercel Aesthetic) مريح للقراءة مع تباين عالي للنصوص.
+- **زر التبديل المباشر:** أيقونة شمس ☀️ وقمر 🌙 حرة طافية على الموقع بدون أي حوافر أو كبسولات إضافية، مع فيزياء دوران ارتدادي تفاعلي.
+
+### 2. 🌌 محاكي النجوم الفضولية الذكي (Curious Cosmic Stars AI Physics)
+- مرسوم عبر **HTML5 Canvas 2D** بكثافة متوازنة وحسابات فيزيائية حية.
+- **نمط الفضول (Curiosity Mode):** عند ثبات مؤشر الفأرة لمدة 3 ثوانٍ، تسبح النجوم برقة نحو المؤشر كأنها كائنات تستكشف الزائر.
+- **الانفراج السلس (Smooth Dispersion):** عند استئناف الحركة، تتفرق النجوم بانسيابية وتعود لتغطي الفضاء الكوني.
+
+### 3. 🛸 شريط التنقل المطاطي المضاد للجاذبية (Rubber Pill Navigation)
+- شريط علوي مصقول بخامة **Frosted Glass** المزدوجة.
+- مؤشر التحديد (Pill) يتمدد بحركة مطاطية ناعمة بين الروابط وينكمش حول العنصر النشط بفيزياء ارتدادية دقيقة.
+
+### 4. 🎬 التفكك والبناء السينمائي ثنائي الاتجاه (GSAP Bi-Directional Timelines)
+- الأقسام تُبنى وتتفكك تدريجياً مع السكرول سواء عند النزول للأسفل أو الصعود للأعلى دون أي تشوه أو قفزات مفاجئة.
+- دمج كامل مع **Lenis Smooth Scroll** لتوفير تجربة تصفح هادئة وفاخرة.
+
+---
+
+## 🛠️ حزمة التقنيات المستخدمة (Technology Stack)
+
+| التقنية | الدور والاستخدام |
 | :--- | :--- |
-| **HTML5 & Semantic Structure** | الهيكل المعماري الأساسي للموقع |
-| **CSS3 & Modern Glassmorphism** | التصميم الزجاجي، تدرجات النيون، والتجاوب مع جميع الشاشات |
-| **Vanilla JavaScript (ES6+)** | المنطق البرمجي، فيزياء النجوم، وحسابات الإحداثيات |
-| **GSAP 3 (GreenSock)** | المحرك الأساسي لحركات الأقسام والأنيميشن التفاعلي |
-| **GSAP ScrollTrigger** | ربط خطوط الزمن الحركية بموضع التمرير بالسكرول |
-| **Lenis Scroll** | التمرير فائق النعومة والرشاقة |
-| **HTML5 Canvas 2D** | محاكاة النجوم والجسيمات الكونية المتفاعلة |
-| **FontAwesome 6 Pro Icons** | الأيقونات المتجهية الحديثة |
-| **Google Fonts (Cairo & Orbitron)** | الخطوط العربية الفاخرة والإنجليزية الكيبرانية |
+| **HTML5 & Modern Semantics** | الهيكل الدلالي المتقدم لجميع الصفحات |
+| **CSS3 & Glassmorphism System** | الخامات الزجاجية، أنظمة الإضاءة، والوضع النهاري/الليلي |
+| **JavaScript (ES6+)** | المنطق التفاعلي وفيزياء محاكاة النجوم |
+| **GSAP 3 & ScrollTrigger** | تحريك المشاهد وخطوط الزمن السينمائية |
+| **Lenis Scroll** | محرك التمرير الانسيابي |
+| **Node.js & Express** | خادم الإنتاج السحابي ومعالجة المسارات النظيفة (Clean URLs) |
+| **Firebase App Hosting** | النشر المؤتمت عبر GitHub وعمليات Cloud Build |
 
 ---
 
-## 📁 الهيكل التنظيمي للمشروع (Project Structure)
+## 🚀 النشر والتشغيل (Deployment & Local Setup)
 
-`	ext
-الصور المتطايره/
-├── index.html            # الصفحة الرئيسية وهيكل المشاهد والأقسام
-├── style.css             # ملف التنسيقات والخامات الزجاجية والأنيميشن
-├── app.js                # محرك الحركات، فيزياء النجوم، وتتبع السكرول
-├── README.md             # ملف الشرح والتوثيق الفني للمشروع
-├── assets/               # ملفات الوسائط والصور والشعارات
-│   ├── logo.png          # شعار فن البرمجية الرسمي
-│   └── ...
-└── موقع المبرمج/         # الأرشيف المرجعي للمشروع الأصلي
-`
+### 1. التشغيل المحلي السريع (Local Development)
+باستخدام Node.js:
+```bash
+npm install
+npm start
+```
+أو عبر بايثون مباشرة:
+```bash
+python -m http.server 8080
+```
+ثم افتح: [http://localhost:8080](http://localhost:8080)
 
----
+### 2. النشر على Firebase App Hosting (التلقائي عبر GitHub)
+المشروع مزود بـ `package.json` و `server.js` و `apphosting.yaml`. بمجرد رفع الكود إلى فرع `main` في المستودع:
+```text
+https://github.com/fanalelan-oss/Fan-Barmajiah
+```
+سيقوم **Firebase App Hosting** بالتعرف التلقائي على خادم Node.js وتمرير فحص **Cloud Build** بنجاح 100% ونشر الموقع على الرابط السحابي.
 
-## 🚀 كيفية التشغيل محلياً (How to Run Locally)
-
-1. قم باستنساخ المستودع:
-   `ash
-   git clone https://github.com/fanalelan-oss/-.git
-   `
-2. افتح مجلد المشروع:
-   `ash
-   cd -
-   `
-3. شغّل خادم محلي (مثلاً باستخدام بايثون):
-   `ash
-   python -m http.server 8080
-   `
-4. افتح المتصفح على الرابط:
-   `	ext
-   http://localhost:8080
-   `
+### 3. النشر عبر Firebase Hosting التقليدي
+إذا رغبت بالنشر المباشر عبر الطرفية:
+```bash
+firebase deploy --only hosting
+```
 
 ---
 
-## 🤝 حقوق الملكية والتطوير (Credits & License)
+## 🤝 حقوق الملكية والتواصل (Ownership & Contact)
 
-- **تصميم وتطوير:** 🪄 **فريق فن الإعلان**
+- **المنصة:** **فن البرمجية | Fan Al-Barmajiah**
+- **المستودع الرسمي:** [fanalelan-oss/Fan-Barmajiah](https://github.com/fanalelan-oss/Fan-Barmajiah)
 - **البريد الإلكتروني:** [yousf@fan-alelan.com](mailto:yousf@fan-alelan.com)
-- **الموقع:** [فن البرمجية](https://github.com/fanalelan-oss/-.git)
-
-جميع الحقوق محفوظة © 2026 **فن البرمجية | فن الإعلان**.
+- **الهوية الرقمية:** جميع الحقوق محفوظة © 2026.

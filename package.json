@@ -1,0 +1,18 @@
+{
+  "name": "fan-barmajiah",
+  "version": "1.0.0",
+  "description": "منصة فن البرمجية | محرك بناء التجارب الرقمية وهندسة الأنظمة الحية",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node -e \"console.log('Build completed successfully for Fan-Barmajiah.')\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "fanalelan-oss",
+  "license": "ISC"
+}

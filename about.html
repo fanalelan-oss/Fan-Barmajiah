@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | فن البرمجية - هندسة الأنظمة وبناء التجارب الرقمية</title>
+  <meta name="description" content="تعرف على فن البرمجية، المنظومة الرائدة في هندسة وبناء التطبيقات والأنظمة الرقمية المخصصة. لا نخمن ولا نتوقع، بل نفهم نشاطك التجاري ونبني ما يحتاجه بدقة فائقة.">
+  <meta name="keywords" content="برمجة تطبيقات, تطوير متاجر الكترونية, هندسة برمجيات, فلوتر, انظمة سحابية, فن البرمجية, السعودية">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu with Anti-Gravity Rubber Pill -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link active" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- EXPANSIVE ABOUT US CONTENT -->
+  <main class="page-container-layout">
+    
+    <!-- Hero Section -->
+    <section class="page-hero-header">
+      <div class="scene-badge cyan-badge"><i class="fas fa-shield-halved"></i> الفلسفة والرؤية الهندسية</div>
+      <h1 class="master-hero-title">
+        نحن لا نتوقع ولا نخمن.. <br>
+        <span class="glow-cyan-text">نحن نفهم كيف تعمل أنشطتكم ونبني ما تحتاجونه بالضبط</span>
+      </h1>
+      <p class="master-hero-desc">
+        في «فن البرمجية»، نتجاوز مفهوم كتابة الأكواد العادية لنكون المعمار الرقمي الذي يترجم متطلبات عملك وأهدافك التجارية إلى أنظمة حية، متماسكة، وقابلة للنمو بلا حدود.
+      </p>
+    </section>
+
+    <!-- Detailed Manifesto Banner -->
+    <section class="about-manifesto-box glass-element interactive-3d-card">
+      <div class="manifesto-inner">
+        <div class="manifesto-badge"><i class="fas fa-quote-right"></i> مبدأ العمل في فن البرمجية</div>
+        <h2>البرمجة ليست مجرد أداة.. إنها محرك نجاح تجارتك وريادة أعمالك</h2>
+        <p>
+          معظم المشاريع الرقمية تفشل ليس بسبب سوء الأكواد، بل لأن من برمجها لم يفهم طبيعة النشاط، دورة حياة العميل، وسلاسة العمليات التشغيلية. هنا يكمن الفارق الجوهري في «فن البرمجية»: نحن نبدأ من دراسة نموذج عملك التجاري، تحليل سلوك عملائك، وتحديد نقاط القوة، ثم نصمم البنية التحتية البرمجية التي تضمن تفوقك على منافسيك واستقرارك المستمر.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Us Section (Business-First Architecture) -->
+    <section class="about-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-gem"></i> معايير التفوق المؤسسي</div>
+        <h2 class="scene-heading">لماذا تعتمد الأنشطة التجارية والشركات على <span class="glow-gold-text">فن البرمجية</span>؟</h2>
+        <p class="scene-paragraph">نهج هندسي شامل يجمع بين الفهم التجاري العميق والتقنيات البرمجية الأكثر حداثة واستقراراً في العالم.</p>
+      </div>
+
+      <div class="content-grid-cards">
+        <div class="glass-element interactive-3d-card content-card-box">
+          <div class="card-icon-header cyan"><i class="fas fa-brain"></i></div>
+          <h3>الفهم العميق للأنشطة والقطاعات</h3>
+          <p>ندرس دورة حياة نشاطك وسلاسل الإمداد وتجربة العميل قبل وضع سطر برمجي واحد، لنقدم نظاماً يحاكي واقعك ويطوره بدقة متناهية.</p>
+        </div>
+
+        <div class="glass-element interactive-3d-card content-card-box">
+          <div class="card-icon-header purple"><i class="fas fa-layer-group"></i></div>
+          <h3>بناء مخصص 100% بدون قوالب جاهزة</h3>
+          <p>نرفض القوالب الجاهزة والمعدلة. كل نظام وتطبيق يُبنى من الصفر بمعمارية نظيفة (Clean Architecture) تمنحك استقلالية تامة وحرية لا نهائية في التوسع.</p>
+        </div>
+
+        <div class="glass-element interactive-3d-card content-card-box">
+          <div class="card-icon-header emerald"><i class="fas fa-bolt-lightning"></i></div>
+          <h3>سرعة فائقة واستجابة 60 FPS</h3>
+          <p>السرعة هي الركيزة الأولى لرفع المبيعات وتحسين ترتيب الـ SEO. نضمن استجابة لحظية وخفة استثنائية تحافظ على ولاء كل زائر وعميل.</p>
+        </div>
+
+        <div class="glass-element interactive-3d-card content-card-box">
+          <div class="card-icon-header gold"><i class="fas fa-shield-virus"></i></div>
+          <h3>أمان بنكي واستقرار سحابي</h3>
+          <p>تشفير متكامل لقواعد البيانات والاتصالات السحابية مع تصميم أنظمة تتحمل ضغط ملايين الزيارات المتزامنة بدون أدنى تباطؤ أو انقطاع.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Methodology Timeline -->
+    <section class="about-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge purple-badge"><i class="fas fa-timeline"></i> مسار العمل والتحويل الرقمي</div>
+        <h2 class="scene-heading">كيف نحول فكرتك إلى <span class="glow-purple-text">واقع برمجي استثنائي</span>؟</h2>
+      </div>
+
+      <div class="methodology-steps-grid">
+        <div class="step-card-glass glass-element">
+          <div class="step-num">01</div>
+          <h4>تحليل النشاط ودراسة المتطلبات</h4>
+          <p>استكشاف شامل للعمليات، فهم احتياجات المستخدم النهائي، وتحديد أفضل الحلول التقنية المجدية تجارياً.</p>
+        </div>
+
+        <div class="step-card-glass glass-element">
+          <div class="step-num">02</div>
+          <h4>هندسة المعمارية وتجربة الاستخدام</h4>
+          <p>تصميم واجهات فائقة السلاسة UI/UX وبناء المخطط الهيكلي لقواعد البيانات والربط السحابي.</p>
+        </div>
+
+        <div class="step-card-glass glass-element">
+          <div class="step-num">03</div>
+          <h4>التطوير البرمجي والذكاء الاصطناعي</h4>
+          <p>كتابة الأكواد وفق أعلى معايير الجودة العالمية، ودمج محركات الأتمتة والتحليل اللحظي.</p>
+        </div>
+
+        <div class="step-card-glass glass-element">
+          <div class="step-num">04</div>
+          <h4>اختبارات الأداء والإطلاق السحابي</h4>
+          <p>فحص دقيق للسرعة والأمان والحمل السيرفري، ثم نشر النظام على السيرفرات السحابية ومتاجر التطبيقات.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Stats Strip -->
+    <section class="about-stats-strip glass-element">
+      <div class="stat-cell">
+        <strong>100%</strong>
+        <span>أكواد مخصصة بالكامل</span>
+      </div>
+      <div class="stat-cell">
+        <strong>60 FPS</strong>
+        <span>معيار سلاسة الواجهات</span>
+      </div>
+      <div class="stat-cell">
+        <strong>99.9%</strong>
+        <span>جاهزية واستقرار سحابي</span>
+      </div>
+      <div class="stat-cell">
+        <strong>0%</strong>
+        <span>تخمين أو قوالب عشوائية</span>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta-card glass-element interactive-3d-card">
+      <h2>جاهز لبناء نظام رقمي يمنح نشاطك الريادة الحقيقية؟</h2>
+      <p>تحدث مع المستشار التقني اليوم لنناقش تفاصيل مشروعك ونضع لك الخارطة الهندسية الأنسب لتحقيق أهدافك.</p>
+      <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+        <i class="fas fa-comments"></i>
+        <span>ابدأ استشارتك التقنية الآن</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

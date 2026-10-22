@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خدماتنا وحلولنا الرقمية | فن البرمجية - هندسة التطبيقات والأنظمة</title>
+  <meta name="description" content="اكتشف خدمات فن البرمجية المتكاملة: تطوير تطبيقات فلوتر، متاجر إلكترونية متطورة، أنظمة سحابية ERP، وحلول الأتمتة والذكاء الاصطناعي في المملكة.">
+  <meta name="keywords" content="خدمات برمجة, تطبيقات فلوتر, متاجر الكترونية, انظمة سحابية, اتمتة العمليات, فن البرمجية, السعودية">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu with Anti-Gravity Rubber Pill -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link active" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- EXPANSIVE SERVICES BENTO SHOWCASE -->
+  <main class="page-container-layout">
+    
+    <!-- Hero Header -->
+    <section class="page-hero-header">
+      <div class="scene-badge purple-badge"><i class="fas fa-cubes"></i> المنظومة والحلول البرمجية</div>
+      <h1 class="master-hero-title">
+        حلول هندسية مصممة خصيصاً <br>
+        <span class="glow-purple-text">لقيادة وتوسيع نشاطك التجاري</span>
+      </h1>
+      <p class="master-hero-desc">
+        اضغط على أي خدمة لاستعراض مواصفاتها الكاملة، معماريتها التقنية، ومراحل تنفيذها بالتفصيل.
+      </p>
+    </section>
+
+    <!-- Interactive Filter Tabs -->
+    <section class="services-tab-filter">
+      <button class="filter-tab-btn active" data-filter="all"><i class="fas fa-grid-2"></i> كافة الحلول</button>
+      <button class="filter-tab-btn" data-filter="mobile"><i class="fas fa-mobile-screen"></i> تطبيقات الهواتف</button>
+      <button class="filter-tab-btn" data-filter="ecommerce"><i class="fas fa-cart-shopping"></i> المتاجر الإلكترونية</button>
+      <button class="filter-tab-btn" data-filter="cloud"><i class="fas fa-laptop-code"></i> الأنظمة السحابية</button>
+      <button class="filter-tab-btn" data-filter="automation"><i class="fas fa-network-wired"></i> الأتمتة والذكاء الاصطناعي</button>
+      <button class="filter-tab-btn" data-filter="consulting"><i class="fas fa-comments-dollar"></i> الاستشارات والتسريع</button>
+    </section>
+
+    <!-- BENTO GRID SERVICES ARCHITECTURE WITH DIRECT LINKS -->
+    <section class="services-bento-grid">
+
+      <!-- Bento 1: Mobile Apps (Featured Wide 2-Span Card) -->
+      <div class="bento-card bento-span-2 glass-element interactive-3d-card" data-category="mobile">
+        <div class="bento-content-side">
+          <div class="service-tag cyan-tag"><i class="fab fa-flutter"></i> فلوتر وأنظمة الهواتف</div>
+          <h2>تطوير تطبيقات الجوال الذكية (iOS & Android)</h2>
+          <p>
+            تطبيقات متكاملة مبنية بأحدث معايير Flutter و Native لمعمارية نظيفة وسرعة استجابة 60 إطار بالثانية. نربط التطبيق بقواعد بيانات لحظية وبوابات دفع معتمدة.
+          </p>
+          <div class="bento-feature-chips">
+            <span><i class="fas fa-bolt"></i> استجابة 60 FPS</span>
+            <span><i class="fab fa-apple"></i> Apple Pay & مدى</span>
+            <span><i class="fas fa-bell"></i> إشعارات فورية Live</span>
+            <span><i class="fas fa-sliders"></i> لوحة إدارة مركزية</span>
+          </div>
+          <div class="bento-card-action">
+            <a href="service-mobile.html" class="bento-explore-link">
+              <span>استكشاف كامل تفاصيل الخدمة</span>
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+        <div class="bento-visual-side bento-mobile-visual">
+          <div class="mini-app-mockup">
+            <div class="mockup-header">
+              <span class="mock-dot red"></span>
+              <span class="mock-dot yellow"></span>
+              <span class="mock-dot green"></span>
+              <span class="mock-title">Mobile Engine v2.6</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mock-metric-bar">
+                <span>زمن الاستجابة:</span>
+                <strong>42ms</strong>
+              </div>
+              <div class="mock-metric-bar">
+                <span>معدل السلاسة:</span>
+                <strong style="color: var(--emerald);">60 FPS Stable</strong>
+              </div>
+              <div class="mock-code-line"><code>BlocProvider.value(state: Active)</code></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento 2: E-Commerce Platforms -->
+      <div class="bento-card glass-element interactive-3d-card" data-category="ecommerce">
+        <div class="bento-icon-header purple"><i class="fas fa-cart-shopping"></i></div>
+        <div class="service-tag purple-tag">التجارة الإلكترونية</div>
+        <h3>المتاجر والمنصات البيعية المتطورة</h3>
+        <p>
+          متاجر إلكترونية مخصصة ترفع معدلات الشراء السريع، مع ربط مباشر بتمارا، تابي، وشركات الشحن الرائدة.
+        </p>
+        <div class="bento-mini-bullets">
+          <div><i class="fas fa-check-circle"></i> شراء فوري بنقرة واحدة One-Click</div>
+          <div><i class="fas fa-check-circle"></i> تزامن لحظي مع المستودعات</div>
+          <div><i class="fas fa-check-circle"></i> تهيئة محركات البحث E-Com SEO</div>
+        </div>
+        <div class="bento-card-action">
+          <a href="service-ecommerce.html" class="bento-explore-link">
+            <span>استكشاف تفاصيل المتجر</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bento 3: Cloud Web & ERP Systems -->
+      <div class="bento-card glass-element interactive-3d-card" data-category="cloud">
+        <div class="bento-icon-header emerald"><i class="fas fa-laptop-code"></i></div>
+        <div class="service-tag emerald-tag">الأنظمة والويب السحابي</div>
+        <h3>المنصات السحابية ولوحات التحكم ERP</h3>
+        <p>
+          أنظمة مخصصة لإدارة العمليات والمبيعات والموظفين بدقة أمان بنكية وصلاحيات وصول متدرجة.
+        </p>
+        <div class="bento-mini-bullets">
+          <div><i class="fas fa-check-circle"></i> لوحات تحكم تفاعلية مع تقارير حية</div>
+          <div><i class="fas fa-check-circle"></i> استيعاب آلاف الموظفين والعملاء</div>
+          <div><i class="fas fa-check-circle"></i> تشفير بنكي لقواعد البيانات</div>
+        </div>
+        <div class="bento-card-action">
+          <a href="service-cloud-erp.html" class="bento-explore-link">
+            <span>استكشاف تفاصيل الأنظمة</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bento 4: AI & Workflow Automation -->
+      <div class="bento-card glass-element interactive-3d-card" data-category="automation">
+        <div class="bento-icon-header gold"><i class="fas fa-network-wired"></i></div>
+        <div class="service-tag gold-tag">الأتمتة والذكاء الاصطناعي</div>
+        <h3>شبكات الأتمتة والروبوتات الذكية</h3>
+        <p>
+          تحويل المهام اليدوية والتشغيلية إلى منظومة ذاتية تعمل 24/7 عبر الـ APIs وبوتات خدمة العملاء.
+        </p>
+        <div class="bento-mini-bullets">
+          <div><i class="fas fa-check-circle"></i> أتمتة الفواتير ومزامنة الطلبات</div>
+          <div><i class="fas fa-check-circle"></i> بوتات واتساب وتليجرام ذكية</div>
+          <div><i class="fas fa-check-circle"></i> تقليل التكاليف التشغيلية حتى 70%</div>
+        </div>
+        <div class="bento-card-action">
+          <a href="service-automation-ai.html" class="bento-explore-link">
+            <span>استكشاف حلول الأتمتة</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bento 5: System Refactoring & Speed Booster -->
+      <div class="bento-card glass-element interactive-3d-card" data-category="consulting">
+        <div class="bento-icon-header cyan"><i class="fas fa-gauge-high"></i></div>
+        <div class="service-tag cyan-tag">التسريع وتحديث الأنظمة</div>
+        <h3>إعادة هيكلة وحل مشكلات الأداء</h3>
+        <p>
+          نعيد هندسة الأنظمة البطيئة، ونحل مشاكل الانهيار عند ضغط الزوار، ونرفع كفاءة السيرفرات لأقصى حد.
+        </p>
+        <div class="bento-mini-bullets">
+          <div><i class="fas fa-check-circle"></i> مضاعفة سرعة التصفح والاستجابة</div>
+          <div><i class="fas fa-check-circle"></i> سد الثغرات وتأمين السيرفرات</div>
+          <div><i class="fas fa-check-circle"></i> تحديث التقنيات القديمة للأحدث</div>
+        </div>
+        <div class="bento-card-action">
+          <a href="service-refactoring.html" class="bento-explore-link">
+            <span>استكشاف خطة الهيكلة</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bento 6: Technical Architecture Consulting (Wide 2-Span Card) -->
+      <div class="bento-card bento-span-2 glass-element interactive-3d-card" data-category="consulting">
+        <div class="bento-content-side">
+          <div class="service-tag gold-tag"><i class="fas fa-chess-knight"></i> استشارات هندسة المنتجات</div>
+          <h2>الاستشارات التقنية وخارطة بناء المنتجات الرقمية</h2>
+          <p>
+            نوجهك نحو القرارات البرمجية الصحيحة قبل استثمار أموالك: نحدد التقنيات الأنسب، ونضع الخارطة الهندسية لتقليل التكاليف التشغيلية وضمان التوسع بلا عوائق.
+          </p>
+          <div class="bento-feature-chips">
+            <span><i class="fas fa-file-invoice-dollar"></i> دراسة الجدوى الفنية</span>
+            <span><i class="fas fa-route"></i> تخطيط رحلة المستخدم</span>
+            <span><i class="fas fa-shield-check"></i> تقييم الأمان والكفاءة</span>
+            <span><i class="fas fa-coins"></i> تحسين الميزانية التشغيلية</span>
+          </div>
+          <div class="bento-card-action">
+            <a href="service-consulting.html" class="bento-explore-link">
+              <span>استكشاف محاور الاستشارة</span>
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+        <div class="bento-visual-side bento-consult-visual">
+          <a href="service-consulting.html" class="bento-consult-btn">
+            <i class="fas fa-comments"></i>
+            <span>طلب جلسة استشارية</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- INCLUDED IN EVERY SOLUTION (STANDARDS MATRIX) -->
+    <section class="included-standards-section">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-award"></i> ميثاق الجودة</div>
+        <h2 class="scene-heading">معايير ثابتة مشمولة في <span class="glow-cyan-text">كل مشروع ننفذه</span></h2>
+      </div>
+
+      <div class="standards-4col-grid">
+        <div class="standard-pill-box glass-element">
+          <i class="fas fa-key"></i>
+          <h4>ملكية الكود 100%</h4>
+          <p>أنت المالك الحصري لكامل الأكواد والمستودعات وقواعد البيانات بدون أي شروط تقييدية.</p>
+        </div>
+
+        <div class="standard-pill-box glass-element">
+          <i class="fas fa-shield-halved"></i>
+          <h4>أمان وتشفير بنكي</h4>
+          <p>حماية السيرفرات وقواعد البيانات وفق أعلى معايير الحماية والأمان السيبراني.</p>
+        </div>
+
+        <div class="standard-pill-box glass-element">
+          <i class="fas fa-tachograph-digital"></i>
+          <h4>استجابة 60 FPS</h4>
+          <p>واجهات مستخدم سريعة وخفيفة جداً تضمن بقاء عملائك ورضاهم التام.</p>
+        </div>
+
+        <div class="standard-pill-box glass-element">
+          <i class="fas fa-headset"></i>
+          <h4>دعم فني ومراقبة 24/7</h4>
+          <p>مرافقة تقنية مستمرة لضمان عمل كافة الأنظمة والسيرفرات بكفاءة تامة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION FOR SEO AND CLIENT CLARITY -->
+    <section class="services-faq-section">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</div>
+        <h2 class="scene-heading">إجابات عن تساؤلات <span class="glow-cyan-text">عملائنا وشركائنا</span></h2>
+      </div>
+
+      <div class="faq-accordion-grid">
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل الأنظمة والتطبيقات مبنية بقوالب جاهزة؟</h4>
+          <p>أبداً. نحن نرفض القوالب الجاهزة رفضاً قاطعاً؛ كل مشروع يتم بناؤه وتطويره بكود مخصص 100% وفق معمارية برمجية صلبة لتوفير أقصى سرعة وحرية كاملة في التوسع المستقبلي.</p>
+        </div>
+
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> كيف تضمنون سرعة واستقرار النظام عند زيادة الزوار؟</h4>
+          <p>نعتمد على معمارية سحابية موزعة وحلول التخزين المؤقت المتقدمة (Edge Caching & CDN)، مما يتيح للنظام استيعاب ملايين الطلبات المتزامنة دون أي انهيار أو بطء في الأداء.</p>
+        </div>
+
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل تقدمون الدعم الفني والصيانة بعد الإطلاق؟</h4>
+          <p>نعم، نرافقك في كافة مراحل ما بعد الإطلاق عبر باقات دعم واستقرار ومراقبة سيرفرات على مدار 24 ساعة لضمان استمرارية عمل نشاطك التجاري بكفاءة تامة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="about-cta-card glass-element interactive-3d-card">
+      <h2>لديك فكرة أو مشروع وتود معرفة الحل التقني الأنسب له؟</h2>
+      <p>تواصل مع مستشارنا التقني مباشرة لمناقشة أهدافك والحصول على توجيه وخارطة طريق فنية مخصصة لنشاطك.</p>
+      <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+        <i class="fas fa-comments"></i>
+        <span>تواصل مع المستشار التقني الآن</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

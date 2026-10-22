@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطوير تطبيقات الهواتف الذكية (iOS & Android) | فن البرمجية</title>
+  <meta name="description" content="خدمة بناء وتطوير تطبيقات الجوال الاحترافية بأحدث معايير فلوتر (Flutter) وكود مخصص 100%. أداء فائق 60fps، تكامل مع Apple Pay ومدى، وإشعارات فورية.">
+  <meta name="keywords" content="تطوير تطبيقات فلوتر, برمجة تطبيقات ايفون واندرويد, تطبيقات الجوال السعودية, flutter mobile apps, فن البرمجية">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link active" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL CONTAINER -->
+  <main class="page-container-layout service-detail-layout">
+    
+    <!-- Breadcrumb -->
+    <div class="service-breadcrumb">
+      <a href="services.html"><i class="fas fa-arrow-right"></i> العودة لقائمة الخدمات</a>
+      <span>/</span>
+      <span class="current">تطوير تطبيقات الهواتف الذكية</span>
+    </div>
+
+    <!-- Service Hero -->
+    <section class="service-hero-detail">
+      <div class="service-tag cyan-tag"><i class="fab fa-flutter"></i> Flutter & Cross-Platform Engine</div>
+      <h1 class="service-main-title">
+        هندسة وتطوير تطبيقات الهواتف الذكية <br>
+        <span class="glow-cyan-text">Native & Ultra-Smooth 60 FPS</span>
+      </h1>
+      <p class="service-main-desc">
+        نصنع تطبيقات جوال استثنائية تجمع بين المعمارية البرمجية الصلبة (Clean Architecture)، وسلاسة الحركة المطلقة، والتكامل السحابي اللحظي لنمنح عملاءك تجربة استخدام تفوق التوقعات.
+      </p>
+
+      <div class="service-hero-actions">
+        <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+          <i class="fas fa-paper-plane"></i>
+          <span>طلب دراسة وتطوير تطبيق</span>
+        </a>
+        <a href="#features" class="btn-secondary-glass">
+          <span>استعراض المميزات الفنية</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Metrics Ribbon -->
+    <section class="service-metrics-ribbon glass-element">
+      <div class="metric-item">
+        <strong>60 FPS</strong>
+        <span>سلاسة العرض والتنقل</span>
+      </div>
+      <div class="metric-item">
+        <strong>100%</strong>
+        <span>توافق مع iOS و Android</span>
+      </div>
+      <div class="metric-item">
+        <strong>Zero</strong>
+        <span>قوالب جاهزة (كود أصلي)</span>
+      </div>
+      <div class="metric-item">
+        <strong>99.9%</strong>
+        <span>استقرار السيرفرات والمزامنة</span>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution Matrix -->
+    <section class="service-section-block" id="features">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-balance-scale"></i> التحديات والحلول</div>
+        <h2 class="scene-heading">كيف يتفوق تطبيقك مع <span class="glow-gold-text">فن البرمجية</span>؟</h2>
+      </div>
+
+      <div class="compare-matrix-grid">
+        <div class="compare-card glass-element flaw-card">
+          <div class="compare-badge red-badge"><i class="fas fa-triangle-exclamation"></i> التطبيقات التقليدية في السوق</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-xmark"></i> قوالب جاهزة بطيئة مليئة بالأخطاء البرمجية.</li>
+            <li><i class="fas fa-xmark"></i> تقطيع وتعليق أثناء التصفح والتحويل بين الشاشات.</li>
+            <li><i class="fas fa-xmark"></i> صعوبة التوسع أو إضافة مميزات جديدة لاحقاً.</li>
+            <li><i class="fas fa-xmark"></i> ضعف الأمان وتكرار رفض التطبيق في المتاجر.</li>
+          </ul>
+        </div>
+
+        <div class="compare-card glass-element advantage-card">
+          <div class="compare-badge green-badge"><i class="fas fa-circle-check"></i> معيار فن البرمجية المخصص</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-check"></i> بناء كود نقي 100% وفق Clean Architecture & BLoC.</li>
+            <li><i class="fas fa-check"></i> حركة فائقة السلاسة 60fps واستجابة فورية للأوامر.</li>
+            <li><i class="fas fa-check"></i> مرونة مطلقة للتوسع وإضافة آلاف الخدمات مستقبلاً.</li>
+            <li><i class="fas fa-check"></i> مطابقة كاملة لشروط App Store و Google Play.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Feature Modules -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-microchip"></i> القدرات الفنية والتكاملات</div>
+        <h2 class="scene-heading">منظومة ميزات شاملة <span class="glow-cyan-text">لكل شاشة وتفاعل</span></h2>
+      </div>
+
+      <div class="feature-detail-grid">
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fab fa-apple-pay"></i></div>
+          <h4>بوابات الدفع الإلكتروني المعتمدة</h4>
+          <p>ربط كامل وسلس مع Apple Pay، مدى (Mada)، فيزا وماستركارد، وحلول التقسيط تمارا وتابي، بتشفير بنكي 3D Secure.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon purple"><i class="fas fa-bell"></i></div>
+          <h4>إشعارات حية وتنبيهات فورية</h4>
+          <p>منظومة إشعارات ذكية مخصصة (Push Notifications) عبر Firebase لنقل التحديثات والعروض لعملائك لحظياً.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-map-location-dot"></i></div>
+          <h4>الخرائط والتتبع اللحظي</h4>
+          <p>دمج خرائط جوجل وتتبع حركة المناديب والشحنات والطلبات بشكل حي ومباشر على الخريطة.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon gold"><i class="fas fa-database"></i></div>
+          <h4>المزامنة السحابية وقواعد البيانات</h4>
+          <p>تزامن فوري بين التطبيق والسيرفرات السحابية واللوحة الإدارية بدون تأخير حتى في حالات ضعف الاتصال.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-language"></i></div>
+          <h4>دعم متعدد اللغات و RTL الأصلي</h4>
+          <p>واجهات عربية أصيلة مصممة خصيصاً للمستخدم العربي مع إمكانية التحويل الفوري لأي لغة أخرى.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon purple"><i class="fas fa-chart-line"></i></div>
+          <h4>لوحة تحكم إدارية متقدمة</h4>
+          <p>لوحة ويب مركزية تمكّنك من إدارة المستخدمين، المنتجات، الصلاحيات، والتقارير المالية بنقرة زر.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Delivery Roadmap -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge purple-badge"><i class="fas fa-route"></i> مراحل العمل والتنفيذ</div>
+        <h2 class="scene-heading">من الفكرة إلى <span class="glow-purple-text">متجر التطبيقات</span></h2>
+      </div>
+
+      <div class="process-steps-container">
+        <div class="process-step-item glass-element">
+          <div class="p-num">01</div>
+          <h4>تحليل النشاط وتحديد المتطلبات</h4>
+          <p>جلسة استكشافية متعمقة لدراسة الفكرة، تحديد الفئات المستهدفة، ورسم تدفق الشاشات (User Flow).</p>
+        </div>
+        <div class="process-step-item glass-element">
+          <div class="p-num">02</div>
+          <h4>تصميم الواجهات وتجربة الاستخدام UI/UX</h4>
+          <p>بناء واجهات تفاعلية جذابة وسهلة ومصممة بأحدث معايير التصميم العالمي للأنظمة الذكية.</p>
+        </div>
+        <div class="process-step-item glass-element">
+          <div class="p-num">03</div>
+          <h4>البرمجة والمعمارية النظيفة</h4>
+          <p>كتابة كود فلوتر متين ونظيف مع الربط بالسيرفرات السحابية وبوابات الدفع الإلكتروني.</p>
+        </div>
+        <div class="process-step-item glass-element">
+          <div class="p-num">04</div>
+          <h4>الاختبار الشامل والنشر في المتاجر</h4>
+          <p>فحص السرعة، واختبار كافة سيناريوهات الاستخدام، ثم رفع التطبيق رسمياً على App Store و Google Play.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</div>
+        <h2 class="scene-heading">تساؤلات حول <span class="glow-cyan-text">تطوير تطبيقات الجوال</span></h2>
+      </div>
+
+      <div class="faq-accordion-grid">
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل يغطي كود فلوتر كلاً من نظامي iOS و Android؟</h4>
+          <p>نعم، فلوتر تتيح بناء تطبيقين حقيقيين أصليين (Native) لنظامي iOS و Android من قاعدة كود برمجية موحدة عالية الأداء، مما يوفر الوقت والتكلفة ويضمن تطابق الأداء بين النظامين.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> من يمتلك الكود المصدري للتطبيق بعد الانتهاء؟</h4>
+          <p>أنت المالك الحصري 100% لكامل الكود المصدري، المستودعات (Git Repositories)، وقواعد البيانات بدون أي شروط تقييدية.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> كم يستغرق بناء تطبيق جوال متكامل؟</h4>
+          <p>يعتمد الوقت على حجم وتفاصيل التطبيق، لكن التطبيقات النموذجية تستغرق عادة ما بين 4 إلى 8 أسابيع من التخطيط وحتى النشر في المتاجر.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project CTA Box -->
+    <section class="about-cta-card glass-element interactive-3d-card">
+      <h2>جاهز لتحويل فكرة تطبيقك إلى منتج رقمي رائد؟</h2>
+      <p>تحدث مع المستشار التقني اليوم لنناقش تفاصيل مشروعك ونضع لك الخارطة الهندسية الأنسب لإطلاقه بنجاح.</p>
+      <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+        <i class="fas fa-comments"></i>
+        <span>بدء استشارة تطوير التطبيق الآن</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المدونة | فن البرمجية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu with Anti-Gravity Rubber Pill -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link active" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT (EMPTY CLEAN STATE READY FOR STRATEGY DISCUSSION) -->
+  <main class="page-container-layout">
+    <section class="page-hero-header">
+      <div class="scene-badge emerald-badge"><i class="fas fa-pen-nib"></i> فضاء الأفكار والرؤى</div>
+      <h1 class="master-hero-title">مدونة <span class="glow-emerald-text">فن البرمجية</span></h1>
+      <p class="master-hero-desc">
+        مساحة متخصصة لنشر المقالات المعمقة، دراسات الحالة الهندسية، وتحليل أحدث التقنيات البرمجية.
+      </p>
+    </section>
+
+    <!-- EMPTY DISCUSSION & STUDY CANVAS -->
+    <section class="blog-discussion-canvas glass-element interactive-3d-card">
+      <div class="discussion-empty-icon">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <h2>مساحة النقاش والدراسة البرمجية</h2>
+      <p>هذا القسم مهيأ ومجهز بشكل كامل تمهيداً لجلسة النقاش والدراسة المخصصة معك لبناء وتحديد المحاور والمقالات الاستراتيجية.</p>
+      <div class="ready-tag"><i class="fas fa-circle-check"></i> جاهز لإضافة المحتوى والأبحاث التقنية</div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

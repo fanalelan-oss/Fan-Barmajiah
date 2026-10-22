@@ -1,4 +1,9 @@
-# Dependencies & temp
+# Dependencies & Environment
+node_modules/
+.firebase/
+.firebaserc
+
+# OS & Temp
 .DS_Store
 Thumbs.db
 *.tmp

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بناء وتطوير المتاجر والمنصات الإلكترونية | فن البرمجية</title>
+  <meta name="description" content="خدمة بناء المتاجر الإلكترونية الكبرى المتوافقة 100% مع السوق السعودي والخليجي: مدى، Apple Pay، تمارا، تابي، الربط مع شركات الشحن، وإدارة المخزون اللحظية.">
+  <meta name="keywords" content="انشاء متجر الكتروني, تطوير متاجر الكترونية, برمجة متجر مخصص, بوابات دفع الكتروني, متاجر السعودية, فن البرمجية">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link active" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL CONTAINER -->
+  <main class="page-container-layout service-detail-layout">
+    
+    <!-- Breadcrumb -->
+    <div class="service-breadcrumb">
+      <a href="services.html"><i class="fas fa-arrow-right"></i> العودة لقائمة الخدمات</a>
+      <span>/</span>
+      <span class="current">المتاجر والمنصات الإلكترونية المتقدمة</span>
+    </div>
+
+    <!-- Service Hero -->
+    <section class="service-hero-detail">
+      <div class="service-tag purple-tag"><i class="fas fa-cart-shopping"></i> Enterprise E-Commerce Platform</div>
+      <h1 class="service-main-title">
+        بناء وتطوير المتاجر الإلكترونية المتطورة <br>
+        <span class="glow-purple-text">سرعة قياسية وزيادة معدلات التحويل</span>
+      </h1>
+      <p class="service-main-desc">
+        نبرمج متاجر ومنصات بيعية متقدمة تتفوق في سرعة إتمام الطلب بنقرة واحدة، وتوفر ربطاً سحابياً فورياً مع بوابات الدفع وشركات الشحن وإدارة المخزون بدقة متناهية.
+      </p>
+
+      <div class="service-hero-actions">
+        <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+          <i class="fas fa-paper-plane"></i>
+          <span>طلب دراسة وتطوير متجر إلكتروني</span>
+        </a>
+        <a href="#features" class="btn-secondary-glass">
+          <span>استعراض مميزات المنصة</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Metrics Ribbon -->
+    <section class="service-metrics-ribbon glass-element">
+      <div class="metric-item">
+        <strong>0.8s</strong>
+        <span>زمن إتمام الطلب الفوري</span>
+      </div>
+      <div class="metric-item">
+        <strong>+45%</strong>
+        <span>متوسط زيادة معدل التحويل</span>
+      </div>
+      <div class="metric-item">
+        <strong>100%</strong>
+        <span>توافق مع السوق والضرائب</span>
+      </div>
+      <div class="metric-item">
+        <strong>100k+</strong>
+        <span>معالجة طلبات متزامنة بسلاسة</span>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution Matrix -->
+    <section class="service-section-block" id="features">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-balance-scale"></i> التحديات والحلول</div>
+        <h2 class="scene-heading">لماذا تفشل المتاجر التقليدية وتنجح <span class="glow-gold-text">متاجرنا المخصصة</span>؟</h2>
+      </div>
+
+      <div class="compare-matrix-grid">
+        <div class="compare-card glass-element flaw-card">
+          <div class="compare-badge red-badge"><i class="fas fa-triangle-exclamation"></i> المتاجر المعتمدة على إضافات جاهزة</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-xmark"></i> ثقل غير محتمل في السلة يسبب هروب 70% من المشترين.</li>
+            <li><i class="fas fa-xmark"></i> انهيار المتجر أثناء حملات الإعلانات ومواسم التخفيضات.</li>
+            <li><i class="fas fa-xmark"></i> اشتراكات شهرية متراكمة تلتهم هوامش أرباحك.</li>
+            <li><i class="fas fa-xmark"></i> قيود برمجية تمنعك من تخصيص العروض وتجربة العميل.</li>
+          </ul>
+        </div>
+
+        <div class="compare-card glass-element advantage-card">
+          <div class="compare-badge green-badge"><i class="fas fa-circle-check"></i> معمارية فن البرمجية فائقة السرعة</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-check"></i> شراء فوري بنقرة واحدة One-Click Checkout يرفع المبيعات.</li>
+            <li><i class="fas fa-check"></i> تحمل مئات آلاف الزيارات المتزامنة بدون أي بطء.</li>
+            <li><i class="fas fa-check"></i> ملكية كاملة للنظام والأكواد بدون رسوم مبيعات خفية.</li>
+            <li><i class="fas fa-check"></i> ربط مباشر ومخصص مع شركات الشحن والتقسيط اللحظي.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Capabilities Grid -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge purple-badge"><i class="fas fa-box-open"></i> المحركات والوحدات التقنية</div>
+        <h2 class="scene-heading">بنية تحتية متكاملة <span class="glow-purple-text">للتجارة والبيع الرقمي</span></h2>
+      </div>
+
+      <div class="feature-detail-grid">
+        <div class="feature-box glass-element">
+          <div class="feat-icon purple"><i class="fas fa-credit-card"></i></div>
+          <h4>بوابات الدفع والتقسيط الخليجية</h4>
+          <p>تكامل مباشر مع مدى، Apple Pay، تمارا، تابي، وSTC Pay لتوفير كافة خيارات الدفع المحلية لعملائك.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-truck-fast"></i></div>
+          <h4>الربط الآلي مع شركات الشحن</h4>
+          <p>إصدار بوالص الشحن وتتبع الشحنات مع سمسا، أرامكس، سبل، وكافة شركات التوصيل السريع تلقائياً.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-boxes-stacked"></i></div>
+          <h4>إدارة المخزون وتعدد المستودعات</h4>
+          <p>نظام ذكي يحدّث الكميات المتوفرة لحظة بلحظة وينبهك قبل نفاد المخزون لمنع البيع الوهمي.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon gold"><i class="fas fa-magnifying-glass-chart"></i></div>
+          <h4>محرك سيو متقدم للتجارة (E-Com SEO)</h4>
+          <p>تصدر نتائج جوجل في الكلمات المفتاحية للمنتجات بفضل البنية الفائقة السرعة والترميز المنظم (Schema).</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon purple"><i class="fas fa-tags"></i></div>
+          <h4>محرك العروض والخصومات الذكية</h4>
+          <p>كوبونات مخصصة، عروض مجمعة (Bundles)، وخصومات ديناميكية حسب قيمة سلة العميل.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-file-invoice"></i></div>
+          <h4>الفوترة الإلكترونية وضريبة القيمة المضافة</h4>
+          <p>مطابقة 100% لمتطلبات الفوترة الإلكترونية (ZATCA / المرحلة الثانية) مع إصدار فواتير QR آلية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</div>
+        <h2 class="scene-heading">تساؤلات حول <span class="glow-cyan-text">المتاجر الإلكترونية</span></h2>
+      </div>
+
+      <div class="faq-accordion-grid">
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل تقتطعون أي نسبة من مبيعات المتجر؟</h4>
+          <p>إطلاقاً. المتجر ملكك بالكامل بدون أي نسب أو عمولات على مبيعاتك؛ الأرباح تعود إليك بنسبة 100%.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل يمكن ربط المتجر مع نظام الكاشير المحاسبي للفرع؟</h4>
+          <p>نعم، نبني واجهات برمجة (APIs) لربط المتجر الإلكتروني بنظام الكاشير (POS) ونظام ERP لتوحيد المخزون والمبيعات بين الفروع والمتجر.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل المتجر مجهز بتطبيق جوال أيضاً؟</h4>
+          <p>نعم، يمكننا بناء متجر ويب فائق السرعة مع تطبيق جوال (iOS & Android) يعملان على نفس قاعدة البيانات المركزية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project CTA Box -->
+    <section class="about-cta-card glass-element interactive-3d-card">
+      <h2>جاهز لبناء متجر إلكتروني يضاعف مبيعات نشاطك؟</h2>
+      <p>تواصل مع مستشارنا التقني اليوم لمناقشة متطلبات متجرك والحصول على خطة هندسية وتسويقية متكاملة.</p>
+      <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+        <i class="fas fa-comments"></i>
+        <span>بدء استشارة تطوير المتجر الآن</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

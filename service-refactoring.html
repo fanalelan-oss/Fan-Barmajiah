@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إعادة هيكلة وتسريع وتأمين الأنظمة القائمة | فن البرمجية</title>
+  <meta name="description" content="خدمة صيانة وإعادة هيكلة الأنظمة والتطبيقات البطيئة وحل مشاكل الانهيار السيرفري وتأمين الثغرات وترقية المعمارية البرمجية لأحدث المعايير.">
+  <meta name="keywords" content="تسريع المواقع والتطبيقات, حل مشاكل السيرفرات, اعادة هيكلة الكود, تامين الانظمة البرمجية, system refactoring, فن البرمجية">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link active" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL CONTAINER -->
+  <main class="page-container-layout service-detail-layout">
+    
+    <!-- Breadcrumb -->
+    <div class="service-breadcrumb">
+      <a href="services.html"><i class="fas fa-arrow-right"></i> العودة لقائمة الخدمات</a>
+      <span>/</span>
+      <span class="current">إعادة الهيكلة والتسريع وتأمين الأنظمة</span>
+    </div>
+
+    <!-- Service Hero -->
+    <section class="service-hero-detail">
+      <div class="service-tag cyan-tag"><i class="fas fa-wrench"></i> System Refactoring & Speed Booster</div>
+      <h1 class="service-main-title">
+        إعادة هيكلة وتسريع الأنظمة القائمة <br>
+        <span class="glow-cyan-text">معالجة البطء، الانهيارات، وسد الثغرات</span>
+      </h1>
+      <p class="service-main-desc">
+        ننقذ الأنظمة والتطبيقات المتعثرة: نعيد كتابة الأجزاء البطيئة، نحسن استعلامات قواعد البيانات، وننقل بنيتك التحتية لسيرفرات سحابية آمنة قادرة على استيعاب ملايين الزيارات.
+      </p>
+
+      <div class="service-hero-actions">
+        <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+          <i class="fas fa-paper-plane"></i>
+          <span>طلب فحص وتسريع نظامك</span>
+        </a>
+        <a href="#features" class="btn-secondary-glass">
+          <span>استعراض خطة الهيكلة</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Metrics Ribbon -->
+    <section class="service-metrics-ribbon glass-element">
+      <div class="metric-item">
+        <strong>-80%</strong>
+        <span>انخفاض زمن استجابة السيرفر</span>
+      </div>
+      <div class="metric-item">
+        <strong>10x</strong>
+        <span>مضاعفة قدرة استيعاب الزيارات</span>
+      </div>
+      <div class="metric-item">
+        <strong>Zero</strong>
+        <span>فقدان للبيانات أثناء النقل</span>
+      </div>
+      <div class="metric-item">
+        <strong>100%</strong>
+        <span>تأمين شامل ضد الاختراق</span>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution Matrix -->
+    <section class="service-section-block" id="features">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-balance-scale"></i> التحديات والحلول</div>
+        <h2 class="scene-heading">كيف نحول النظام المنهار إلى <span class="glow-gold-text">منظومة فائقة الاستقرار</span>؟</h2>
+      </div>
+
+      <div class="compare-matrix-grid">
+        <div class="compare-card glass-element flaw-card">
+          <div class="compare-badge red-badge"><i class="fas fa-triangle-exclamation"></i> وضع النظام قبل التدخل</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-xmark"></i> بطء شديد في التصفح واستجابة الشاشات.</li>
+            <li><i class="fas fa-xmark"></i> انهيار السيرفرات بمجرد إطلاق حملة إعلانية.</li>
+            <li><i class="fas fa-xmark"></i> كود عشوائي غير منظم يصعب تعديله وتطويره.</li>
+            <li><i class="fas fa-xmark"></i> استهلاك باهظ لموارد السيرفرات وفواتير سحابية متضخمة.</li>
+          </ul>
+        </div>
+
+        <div class="compare-card glass-element advantage-card">
+          <div class="compare-badge green-badge"><i class="fas fa-circle-check"></i> بعد إعادة الهيكلة مع فن البرمجية</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-check"></i> سرعة استجابة فورية في أجزاء من الثانية.</li>
+            <li><i class="fas fa-check"></i> ثبات مطلق حتى مع زيادة الزوار إلى أضعاف مضاعفة.</li>
+            <li><i class="fas fa-check"></i> كود نظيف مقسم لوحدات مرنة جاهزة للتوسع.</li>
+            <li><i class="fas fa-check"></i> تقليل تكلفة فواتير الاستضافة بنسبة تصل إلى 60%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Modules -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-shield-halved"></i> خطوات التطوير والتأمين</div>
+        <h2 class="scene-heading">منظومة التدخل الهندسي <span class="glow-cyan-text">والتسريع الشامل</span></h2>
+      </div>
+
+      <div class="feature-detail-grid">
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-stethoscope"></i></div>
+          <h4>الفحص الشامل وتحديد الاختناقات (Code Audit)</h4>
+          <p>تحليل عميق لكامل الكود البرمجي وقواعد البيانات والسيرفرات لتحديد أسباب البطء ونقاط الضعف بدقة.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-bolt-lightning"></i></div>
+          <h4>تحسين استعلامات قواعد البيانات (DB Optimization)</h4>
+          <p>إعادة بناء الفهارس (Indexes)، تقليص الاستعلامات الثقيلة، واستخدام محركات التخزين المؤقت مثل Redis.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon purple"><i class="fas fa-cloud-bolt"></i></div>
+          <h4>الترقية للبنية التحتية السحابية الموزعة</h4>
+          <p>توزيع الحمل عبر شبكات CDN وحلول Auto-scaling لاستيعاب الزيارات المليونية تلقائياً.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon gold"><i class="fas fa-shield-virus"></i></div>
+          <h4>سد الثغرات والحماية من هجمات DDoS</h4>
+          <p>تأمين منافذ السيرفرات، حماية طبقات الـ API، ودمج جدران الحماية ضد محاولات الاختراق والهجمات التخريبية.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-code-merge"></i></div>
+          <h4>تنظيف الكود وترقيته لأحدث الإصدارات</h4>
+          <p>تحديث المكتبات واللغات البرمجية القديمة لتجنب المشاكل الأمنية وتحسين كفاءة المعالجة.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-chart-line-up"></i></div>
+          <h4>مراقبة حية للأداء وتنبيهات فورية</h4>
+          <p>تركيب أدوات مراقبة حية (Monitoring Tools) ترسل تنبيهات فورية في حال حدوث أي ضغط غير طبيعي.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</div>
+        <h2 class="scene-heading">تساؤلات حول <span class="glow-cyan-text">إعادة هيكلة الأنظمة</span></h2>
+      </div>
+
+      <div class="faq-accordion-grid">
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل سيتوقف موقعنا أو تطبيقنا أثناء عملية التحسين؟</h4>
+          <p>لا، نقوم بإنشاء بيئة تجريبية معزولة تماماً (Staging Environment) لتطبيق التعديلات واختبارها ثم نقلها للنظام الحي في دقائق وبدون أي انقطاع.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل تضمنون عدم ضياع بيانات العملاء والطلبات؟</h4>
+          <p>نعم، نأخذ نسخاً احتياطية مشفرة متعددة قبل البدء، ونضمن سلامة كل سجل وعميل بنسبة 100%.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> متى سنشعر بالفرق في السرعة؟</h4>
+          <p>فور تطبيق تحسينات قواعد البيانات وشبكة التخزين المؤقت، ستلاحظ انخفاض زمن التحميل إلى أقل من ثانية واحدة مباشرة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project CTA Box -->
+    <section class="about-cta-card glass-element interactive-3d-card">
+      <h2>هل يعاني نظامك أو تطبيقك من البطء أو الانهيارات المتكررة؟</h2>
+      <p>تواصل مع فريق التدخل البرمجي لدينا للحصول على تقرير فحص مجاني يحدد المشاكل وخطة معالجتها فوراً.</p>
+      <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+        <i class="fas fa-comments"></i>
+        <span>طلب فحص وتسريع النظام الآن</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شبكات الأتمتة البرمجية والذكاء الاصطناعي | فن البرمجية</title>
+  <meta name="description" content="خدمة أتمتة العمليات التجارية والربط السحابي بالذكاء الاصطناعي: بوتات واتساب وتليجرام ذكية، أتمتة الفواتير والطلبات، وتقليل التكاليف التشغيلية بنسبة 70%.">
+  <meta name="keywords" content="اتمتة الاعمال, ذكاء اصطناعي للشركات, روبوتات واتساب, ربط APIs, workflow automation, فن البرمجية">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+  <div class="cursor-laser" id="cursorLaser"></div>
+
+  <!-- TOP HEADER & NAVIGATION -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-row">
+      <div class="nav-folder-capsule">
+        <!-- Identity Section (Clean Logo & Bold Modern Title) -->
+        <div class="nav-identity">
+          <a href="index.html" class="nav-brand-link">
+            <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
+            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+          </a>
+        </div>
+
+        <!-- Unified Main Pages Navigation Menu -->
+        <nav class="nav-main-menu" id="navMainMenu">
+          <div class="antigravity-rubber-pill" id="rubberPill"></div>
+          <a href="index.html" class="nav-page-link" data-index="0">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
+          <a href="services.html" class="nav-page-link active" data-index="2">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+        </nav>
+
+        <!-- Action Section (CTA Button) -->
+        <div class="nav-actions">
+          <a href="index.html#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
+            <span>طلب مشروع</span>
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Floating Sun/Moon Theme Toggle (No Container) -->
+      <button class="theme-toggle-floating" id="themeToggle" aria-label="تبديل المظهر النهاري/الليلي" title="تبديل المظهر">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL CONTAINER -->
+  <main class="page-container-layout service-detail-layout">
+    
+    <!-- Breadcrumb -->
+    <div class="service-breadcrumb">
+      <a href="services.html"><i class="fas fa-arrow-right"></i> العودة لقائمة الخدمات</a>
+      <span>/</span>
+      <span class="current">شبكات الأتمتة البرمجية والذكاء الاصطناعي</span>
+    </div>
+
+    <!-- Service Hero -->
+    <section class="service-hero-detail">
+      <div class="service-tag gold-tag"><i class="fas fa-network-wired"></i> AI & Workflow Automation Engine</div>
+      <h1 class="service-main-title">
+        حلول الأتمتة والذكاء الاصطناعي السحابي <br>
+        <span class="glow-gold-text">تشغيل ذاتي 24/7 وخفض التكاليف التشغيلية</span>
+      </h1>
+      <p class="service-main-desc">
+        حوّل المهام اليدوية والروتينية المجهدة إلى شبكات برمجية مؤتمتة تعمل على مدار الساعة بدون خطأ بشري واحد، مع تكامل ذكي بين مبيعاتك، فواتيرك، وخدمة عملائك.
+      </p>
+
+      <div class="service-hero-actions">
+        <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+          <i class="fas fa-paper-plane"></i>
+          <span>طلب أتمتة العمليات لنشاطك</span>
+        </a>
+        <a href="#features" class="btn-secondary-glass">
+          <span>استعراض سيناريوهات الأتمتة</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Metrics Ribbon -->
+    <section class="service-metrics-ribbon glass-element">
+      <div class="metric-item">
+        <strong>-70%</strong>
+        <span>توفير في التكاليف التشغيلية</span>
+      </div>
+      <div class="metric-item">
+        <strong>24/7/365</strong>
+        <span>عمل مستمر بلا توقف</span>
+      </div>
+      <div class="metric-item">
+        <strong>0%</strong>
+        <span>نسبة الخطأ البشري في البيانات</span>
+      </div>
+      <div class="metric-item">
+        <strong>10x</strong>
+        <span>سرعة معالجة الطلبات والفواتير</span>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution Matrix -->
+    <section class="service-section-block" id="features">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-balance-scale"></i> التحديات والحلول</div>
+        <h2 class="scene-heading">لماذا تحتاج الأنشطة إلى <span class="glow-gold-text">الأتمتة الذكية</span>؟</h2>
+      </div>
+
+      <div class="compare-matrix-grid">
+        <div class="compare-card glass-element flaw-card">
+          <div class="compare-badge red-badge"><i class="fas fa-triangle-exclamation"></i> الاعتماد على العمل اليدوي التقليدي</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-xmark"></i> إدخال يدوي مكرر للبيانات يستنزف ساعات طويلة يومياً.</li>
+            <li><i class="fas fa-xmark"></i> أخطاء متكررة في الفواتير والتحصيلات والمخزون.</li>
+            <li><i class="fas fa-xmark"></i> بطء الرد على استفسارات العملاء خارج أوقات الدوام.</li>
+            <li><i class="fas fa-xmark"></i> رواتب ومصاريف تشغيلية متضخمة لإنجاز مهام روتينية.</li>
+          </ul>
+        </div>
+
+        <div class="compare-card glass-element advantage-card">
+          <div class="compare-badge green-badge"><i class="fas fa-circle-check"></i> شبكات الأتمتة مع فن البرمجية</div>
+          <ul class="compare-list">
+            <li><i class="fas fa-check"></i> تدفق آلي لحظي للبيانات بين كافة المنصات والسيرفرات.</li>
+            <li><i class="fas fa-check"></i> دقة متناهية 100% في إصدار الفواتير ومطابقة الحسابات.</li>
+            <li><i class="fas fa-check"></i> روبوتات ذكية ترد فوراً على العملاء وتغلق الصفقات 24/7.</li>
+            <li><i class="fas fa-check"></i> توفير ملايين الريالات وتحرير موظفيك للمهام الاستراتيجية.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Automation Capabilities Modules -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge gold-badge"><i class="fas fa-robot"></i> قدرات وسيناريوهات الأتمتة</div>
+        <h2 class="scene-heading">أمثلة عملية <span class="glow-gold-text">لما نؤتمته لنشاطك التجاري</span></h2>
+      </div>
+
+      <div class="feature-detail-grid">
+        <div class="feature-box glass-element">
+          <div class="feat-icon gold"><i class="fab fa-whatsapp"></i></div>
+          <h4>بوتات واتساب وتليجرام الذكية</h4>
+          <p>روبوتات ذكية مرتبطة بقواعد بياناتك للرد على استفسارات العملاء، إرسال تفاصيل الحجوزات، وتأكيد الطلبات تلقائياً.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h4>أتمتة الفواتير والتحصيل والمطابقات</h4>
+          <p>إصدار الفواتير الضريبية آلياً فور إتمام الدفع، وتوليد روابط السداد وإرسال تذكيرات الدفع للعملاء المتأخرين.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-shuffle"></i></div>
+          <h4>الربط الشامل بين المنصات (API Pipelines)</h4>
+          <p>ربط متجرك ونظام CRM وبرامج المحاسبة وشركات الشحن لتعمل كلها ككيان واحد متناغم ومترابط.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon purple"><i class="fas fa-brain-circuit"></i></div>
+          <h4>محركات الذكاء الاصطناعي التوليدي</h4>
+          <p>دمج نماذج الذكاء الاصطناعي لتلخيص التقارير، تحليل مشاعر العملاء، وتوليد ردود مقترحة لفرق المبيعات.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon emerald"><i class="fas fa-box-check"></i></div>
+          <h4>أتمتة سلاسل الإمداد والمستودعات</h4>
+          <p>تنبيهات فورية عند انخفاض كميات الأصناف مع توليد أوامر شراء آلية للموردين المعتمدين.</p>
+        </div>
+
+        <div class="feature-box glass-element">
+          <div class="feat-icon cyan"><i class="fas fa-envelope-circle-check"></i></div>
+          <h4>الحملات التسويقية الآلية</h4>
+          <p>إعادة استهداف العملاء الذين تركوا سلاتهم الشرائية برسائل مخصصة وتخفيضات آلية ترفع المبيعات.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="service-section-block">
+      <div class="section-title-center">
+        <div class="scene-badge cyan-badge"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</div>
+        <h2 class="scene-heading">تساؤلات حول <span class="glow-cyan-text">الأتمتة والذكاء الاصطناعي</span></h2>
+      </div>
+
+      <div class="faq-accordion-grid">
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل تتطلب الأتمتة تغيير البرامج الحالية التي نستخدمها؟</h4>
+          <p>لا، فنحن نبني جسوراً برمجية (APIs & Webhooks) تربط بين أنظمتك وبرامجك الحالية دون الحاجة لتغييرها أو استبدالها.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> هل بوتات الواتساب رسمية وآمنة من الحظر؟</h4>
+          <p>نعم، نعتمد على واجهة الواتساب الرسمية للأعمال (WhatsApp Cloud API المعتمدة من Meta) لضمان الأمان والتوثيق الأخضر ومنع الحظر تماماً.</p>
+        </div>
+        <div class="faq-item glass-element">
+          <h4><i class="fas fa-chevron-left"></i> كيف تضمنون استمرارية عمل الروبوتات والأتمتة؟</h4>
+          <p>نستضيف محركات الأتمتة على سيرفرات سحابية قوية ومحمية مع نظام مراقبة فوري ينبهنا ويعالج أي انقطاع خلال ثوانٍ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project CTA Box -->
+    <section class="about-cta-card glass-element interactive-3d-card">
+      <h2>جاهز لتشغيل نشاطك التجاري ذاتياً وتوفير 70% من التكاليف؟</h2>
+      <p>تواصل مع مستشار الأتمتة اليوم لنستعرض العمليات الحالية في نشاطك ونحدد ما يمكن أتمتته فوراً.</p>
+      <a href="mailto:yousf@fan-alelan.com" class="btn-primary-consult">
+        <i class="fas fa-comments"></i>
+        <span>طلب استشارة الأتمتة البرمجية الآن</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cinematic-footer">
+      <div class="footer-badge-wrapper">
+        <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn">
+          <span class="sig-label">تصميم وتطوير:</span>
+          <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+        </a>
+      </div>
+      <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+    </footer>
+  </main>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+      <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
