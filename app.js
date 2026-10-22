@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function moveRubberPill(targetIndex, animate = true) {
-    if (!rubberPill || !navMenu || !pageLinks[targetIndex]) return;
+    if (window.innerWidth <= 850 || !rubberPill || !navMenu || !pageLinks[targetIndex]) return;
 
     const menuRect = navMenu.getBoundingClientRect();
     const targetEl = pageLinks[targetIndex];
@@ -860,6 +860,77 @@ document.addEventListener('DOMContentLoaded', () => {
   themeToggle?.addEventListener('click', () => {
     const isCurrentlyLight = document.body.classList.contains('light-mode');
     applyTheme(!isCurrentlyLight, true);
+  });
+
+
+  // 10. RESPONSIVE MOBILE NAVIGATION DRAWER CONTROLLER
+  const navFolder = document.getElementById('navFolder');
+  const navMainMenu = document.getElementById('navMainMenu');
+  let mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+  // Inject mobile toggle button if not already present in HTML
+  if (navFolder && !mobileMenuBtn) {
+    const controls = document.createElement('div');
+    controls.className = 'mobile-nav-controls';
+    controls.innerHTML = `
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    `;
+    navFolder.appendChild(controls);
+    mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  }
+
+  // Ensure a dedicated mobile CTA exists inside navMainMenu
+  if (navMainMenu && !navMainMenu.querySelector('.mobile-only-cta')) {
+    const mobileCta = document.createElement('a');
+    mobileCta.href = document.getElementById('quickContactBtn')?.getAttribute('href') || '#scene6';
+    mobileCta.className = 'nav-page-link mobile-only-cta';
+    mobileCta.innerHTML = `<span>طلب مشروع</span> <i class="fas fa-arrow-left"></i>`;
+    navMainMenu.appendChild(mobileCta);
+  }
+
+  function toggleMobileMenu(forceClose = false) {
+    if (!navMainMenu || !mobileMenuBtn) return;
+    const isOpen = navMainMenu.classList.contains('open');
+    const shouldOpen = forceClose ? false : !isOpen;
+
+    if (shouldOpen) {
+      navMainMenu.classList.add('open');
+      mobileMenuBtn.classList.add('active');
+      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+      navMainMenu.classList.remove('open');
+      mobileMenuBtn.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+  }
+
+  mobileMenuBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMobileMenu();
+  });
+
+  // Close mobile drawer when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navMainMenu && navMainMenu.classList.contains('open')) {
+      if (!navMainMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        toggleMobileMenu(true);
+      }
+    }
+  });
+
+  // Close mobile drawer when selecting any link
+  navMainMenu?.querySelectorAll('.nav-page-link').forEach(link => {
+    link.addEventListener('click', () => {
+      toggleMobileMenu(true);
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 850 && navMainMenu && navMainMenu.classList.contains('open')) {
+      toggleMobileMenu(true);
+    }
   });
 
 });

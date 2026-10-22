@@ -2376,15 +2376,24 @@ body.light-mode .theme-toggle-floating .icon-moon {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS (Complete Adaptive Layout)
    ========================================================================== */
 
+/* Mobile Navigation Controls & Drawer Base */
+.mobile-nav-controls {
+  display: none;
+}
+
+.mobile-only-cta {
+  display: none !important;
+}
+
 @media (max-width: 1024px) {
-  .master-hero-title { font-size: 2.8rem; }
-  .scene-heading { font-size: 2.2rem; }
+  .master-hero-title { font-size: 2.4rem; }
+  .scene-heading { font-size: 2rem; }
   .scene-grid-2col, .reverse-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
   .web-matrix-grid {
     grid-template-columns: 1fr;
@@ -2397,26 +2406,466 @@ body.light-mode .theme-toggle-floating .icon-moon {
     width: 260px;
     font-size: 0.8rem;
   }
+  .services-bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .bento-card.bento-large-hero {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+  }
+}
+
+@media (max-width: 850px) {
+  /* Sleek Compact Mobile Header */
+  .top-nav {
+    top: 10px;
+    padding: 0 12px;
+  }
+
+  .top-nav-row {
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .nav-folder-capsule {
+    padding: 6px 14px;
+    border-radius: 40px;
+    min-width: 0;
+    max-width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-identity .nav-brand-link {
+    gap: 8px;
+  }
+
+  .nav-identity .nav-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-identity .site-title {
+    font-size: 1.05rem;
+  }
+
+  .nav-identity .site-sub {
+    display: none !important;
+  }
+
+  /* Hide Desktop Horizontal Links and Desktop CTA from the Capsule */
+  .nav-actions {
+    display: none !important;
+  }
+
+  .stage-stepper {
+    display: none !important;
+  }
+
+  .antigravity-rubber-pill {
+    display: none !important;
+  }
+
+  /* Mobile Controls (Menu Hamburger Button) */
+  .mobile-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s ease;
+  }
+
+  .mobile-menu-btn:hover,
+  .mobile-menu-btn.active {
+    background: rgba(0, 240, 255, 0.18);
+    border-color: rgba(0, 240, 255, 0.45);
+    color: var(--cyan);
+  }
+
+  /* Compact Floating Theme Switcher on Mobile */
+  .theme-toggle-floating {
+    width: 36px;
+    height: 36px;
+  }
+
+  .theme-toggle-floating i {
+    font-size: 1.3rem;
+  }
+
+  /* Sliding Glass Mobile Dropdown Drawer */
+  .nav-main-menu {
+    display: none;
+    position: fixed;
+    top: 66px;
+    left: 12px;
+    right: 12px;
+    margin: 0;
+    flex-direction: column;
+    background: rgba(10, 15, 26, 0.95);
+    backdrop-filter: blur(30px) saturate(190%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 14px;
+    gap: 6px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    z-index: 1002;
+    animation: mobileMenuSlideDown 0.3s var(--spring-ease) forwards;
+  }
+
+  .nav-main-menu.open {
+    display: flex !important;
+  }
+
+  .nav-page-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #cbd5e1;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-page-link:hover,
+  .nav-page-link.active {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--cyan);
+  }
+
+  .mobile-only-cta {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+    background: linear-gradient(135deg, #00f0ff 0%, #b026ff 100%);
+    color: #ffffff !important;
+    font-weight: 800;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+  }
+
+  @keyframes mobileMenuSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Light Mode for Mobile Drawer & Buttons */
+  body.light-mode .mobile-menu-btn {
+    background: rgba(15, 23, 42, 0.06);
+    border-color: rgba(15, 23, 42, 0.12);
+    color: #0f172a;
+  }
+
+  body.light-mode .nav-main-menu {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+  }
+
+  body.light-mode .nav-page-link {
+    color: #334155;
+  }
+
+  body.light-mode .nav-page-link:hover,
+  body.light-mode .nav-page-link.active {
+    background: rgba(2, 132, 199, 0.08);
+    color: #0284c7;
+  }
 }
 
 @media (max-width: 768px) {
-  .top-nav .site-sub, .stage-stepper {
-    display: none;
+  /* Scene 1 Hero Section Mobile Layout */
+  #scene1 {
+    min-height: auto;
+    padding-top: 85px;
+    padding-bottom: 30px;
   }
-  .master-hero-title { font-size: 2rem; }
-  .master-hero-desc { font-size: 1rem; }
-  .scene-heading { font-size: 1.8rem; }
-  .scene-paragraph { font-size: 0.95rem; }
+
+  .hero-chip {
+    font-size: 0.74rem !important;
+    padding: 6px 14px !important;
+    max-width: 95% !important;
+    line-height: 1.35 !important;
+    margin-bottom: 14px !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-chip .chip-en {
+    display: inline-block;
+    opacity: 0.85;
+    font-size: 0.88em;
+  }
+
+  @media (max-width: 520px) {
+    .hero-chip .chip-en {
+      display: none !important;
+    }
+  }
+
+  .hero-chip .pulse-beacon {
+    width: 6px;
+    height: 6px;
+  }
+
+  .master-hero-title {
+    font-size: 1.55rem !important;
+    line-height: 1.35 !important;
+    padding: 0 6px !important;
+    margin-bottom: 12px !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  .master-hero-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    max-width: 95% !important;
+    margin: 0 auto 18px auto !important;
+  }
+
+  /* 2x2 Clean Dashboard Grid for Orbiting Capsules */
+  .orbiting-capsules {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto 18px auto !important;
+  }
+
+  .capsule {
+    padding: 8px 10px !important;
+    font-size: 0.75rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    border-radius: 18px !important;
+  }
+
+  .capsule i {
+    font-size: 0.88rem !important;
+  }
+
+  .scroll-down-hint {
+    display: none !important;
+  }
+
+  /* Scenes General Spacing & Headings */
+  .scene-section {
+    padding: 35px 16px;
+    min-height: auto;
+  }
+
+  .scene-badge {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+  }
+
+  .scene-heading {
+    font-size: 1.45rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .scene-paragraph {
+    font-size: 0.88rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Scene 2 Flutter Mobile */
+  .flutter-spec-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .spec-tile {
+    padding: 10px;
+  }
+
+  .spec-tile strong {
+    font-size: 0.82rem;
+  }
+
+  .spec-tile span {
+    font-size: 0.72rem;
+  }
+
+  .phone-frame-mockup {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  /* Scene 3 E-Commerce */
+  .ecom-cart-visual {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .payment-card-floater {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    margin-top: 12px !important;
+  }
+
+  /* Scene 4 Web Matrix */
+  .web-matrix-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .web-card {
+    padding: 16px;
+  }
+
+  /* Scene 5 Value & Video */
+  .value-grid-balanced {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .value-title {
+    font-size: 1.45rem !important;
+  }
+
+  .video-thumbnail-container {
+    min-height: 190px !important;
+  }
+
+  .usecase-capsules-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .usecase-capsule {
+    font-size: 0.75rem !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Scene 6 Contact */
+  .contact-card {
+    padding: 24px 16px !important;
+  }
+
   .contact-channels-grid {
     flex-direction: column;
+    gap: 10px;
   }
+
+  .contact-channel-item {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
   .master-bot-stage {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
+
   .bot-dialog-bubble {
-    width: 220px;
-    top: -75px;
+    width: 210px;
+    top: -70px;
+    font-size: 0.78rem;
+  }
+
+  /* Subpages & Services Directory Mobile */
+  .service-main-title {
+    font-size: 1.6rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .service-main-desc {
+    font-size: 0.9rem !important;
+  }
+
+  .filter-tabs-row {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 4px 0 10px 0 !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+    scrollbar-width: none !important;
+  }
+
+  .filter-tabs-row::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .filter-tab-btn {
+    flex-shrink: 0 !important;
+    font-size: 0.82rem !important;
+    padding: 7px 14px !important;
+    white-space: nowrap !important;
+  }
+
+  .services-bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .bento-card {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+    padding: 22px 18px !important;
+  }
+
+  .standards-grid-4col {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .process-steps-container {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .service-metrics-ribbon {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    padding: 16px !important;
+  }
+
+  .compare-dual-matrix {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .service-breadcrumb {
+    font-size: 0.78rem !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
   }
 }
 
