@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
     wheelMultiplier: 0.8,
-    touchMultiplier: 1.4,
+    touchMultiplier: 1.0,
+    syncTouch: false,
   });
 
   lenis.on('scroll', ScrollTrigger.update);
@@ -455,9 +456,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. TWO-WAY SLOW CINEMATIC ASSEMBLY & DISASSEMBLY TIMELINES (INDEX ONLY)
   // =========================================================================
   if (document.getElementById('mainFlow')) {
+    const mm = gsap.matchMedia();
 
-    // --- SECTION 1: Launchpad ---
-    const sec1Tl = gsap.timeline({
+    // DESKTOP: FULL 3D EXPANSIVE CINEMATICS (Min-width: 851px)
+    mm.add("(min-width: 851px)", () => {
+
+      // --- SECTION 1: Launchpad ---
+      const sec1Tl = gsap.timeline({
       scrollTrigger: {
         trigger: '#scene1',
         start: 'top top',
@@ -744,6 +749,32 @@ document.addEventListener('DOMContentLoaded', () => {
         { scale: 1, opacity: 1, ease: 'back.out(1.8)', duration: 0.4 },
         0.25
       );
+
+    }); // End Desktop MatchMedia (min-width: 851px)
+
+    // MOBILE: CLEAN, FAST, ROCK-SOLID VERTICAL SCROLL FLOW (Max-width: 850px)
+    mm.add("(max-width: 850px)", () => {
+      const mobileScenes = ['#scene1', '#sceneValue', '#scene2', '#scene3', '#scene4', '#scene5', '#scene6'];
+      mobileScenes.forEach(secId => {
+        const sec = document.querySelector(secId);
+        if (!sec) return;
+        const targets = sec.querySelectorAll('.anim-node, .glass-element, .scene-narrative, .web-card, .video-glass-card, .docking-station-card, .scene-badge');
+        if (targets.length) {
+          gsap.from(targets, {
+            scrollTrigger: {
+              trigger: sec,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            },
+            y: 20,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.05,
+            ease: 'power2.out'
+          });
+        }
+      });
+    });
 
   }
 
