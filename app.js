@@ -754,23 +754,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // MOBILE: CLEAN, FAST, ROCK-SOLID VERTICAL SCROLL FLOW (Max-width: 850px)
     mm.add("(max-width: 850px)", () => {
-      const mobileScenes = ['#scene1', '#sceneValue', '#scene2', '#scene3', '#scene4', '#scene5', '#scene6'];
-      mobileScenes.forEach(secId => {
+      // 1. Scene 1 (Hero): Animate entrance immediately on mobile, never reverse or hide
+      gsap.from('#scene1 .anim-node, #scene1 .capsule', {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.05,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      // 2. Subsequent Scenes: Trigger smooth entrance once when scrolling into view
+      const scrollScenes = ['#sceneValue', '#scene2', '#scene3', '#scene4', '#scene5', '#scene6'];
+      scrollScenes.forEach(secId => {
         const sec = document.querySelector(secId);
         if (!sec) return;
-        const targets = sec.querySelectorAll('.anim-node, .glass-element, .scene-narrative, .web-card, .video-glass-card, .docking-station-card, .scene-badge');
+        const targets = sec.querySelectorAll('.anim-node, .glass-element, .scene-narrative, .web-card, .video-glass-card, .docking-station-card, .scene-badge, .spec-tile');
         if (targets.length) {
           gsap.from(targets, {
             scrollTrigger: {
               trigger: sec,
               start: 'top 85%',
-              toggleActions: 'play none none reverse'
+              once: true
             },
-            y: 20,
+            y: 24,
             opacity: 0,
-            duration: 0.5,
+            duration: 0.55,
             stagger: 0.05,
-            ease: 'power2.out'
+            ease: 'power2.out',
+            clearProps: 'all'
           });
         }
       });
@@ -872,11 +884,13 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('fan_theme', 'dark');
     }
 
-    if (animated && themeToggle) {
-      gsap.fromTo(themeToggle, 
-        { rotate: -45, scale: 0.75 }, 
-        { rotate: 0, scale: 1, duration: 0.5, ease: 'back.out(2.5)' }
-      );
+    if (animated) {
+      document.querySelectorAll('.theme-toggle-floating').forEach(btn => {
+        gsap.fromTo(btn, 
+          { rotate: -45, scale: 0.75 }, 
+          { rotate: 0, scale: 1, duration: 0.5, ease: 'back.out(2.5)' }
+        );
+      });
     }
   }
 
@@ -888,9 +902,11 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme(false, false);
   }
 
-  themeToggle?.addEventListener('click', () => {
-    const isCurrentlyLight = document.body.classList.contains('light-mode');
-    applyTheme(!isCurrentlyLight, true);
+  document.querySelectorAll('.theme-toggle-floating').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isCurrentlyLight = document.body.classList.contains('light-mode');
+      applyTheme(!isCurrentlyLight, true);
+    });
   });
 
 

@@ -2605,9 +2605,13 @@ body.light-mode .theme-toggle-floating .icon-moon {
 
   /* Light Mode for Mobile Drawer & Buttons */
   body.light-mode .mobile-menu-btn {
-    background: rgba(15, 23, 42, 0.06);
-    border-color: rgba(15, 23, 42, 0.12);
-    color: #0f172a;
+    background: rgba(15, 23, 42, 0.08) !important;
+    border-color: rgba(15, 23, 42, 0.16) !important;
+    color: #0f172a !important;
+  }
+
+  body.light-mode .mobile-menu-btn i {
+    color: #0f172a !important;
   }
 
   body.light-mode .nav-main-menu {
@@ -3343,6 +3347,59 @@ body.light-mode .code-preview-footer {
   border-top: 1px solid #e2e8f0;
   color: #0284c7;
   font-weight: 600;
+}
+
+body.light-mode .code-snippet-line {
+  background: #f1f5f9 !important;
+  color: #0369a1 !important;
+  border: 1px solid #cbd5e1 !important;
+  font-weight: 700 !important;
+}
+
+body.light-mode .meter-circle {
+  border-color: #059669 !important;
+  box-shadow: 0 0 15px rgba(5, 150, 105, 0.25) !important;
+}
+
+body.light-mode .meter-circle strong {
+  color: #09090b !important;
+}
+
+body.light-mode .meter-circle span {
+  color: #475569 !important;
+}
+
+body.light-mode .tech-icon-large {
+  color: #0284c7 !important;
+}
+
+body.light-mode .usecase-capsule {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.light-mode .video-glass-card {
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
+}
+
+body.light-mode .docking-station-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #09090b !important;
+}
+
+body.light-mode .channel-btn {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #09090b !important;
+}
+
+body.light-mode .scene-badge {
+  background: rgba(2, 132, 199, 0.08) !important;
+  color: #0284c7 !important;
+  border-color: rgba(2, 132, 199, 0.25) !important;
 }
 
 /* Standards 4-Col Grid in Light Mode */
