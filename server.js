@@ -9,8 +9,9 @@ const PUBLIC_DIR = __dirname;
 // Serve static files with proper MIME types & extensions
 app.use(express.static(PUBLIC_DIR, {
   extensions: ['html', 'htm'],
-  maxAge: '1h',
+  maxAge: 0,
   setHeaders: (res, filePath) => {
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
     if (filePath.endsWith('.glb')) {
       res.setHeader('Content-Type', 'model/gltf-binary');
     }
