@@ -2390,9 +2390,13 @@ body.light-mode .theme-toggle-floating .icon-moon {
    RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS (Complete Adaptive Layout)
    ========================================================================== */
 
-/* Mobile Navigation Controls & Drawer Base */
+/* Mobile Navigation Controls & Drawer Base (Hidden completely on Desktop) */
 .mobile-nav-controls {
-  display: none;
+  display: none !important;
+}
+
+.mobile-menu-btn {
+  display: none !important;
 }
 
 .mobile-only-cta {
