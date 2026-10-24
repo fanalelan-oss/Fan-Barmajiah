@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فن | محرك التجارب الرقمية والأتمتة</title>
+  <title data-i18n="pageTitle">فن | محرك التجارب الرقمية والأتمتة</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=2.5.0">
+  <link rel="stylesheet" href="style.css?v=2.6.0">
 </head>
 <body>
 
@@ -34,8 +34,8 @@
   <div class="master-bot-stage" id="masterBotStage">
     <div class="bot-energy-field"></div>
     <div class="bot-dialog-bubble" id="botBubble">
-      <div class="bubble-tag"><i class="fas fa-microchip"></i> منصة فن الذكية</div>
-      <p class="bubble-msg" id="bubbleMsg">مرحباً بك! أنا رفيقك البرمجي، انزل بالسكرول لترى العالم وهو يُبنى قطعة قطعة 👇</p>
+      <div class="bubble-tag" data-i18n="bubbleTag"><i class="fas fa-microchip"></i> منصة فن الذكية</div>
+      <p class="bubble-msg" id="bubbleMsg" data-i18n="bubbleMsg">مرحباً بك! أنا رفيقك البرمجي، انزل بالسكرول لترى العالم وهو يُبنى قطعة قطعة 👇</p>
     </div>
     
     <!-- Three.js 3D WebGL Canvas -->
@@ -43,7 +43,7 @@
       <canvas id="threeBotCanvas"></canvas>
       <div class="bot-loading-spinner" id="botLoader">
         <i class="fas fa-circle-notch fa-spin"></i>
-        <span>جاري تحميل مجسم الـ 3D...</span>
+        <span data-i18n="botLoader">جاري تحميل مجسم الـ 3D...</span>
       </div>
       <div class="bot-thruster"></div>
     </div>
@@ -71,19 +71,19 @@
         <div class="nav-identity">
           <a href="index.html" class="nav-brand-link">
             <img src="assets/logo.png" alt="فن البرمجية" class="nav-logo">
-            <span class="site-title">فن <span class="title-highlight">البرمجية</span></span>
+            <span class="site-title" data-i18n="siteTitle">فن <span class="title-highlight">البرمجية</span></span>
           </a>
         </div>
 
         <!-- Unified Main Pages Navigation Menu with Anti-Gravity Rubber Pill -->
         <nav class="nav-main-menu" id="navMainMenu">
           <div class="antigravity-rubber-pill" id="rubberPill"></div>
-          <a href="index.html" class="nav-page-link active" data-index="0">الرئيسية</a>
-          <a href="about.html" class="nav-page-link" data-index="1">من نحن</a>
-          <a href="services.html" class="nav-page-link" data-index="2">خدماتنا</a>
-          <a href="blog.html" class="nav-page-link" data-index="3">المدونة</a>
+          <a href="index.html" class="nav-page-link active" data-index="0" data-i18n="navHome">الرئيسية</a>
+          <a href="about.html" class="nav-page-link" data-index="1" data-i18n="navAbout">من نحن</a>
+          <a href="services.html" class="nav-page-link" data-index="2" data-i18n="navServices">خدماتنا</a>
+          <a href="blog.html" class="nav-page-link" data-index="3" data-i18n="navBlog">المدونة</a>
           <a href="#scene6" class="nav-page-link mobile-only-cta">
-            <span>طلب مشروع</span>
+            <span data-i18n="navCta">طلب مشروع</span>
             <i class="fas fa-arrow-left"></i>
           </a>
         </nav>
@@ -91,7 +91,7 @@
         <!-- Action Section (CTA Button for Desktop) -->
         <div class="nav-actions">
           <a href="#scene6" class="nav-cta-btn liquid-glass-btn" id="quickContactBtn">
-            <span>طلب مشروع</span>
+            <span data-i18n="navCta">طلب مشروع</span>
             <i class="fas fa-arrow-left"></i>
           </a>
         </div>
@@ -127,38 +127,32 @@
       <div class="scene-pinned-box">
         <div class="scene-content center-aligned">
           
-          <div class="hero-chip laser-border anim-node">
+          <div class="hero-chip laser-border anim-node" id="heroChipContainer">
             <span class="pulse-beacon"></span>
-            <span>نظام البناء البرمجي الحي ثلاثي الأبعاد <span class="chip-en" dir="ltr">(Realtime 3D Engine)</span></span>
+            <span id="heroChipText" class="hero-chip-text" data-i18n="heroChip">نظام البناء البرمجي المتكامل 2026</span>
           </div>
 
-          <h1 class="master-hero-title anim-node">
-            نحن لا نكتب أكواداً عادية.. <br>
-            <span class="glow-cyan-text">نحن نبني كيانات برمجية حية</span>
-          </h1>
+          <h1 class="master-hero-title anim-node" data-i18n="heroTitle">نحن لا نكتب أكواداً عادية..<br><span class="glow-cyan-text">نحن نبني كيانات برمجية حية</span></h1>
 
-          <p class="master-hero-desc anim-node">
-            تطبيقات <strong>Flutter</strong> فائقة الرشاقة، <strong>متاجر رقمية</strong> تضاعف التحويل، 
-            <strong>منصات سحابية</strong>، و<strong>روبوتات أتمتة</strong> تحررك من المهام الروتينية.
-          </p>
+          <p class="master-hero-desc anim-node" data-i18n="heroDesc">تطبيقات <strong>Flutter</strong> فائقة الرشاقة، <strong>متاجر رقمية</strong> تضاعف التحويل، <strong>منصات سحابية</strong>، و<strong>روبوتات أتمتة</strong> تحررك من المهام الروتينية.</p>
 
           <!-- Floating Orbiting Capsules -->
           <div class="orbiting-capsules anim-node" id="orbitCapsules">
             <div class="capsule cap-1 glass-element">
               <i class="fab fa-flutter"></i>
-              <span>تطبيقات فلوتر 60fps</span>
+              <span data-i18n="capsule1">تطبيقات فلوتر 60fps</span>
             </div>
             <div class="capsule cap-2 glass-element">
               <i class="fas fa-store"></i>
-              <span>متاجر إلكترونية متكاملة</span>
+              <span data-i18n="capsule2">متاجر إلكترونية متكاملة</span>
             </div>
             <div class="capsule cap-3 glass-element">
               <i class="fas fa-code"></i>
-              <span>منصات ويب حديثة</span>
+              <span data-i18n="capsule3">منصات ويب حديثة</span>
             </div>
             <div class="capsule cap-4 glass-element">
               <i class="fas fa-robot"></i>
-              <span>أنظمة أتمتة ذكية</span>
+              <span data-i18n="capsule4">أنظمة أتمتة ذكية</span>
             </div>
           </div>
 
@@ -173,36 +167,31 @@
           
           <!-- Narrative & Bullet Points (Right Side in RTL) -->
           <div class="scene-narrative anim-right value-text-side">
-            <div class="scene-badge gold-badge"><i class="fas fa-cube"></i> شراكة تقنية مستدامة</div>
-            <h2 class="scene-heading value-title">
-              هندسة وبناء التطبيقات والأنظمة <br>
-              <span class="glow-gold-text">نصنع منتجك ونقوده نحو الريادة والنمو</span>
-            </h2>
-            <p class="scene-paragraph value-desc">
-              لا يقتصر العمل على مجرد كتابة الأكواد، بل تقديم منظومة تقنية متكاملة لإدارة وتطوير وتوسيع منتجك الرقمي من الفكرة وحتى الإطلاق والنمو المستمر.
-            </p>
+            <div class="scene-badge gold-badge" data-i18n="valBadge"><i class="fas fa-cube"></i> شراكة تقنية مستدامة</div>
+            <h2 class="scene-heading value-title" data-i18n="valTitle">هندسة وبناء التطبيقات والأنظمة <br><span class="glow-gold-text">نصنع منتجك ونقوده نحو الريادة والنمو</span></h2>
+            <p class="scene-paragraph value-desc" data-i18n="valDesc">لا يقتصر العمل على مجرد كتابة الأكواد، بل تقديم منظومة تقنية متكاملة لإدارة وتطوير وتوسيع منتجك الرقمي من الفكرة وحتى الإطلاق والنمو المستمر.</p>
 
             <div class="usecases-box">
-              <div class="usecase-intro-label">سواء كان هدفك:</div>
+              <div class="usecase-intro-label" data-i18n="valLabel">سواء كان هدفك:</div>
               <ul class="usecase-list">
-                <li><i class="fas fa-circle-dot"></i> التخطيط لإطلاق تطبيق أو منصة جديدة وتحويل الفكرة لمنتج رقمي متكامل.</li>
-                <li><i class="fas fa-circle-dot"></i> امتلاك نظام قائم والحاجة لتطوير بنيته التحتية وتحديثه بأحدث المعايير.</li>
-                <li><i class="fas fa-circle-dot"></i> معالجة تحديات السرعة، استقرار السيرفرات، وتجربة المستخدم.</li>
-                <li><i class="fas fa-circle-dot"></i> استلام وإعادة هيكلة وتأمين المشاريع البرمجية باحترافية تامة.</li>
+                <li data-i18n="valBullet1"><i class="fas fa-circle-dot"></i> التخطيط لإطلاق تطبيق أو منصة جديدة وتحويل الفكرة لمنتج رقمي متكامل.</li>
+                <li data-i18n="valBullet2"><i class="fas fa-circle-dot"></i> امتلاك نظام قائم والحاجة لتطوير بنيته التحتية وتحديثه بأحدث المعايير.</li>
+                <li data-i18n="valBullet3"><i class="fas fa-circle-dot"></i> معالجة تحديات السرعة، استقرار السيرفرات، وتجربة المستخدم.</li>
+                <li data-i18n="valBullet4"><i class="fas fa-circle-dot"></i> استلام وإعادة هيكلة وتأمين المشاريع البرمجية باحترافية تامة.</li>
               </ul>
             </div>
 
             <div class="capabilities-grid">
-              <div class="cap-pill"><i class="fas fa-circle-check"></i> بناء وتطوير تطبيقات احترافية</div>
-              <div class="cap-pill"><i class="fas fa-circle-check"></i> إدارة وتوسيع المنتجات الرقمية</div>
-              <div class="cap-pill"><i class="fas fa-circle-check"></i> تحسين الأداء وتجربة المستخدم</div>
-              <div class="cap-pill"><i class="fas fa-circle-check"></i> الدعم الفني واستقرار الأنظمة</div>
+              <div class="cap-pill" data-i18n="valPill1"><i class="fas fa-circle-check"></i> بناء وتطوير تطبيقات احترافية</div>
+              <div class="cap-pill" data-i18n="valPill2"><i class="fas fa-circle-check"></i> إدارة وتوسيع المنتجات الرقمية</div>
+              <div class="cap-pill" data-i18n="valPill3"><i class="fas fa-circle-check"></i> تحسين الأداء وتجربة المستخدم</div>
+              <div class="cap-pill" data-i18n="valPill4"><i class="fas fa-circle-check"></i> الدعم الفني واستقرار الأنظمة</div>
             </div>
 
             <div class="section-cta-wrapper">
               <a href="#scene6" class="btn-primary-consult">
                 <i class="fas fa-comments"></i>
-                <span>تواصل مع المستشار التقني الآن</span>
+                <span data-i18n="valCta">تواصل مع المستشار التقني الآن</span>
               </a>
             </div>
           </div>
@@ -216,11 +205,9 @@
                 <div class="video-play-btn-glow">
                   <i class="fas fa-play"></i>
                 </div>
-                <div class="video-top-tag">
-                  <i class="fas fa-shield-halved"></i> منهجية بناء وهندسة الأنظمة
-                </div>
+                <div class="video-top-tag" data-i18n="valVideoTag"><i class="fas fa-shield-halved"></i> منهجية بناء وهندسة الأنظمة</div>
                 <div class="video-bottom-bar">
-                  <span><i class="fas fa-microchip"></i> معايير برمجية عالمية</span>
+                  <span data-i18n="valVideoSub"><i class="fas fa-microchip"></i> معايير برمجية عالمية</span>
                   <span class="video-duration">4K UHD</span>
                 </div>
               </div>
@@ -237,18 +224,18 @@
         <div class="scene-grid-2col">
           
           <div class="scene-narrative anim-left">
-            <div class="scene-badge cyan-badge"><i class="fab fa-flutter"></i> معمل هندسة الهواتف</div>
-            <h2 class="scene-heading">بناء تطبيقات فلوتر <br><span class="glow-cyan-text">Native & Ultra-Smooth</span></h2>
-            <p class="scene-paragraph">
+            <div class="scene-badge cyan-badge" data-i18n="s2Badge"><i class="fab fa-flutter"></i> معمل هندسة الهواتف</div>
+            <h2 class="scene-heading"><span data-i18n="s2Title">بناء تطبيقات فلوتر <br><span class="glow-cyan-text">Native & Ultra-Smooth</span></span></h2>
+            <p class="scene-paragraph"><span data-i18n="s2Desc">
               نجمع أجزاء التطبيق قطعة وراء قطعة: معمارية برمجية صلبة، سرعة استجابة مذهلة 60 إطار في الثانية، ودعم كامل لكافة أنظمة iOS و Android.
-            </p>
+            </span></p>
 
             <div class="assembly-specs">
               <div class="spec-tile glass-element">
                 <i class="fas fa-layer-group"></i>
                 <div>
                   <strong>Clean Architecture & Bloc</strong>
-                  <span>فصل تام للطبقات وسهولة التوسع المستقبلي</span>
+                  <span data-i18n="s2Spec1Desc">فصل تام للطبقات وسهولة التوسع المستقبلي</span>
                 </div>
               </div>
 
@@ -256,15 +243,15 @@
                 <i class="fas fa-bolt-lightning"></i>
                 <div>
                   <strong>Realtime Supabase & Firebase</strong>
-                  <span>مزامنة بيانات لحظية وإشعارات فورية دقيقة</span>
+                  <span data-i18n="s2Spec2Desc">مزامنة بيانات لحظية وإشعارات فورية دقيقة</span>
                 </div>
               </div>
 
               <div class="spec-tile glass-element">
                 <i class="fas fa-cloud-arrow-up"></i>
                 <div>
-                  <strong>جاهزية تامة لمتاجر التطبيقات</strong>
-                  <span>اعتماد كامل لمعايير App Store و Google Play</span>
+                  <strong data-i18n="s2Spec3Title">جاهزية تامة لمتاجر التطبيقات</strong>
+                  <span data-i18n="s2Spec3Desc">اعتماد كامل لمعايير App Store و Google Play</span>
                 </div>
               </div>
             </div>
@@ -298,46 +285,46 @@
 
             <div class="payment-card-floater card-mada glass-element">
               <i class="fas fa-credit-card"></i>
-              <span>مدى & Apple Pay</span>
-              <strong>دفع فوري وآمن 100%</strong>
+              <span data-i18n="s3Floater1Sub">مدى & Apple Pay</span>
+              <strong data-i18n="s3Floater1Title">دفع فوري وآمن 100%</strong>
             </div>
 
             <div class="payment-card-floater card-stats glass-element">
               <i class="fas fa-arrow-trend-up"></i>
-              <span>معدل المبيعات</span>
+              <span data-i18n="s3Floater2Label">معدل المبيعات</span>
               <strong>+45% Conversion Rate</strong>
             </div>
           </div>
 
           <div class="scene-narrative anim-right">
-            <div class="scene-badge purple-badge"><i class="fas fa-store"></i> متجر المستقبل</div>
-            <h2 class="scene-heading">متاجر إلكترونية <br><span class="glow-purple-text">تستقطب العملاء وتضاعف أرباحك</span></h2>
-            <p class="scene-paragraph">
+            <div class="scene-badge purple-badge" data-i18n="s3Badge"><i class="fas fa-store"></i> متجر المستقبل</div>
+            <h2 class="scene-heading"><span data-i18n="s3Title">متاجر إلكترونية <br><span class="glow-purple-text">تستقطب العملاء وتضاعف أرباحك</span></span></h2>
+            <p class="scene-paragraph"><span data-i18n="s3Desc">
               نصمم متاجر احترافية بمحركات متطورة وسريعة جداً، مع تجربة شراء سلسة تشجع العميل على إتمام الطلب بنقرة واحدة فقط.
-            </p>
+            </span></p>
 
             <div class="assembly-specs">
               <div class="spec-tile glass-element purple-tint">
                 <i class="fas fa-wallet"></i>
                 <div>
-                  <strong>تكامل بوابات الدفع والتقسيط</strong>
-                  <span>ربط رسمي مع ميسر، تابي، تمارا، وباي بال</span>
+                  <strong data-i18n="s3Spec1Title">تكامل بوابات الدفع والتقسيط</strong>
+                  <span data-i18n="s3Spec1Desc">ربط رسمي مع ميسر، تابي، تمارا، وباي بال</span>
                 </div>
               </div>
 
               <div class="spec-tile glass-element purple-tint">
                 <i class="fas fa-truck-fast"></i>
                 <div>
-                  <strong>الربط الآلي لشركات الشحن</strong>
-                  <span>طباعة البوليصات والتتبع التلقائي للطلبات</span>
+                  <strong data-i18n="s3Spec2Title">الربط الآلي لشركات الشحن</strong>
+                  <span data-i18n="s3Spec2Desc">طباعة البوليصات والتتبع التلقائي للطلبات</span>
                 </div>
               </div>
 
               <div class="spec-tile glass-element purple-tint">
                 <i class="fas fa-chart-pie"></i>
                 <div>
-                  <strong>لوحة قيادة وتحليلات مبيعات حية</strong>
-                  <span>متابعة حركة المخزون والعملاء الأكثر ولاءً</span>
+                  <strong data-i18n="s3Spec3Title">لوحة قيادة وتحليلات مبيعات حية</strong>
+                  <span data-i18n="s3Spec3Desc">متابعة حركة المخزون والعملاء الأكثر ولاءً</span>
                 </div>
               </div>
             </div>
@@ -354,9 +341,9 @@
         <div class="scene-content full-width">
           
           <div class="scene-header-center anim-node">
-            <div class="scene-badge cyan-badge"><i class="fas fa-code"></i> المنصات السحابية</div>
-            <h2 class="scene-heading">مواقع وتطبيقات ويب <span class="glow-cyan-text">تبني هويتك الرقمية</span></h2>
-            <p class="scene-paragraph">هندسة متقدمة مبنية على أحدث تقنيات Next.js و React لسرعة تحميل فائقة وتوافق مطلق مع محركات البحث.</p>
+            <div class="scene-badge cyan-badge" data-i18n="s4Badge"><i class="fas fa-code"></i> المنصات السحابية</div>
+            <h2 class="scene-heading"><span data-i18n="s4Title">مواقع وتطبيقات ويب <span class="glow-cyan-text">تبني هويتك الرقمية</span></span></h2>
+            <p class="scene-paragraph"><span data-i18n="s4Desc">هندسة متقدمة مبنية على أحدث تقنيات Next.js و React لسرعة تحميل فائقة وتوافق مطلق مع محركات البحث.</span></p>
           </div>
 
           <div class="web-matrix-grid anim-node" id="webMatrixGrid">
@@ -368,8 +355,8 @@
               </div>
               <div class="card-body">
                 <div class="tech-icon-large"><i class="fab fa-react"></i></div>
-                <h3>تطبيقات ويب فائقة السرعة</h3>
-                <p>لوحات تحكم تفاعلية، منصات SaaS، وتطبيقات إدارة الأعمال متكاملة الصلاحيات.</p>
+                <h3 data-i18n="s4Card1Title">تطبيقات ويب فائقة السرعة</h3>
+                <p data-i18n="s4Card1Desc">لوحات تحكم تفاعلية، منصات SaaS، وتطبيقات إدارة الأعمال متكاملة الصلاحيات.</p>
                 <div class="code-snippet-line"><code>&gt; npm run deploy --fast-edge</code></div>
               </div>
             </div>
@@ -386,8 +373,8 @@
                     <span class="meter-lbl">Score</span>
                   </div>
                 </div>
-                <h3>أعلى معايير الـ SEO والأداء</h3>
-                <p>صفحات فائقة السرعة تضمن ظهورك في المراتب الأولى على Google Core Vitals.</p>
+                <h3 data-i18n="s4Card2Title">أعلى معايير الـ SEO والأداء</h3>
+                <p data-i18n="s4Card2Desc">صفحات فائقة السرعة تضمن ظهورك في المراتب الأولى على Google Core Vitals.</p>
               </div>
             </div>
 
@@ -398,8 +385,8 @@
               </div>
               <div class="card-body">
                 <div class="tech-icon-large"><i class="fas fa-server"></i></div>
-                <h3>سيرفرات سحابية وحماية مشددة</h3>
-                <p>قواعد بيانات موثوقة ونظم توثيق أمنية عالية التحمل (Postgres, Node, Redis).</p>
+                <h3 data-i18n="s4Card3Title">سيرفرات سحابية وحماية مشددة</h3>
+                <p data-i18n="s4Card3Desc">قواعد بيانات موثوقة ونظم توثيق أمنية عالية التحمل (Postgres, Node, Redis).</p>
                 <div class="code-snippet-line"><code>&gt; status: 200 OK | Encrypted</code></div>
               </div>
             </div>
@@ -417,18 +404,18 @@
         <div class="scene-grid-2col">
           
           <div class="scene-narrative anim-left">
-            <div class="scene-badge emerald-badge"><i class="fas fa-robot"></i> مصفوفة الأتمتة والذكاء الاصطناعي</div>
-            <h2 class="scene-heading">أنظمة وروبوتات ذكية <br><span class="glow-emerald-text">تعمل بدلاً منك 24 ساعة</span></h2>
-            <p class="scene-paragraph">
+            <div class="scene-badge emerald-badge" data-i18n="s5Badge"><i class="fas fa-robot"></i> مصفوفة الأتمتة والذكاء الاصطناعي</div>
+            <h2 class="scene-heading"><span data-i18n="s5Title">أنظمة وروبوتات ذكية <br><span class="glow-emerald-text">تعمل بدلاً منك 24 ساعة</span></span></h2>
+            <p class="scene-paragraph"><span data-i18n="s5Desc">
               نصمم مسارات عمل برمجية (Python, n8n, Webhooks, AI Agents) لربط خدماتك ببعضها وأتمتة الردود، الفواتير، ومزامنة البيانات تلقائياً.
-            </p>
+            </span></p>
 
             <div class="neural-pipeline" id="neuralPipeline">
               <div class="pipeline-node node-1 glass-element">
                 <div class="node-indicator pulse-emerald"></div>
                 <div>
-                  <strong>1. التقاط الحدث اللحظي</strong>
-                  <span>(رسالة واتساب، طلب متجر، إشعار سحابي)</span>
+                  <strong data-i18n="s5Node1Title">1. التقاط الحدث اللحظي</strong>
+                  <span data-i18n="s5Node1Desc">(رسالة واتساب، طلب متجر، إشعار سحابي)</span>
                 </div>
               </div>
 
@@ -437,8 +424,8 @@
               <div class="pipeline-node node-2 glass-element">
                 <div class="node-indicator pulse-emerald"></div>
                 <div>
-                  <strong>2. المعالجة بذكاء اصطناعي مخصص</strong>
-                  <span>(تصنيف العميل، تحليل الطلب، تجهيز الرد)</span>
+                  <strong data-i18n="s5Node2Title">2. المعالجة بذكاء اصطناعي مخصص</strong>
+                  <span data-i18n="s5Node2Desc">(تصنيف العميل، تحليل الطلب، تجهيز الرد)</span>
                 </div>
               </div>
 
@@ -447,8 +434,8 @@
               <div class="pipeline-node node-3 glass-element">
                 <div class="node-indicator pulse-emerald"></div>
                 <div>
-                  <strong>3. التنفيذ والأرشفة اللحظية</strong>
-                  <span>(إصدار فاتورة، تحديث المخزون، إشعار الفريق)</span>
+                  <strong data-i18n="s5Node3Title">3. التنفيذ والأرشفة اللحظية</strong>
+                  <span data-i18n="s5Node3Desc">(إصدار فاتورة، تحديث المخزون، إشعار الفريق)</span>
                 </div>
               </div>
             </div>
@@ -473,11 +460,11 @@
           
           <div class="docking-station-card glass-element anim-node" id="contactDock">
             <div class="dock-header">
-              <div class="scene-badge cyan-badge"><i class="fas fa-rocket"></i> محطة هبوط البوت والجاهزية</div>
-              <h2 class="scene-heading">جاهز لتحويل فكرتك إلى <br><span class="glow-cyan-text">واقع برمجـي استثنائـي؟</span></h2>
-              <p class="scene-paragraph">
+              <div class="scene-badge cyan-badge" data-i18n="s6Badge"><i class="fas fa-rocket"></i> محطة هبوط البوت والجاهزية</div>
+              <h2 class="scene-heading"><span data-i18n="s6Title">جاهز لتحويل فكرتك إلى <br><span class="glow-cyan-text">واقع برمجـي استثنائـي؟</span></span></h2>
+              <p class="scene-paragraph"><span data-i18n="s6Desc">
                 دعنا نبدأ في صياغة مشروعك القادم بنفس الدقة والسحر الذي رأيته في هذه الصفحة.
-              </p>
+              </span></p>
             </div>
 
             <!-- Contact Channels Grid -->
@@ -485,8 +472,8 @@
               <a href="https://wa.me/" target="_blank" class="channel-btn whatsapp-channel glass-element">
                 <i class="fab fa-whatsapp"></i>
                 <div class="channel-info">
-                  <span>محادثة فورية</span>
-                  <strong>تواصل عبر واتساب</strong>
+                  <span data-i18n="s6WaSub">محادثة فورية</span>
+                  <strong data-i18n="s6WaTitle">تواصل عبر واتساب</strong>
                 </div>
                 <i class="fas fa-arrow-left arrow-peek"></i>
               </a>
@@ -494,7 +481,7 @@
               <a href="mailto:yousf@fan-alelan.com" class="channel-btn email-channel glass-element">
                 <i class="fas fa-envelope"></i>
                 <div class="channel-info">
-                  <span>استفسار أو طلب عرض سعر</span>
+                  <span data-i18n="s6EmailSub">استفسار أو طلب عرض سعر</span>
                   <strong>yousf@fan-alelan.com</strong>
                 </div>
                 <i class="fas fa-arrow-left arrow-peek"></i>
@@ -503,8 +490,8 @@
               <a href="https://t.me/" target="_blank" class="channel-btn telegram-channel glass-element">
                 <i class="fab fa-telegram"></i>
                 <div class="channel-info">
-                  <span>قناة وسرعة رد</span>
-                  <strong>تواصل عبر تليجرام</strong>
+                  <span data-i18n="s6TgSub">قناة وسرعة رد</span>
+                  <strong data-i18n="s6TgTitle">تواصل عبر تليجرام</strong>
                 </div>
                 <i class="fas fa-arrow-left arrow-peek"></i>
               </a>
@@ -514,7 +501,7 @@
             <div class="bot-docking-pad" id="botDockingPad">
               <div class="pad-ring ring-outer"></div>
               <div class="pad-ring ring-inner"></div>
-              <span class="pad-status"><i class="fas fa-check-circle"></i> منصة الانطلاق جاهزة 🚀</span>
+              <span class="pad-status" data-i18n="s6PadStatus"><i class="fas fa-check-circle"></i> منصة الانطلاق جاهزة 🚀</span>
             </div>
 
           </div>
@@ -523,11 +510,11 @@
           <footer class="cinematic-footer anim-node">
             <div class="footer-badge-wrapper">
               <a href="mailto:yousf@fan-alelan.com" class="signature-pill-btn" title="تواصل عبر البريد الإلكتروني: yousf@fan-alelan.com">
-                <span class="sig-label">تصميم وتطوير:</span>
-                <span class="sig-name"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
+                <span class="sig-label" data-i18n="footerSigLabel">تصميم وتطوير:</span>
+                <span class="sig-name" data-i18n="footerSigName"><span class="magic-wand">🪄</span> فريق فن الإعلان</span>
               </a>
             </div>
-            <p class="copyright-note">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
+            <p class="copyright-note" data-i18n="footerCopyright">منصة فـن للبرمجيات والأتمتة &copy; 2026</p>
           </footer>
 
         </div>
@@ -537,7 +524,7 @@
   </main>
 
   <!-- Floating Back to Top Cyber Button with Progress Ring -->
-  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى" title="العودة للأعلى">
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="العودة للأعلى" title="العودة للأعلى" data-i18n-title="backToTop">
     <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
       <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
       <circle class="progress-ring-circle" id="scrollProgressCircle" cx="24" cy="24" r="20" />
@@ -556,6 +543,6 @@
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
   <!-- Main App Choreography -->
-  <script src="app.js?v=2.5.0"></script>
+  <script src="app.js?v=2.6.0"></script>
 </body>
 </html>

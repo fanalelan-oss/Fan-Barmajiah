@@ -3673,3 +3673,22 @@ html[lang="en"] .service-breadcrumb i,
 body.lang-en .service-breadcrumb i {
   transform: rotate(180deg) !important;
 }
+
+
+/* Hero Chip Rotating Text & Stability */
+.hero-chip {
+  min-height: 42px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-chip-text {
+  display: inline-block;
+  font-weight: 700;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  will-change: transform, opacity;
+}
+
+body.light-mode .hero-chip-text {
+  color: #0f172a;
+}

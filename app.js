@@ -982,155 +982,246 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// =========================================================================
+  // 11. BILINGUAL INTERNATIONALIZATION (AR / EN) & ROTATING HERO CHIP
   // =========================================================================
-  // 11. BILINGUAL INTERNATIONALIZATION (AR / EN) CONTROLLER
-  // =========================================================================
+  const heroRotatingMessages = {
+    ar: [
+      'نظام البناء البرمجي المتكامل 2026',
+      'محرك التجارب الرقمية والذكاء الاصطناعي 3D',
+      'معمارية سحابية وتطبيقات فائقة السرعة',
+      'حلول برمجية استثنائية تقود أعمالك للريادة'
+    ],
+    en: [
+      'Integrated Software Engineering System 2026',
+      'Realtime 3D Engine & AI-Driven Experiences',
+      'High-Velocity Cloud & Mobile Architecture',
+      'Exceptional Engineering Scaling Your Enterprise'
+    ]
+  };
+
+  let currentChipIndex = 0;
+  let chipTimer = null;
+
+  function initHeroChipRotation() {
+    const chipText = document.getElementById('heroChipText');
+    if (!chipText) return;
+
+    if (chipTimer) clearInterval(chipTimer);
+
+    chipTimer = setInterval(() => {
+      const lang = localStorage.getItem('fan_lang') || 'ar';
+      const msgs = heroRotatingMessages[lang] || heroRotatingMessages.ar;
+      currentChipIndex = (currentChipIndex + 1) % msgs.length;
+      const nextMsg = msgs[currentChipIndex];
+
+      if (typeof gsap !== 'undefined') {
+        gsap.to(chipText, {
+          y: -10,
+          opacity: 0,
+          duration: 0.28,
+          ease: 'power2.in',
+          onComplete: () => {
+            chipText.textContent = nextMsg;
+            gsap.fromTo(chipText, 
+              { y: 10, opacity: 0 }, 
+              { y: 0, opacity: 1, duration: 0.35, ease: 'power2.out' }
+            );
+          }
+        });
+      } else {
+        chipText.textContent = nextMsg;
+      }
+    }, 3200);
+  }
+
   const i18nContent = {
     ar: {
-      btnLabel: 'EN',
-      btnTitle: 'Switch to English / تبديل إلى الإنجليزية',
-      siteTitle: 'فن البرمجية',
-      siteSub: 'حلول رقمية وأتمتة',
-      navHome: 'الرئيسية',
-      navAbout: 'من نحن',
-      navServices: 'خدماتنا',
-      navBlog: 'المدونة',
-      navCta: 'طلب مشروع',
-      // Stepper
-      step0: 'منصة الانطلاق',
-      step1: 'معمل فلوتر',
-      step2: 'متجر المستقبل',
-      step3: 'منصة الويب',
-      step4: 'شبكة الأتمتة',
-      step5: 'محطة التواصل',
-      // Scene 1
-      heroBadge: 'نظام البناء البرمجي المتكامل 2026',
-      heroTitle: 'نصمم ونصنع مستقبلك الرقمي <br><span class="glow-gradient-text">بإتقان استثنائي</span>',
-      heroDesc: 'من تطبيقات الموبايل فائقة السرعة، إلى المتاجر الإلكترونية المتطورة، وأنظمة الأتمتة والذكاء الاصطناعي — نبني لك منظومة تقنية متكاملة ترتقي بأعمالك إلى آفاق غير مسبوقة.',
-      heroCtaMain: 'ابدأ مشروعك الآن',
-      heroCtaSecondary: 'استكشف خدماتنا',
-      capsule1Title: 'تطبيقات فلوتر',
-      capsule1Sub: 'أداء أصيل خارق',
-      capsule2Title: 'متاجر رقمية',
-      capsule2Sub: 'تحويل بيع استثنائي',
-      capsule3Title: 'هندسة سحابية',
-      capsule3Sub: 'سرعة وأمان فائق',
-      capsule4Title: 'أتمتة وذكاء',
-      capsule4Sub: 'روبوتات تعمل 24/7',
-      // Scene 2
-      s2Badge: '<i class="fas fa-layer-group"></i> معمل تطبيقات فلوتر',
-      s2Title: 'تطبيقات جوال خارقة السرعة <br><span class="glow-cyan-text">تنبض بالحياة في يد عميلك</span>',
-      s2Desc: 'نطور تطبيقات هجينة متطورة بتقنية Flutter وDart، تمنحك أداءً سلساً يضاهي التطبيقات الأصلية، مع واجهات تفاعلية مذهلة وتوافق تام عبر iOS وAndroid من قاعدة كود واحدة.',
-      s2Cta: 'استكشف تفاصيل التطبيقات',
-      // Scene 3
-      s3Badge: '<i class="fas fa-shopping-bag"></i> متجر المستقبل الرقمي',
-      s3Title: 'منصات تجارة إلكترونية ذكية <br><span class="glow-purple-text">مُصممة لمضاعفة مبيعاتك</span>',
-      s3Desc: 'نبني متاجر إلكترونية فائقة الاستجابة، مدمجة مع أحدث بوابات الدفع (Apple Pay، مدى، فيزا، تابي وتمارا)، مع نظام ذكي لإدارة المخزون والطلبات وأعلى معايير الأمان.',
-      s3Cta: 'استكشف حلول المتاجر',
-      // Scene 4
-      s4Badge: '<i class="fas fa-cubes"></i> منصة الويب وهندسة السحابة',
-      s4Title: 'مواقع وأنظمة ويب متقدمة <br><span class="glow-gold-text">بأداء سحابي فائق السرعة</span>',
-      s4Desc: 'تطوير منصات ويب تفاعلية بأنظمة Full-Stack الحديثة، مع بنية تحتية سحابية مرنة توفر سرعة تحميل فائقة وتجربة مستخدم ساحرة.',
-      s4Cta: 'استكشف هندسة الويب',
-      // Scene 5
+      pageTitle: "فن | محرك التجارب الرقمية والأتمتة",
+      btnLabel: "EN",
+      btnTitle: "Switch to English / تبديل إلى الإنجليزية",
+      bubbleTag: '<i class="fas fa-microchip"></i> منصة فن الذكية',
+      bubbleMsg: "مرحباً بك! أنا رفيقك البرمجي، انزل بالسكرول لترى العالم وهو يُبنى قطعة قطعة 👇",
+      botLoader: "جاري تحميل مجسم الـ 3D...",
+      siteTitle: 'فن <span class="title-highlight">البرمجية</span>',
+      navHome: "الرئيسية",
+      navAbout: "من نحن",
+      navServices: "خدماتنا",
+      navBlog: "المدونة",
+      navCta: "طلب مشروع",
+      heroChip: "نظام البناء البرمجي المتكامل 2026",
+      heroTitle: 'نحن لا نكتب أكواداً عادية..<br><span class="glow-cyan-text">نحن نبني كيانات برمجية حية</span>',
+      heroDesc: 'تطبيقات <strong>Flutter</strong> فائقة الرشاقة، <strong>متاجر رقمية</strong> تضاعف التحويل، <strong>منصات سحابية</strong>، و<strong>روبوتات أتمتة</strong> تحررك من المهام الروتينية.',
+      capsule1: "تطبيقات فلوتر 60fps",
+      capsule2: "متاجر إلكترونية متكاملة",
+      capsule3: "منصات ويب حديثة",
+      capsule4: "أنظمة أتمتة ذكية",
+      valBadge: '<i class="fas fa-cube"></i> شراكة تقنية مستدامة',
+      valTitle: 'هندسة وبناء التطبيقات والأنظمة <br><span class="glow-gold-text">نصنع منتجك ونقوده نحو الريادة والنمو</span>',
+      valDesc: "لا يقتصر العمل على مجرد كتابة الأكواد، بل تقديم منظومة تقنية متكاملة لإدارة وتطوير وتوسيع منتجك الرقمي من الفكرة وحتى الإطلاق والنمو المستمر.",
+      valLabel: "سواء كان هدفك:",
+      valBullet1: '<i class="fas fa-circle-dot"></i> التخطيط لإطلاق تطبيق أو منصة جديدة وتحويل الفكرة لمنتج رقمي متكامل.',
+      valBullet2: '<i class="fas fa-circle-dot"></i> امتلاك نظام قائم والحاجة لتطوير بنيته التحتية وتحديثه بأحدث المعايير.',
+      valBullet3: '<i class="fas fa-circle-dot"></i> معالجة تحديات السرعة، استقرار السيرفرات، وتجربة المستخدم.',
+      valBullet4: '<i class="fas fa-circle-dot"></i> استلام وإعادة هيكلة وتأمين المشاريع البرمجية باحترافية تامة.',
+      valPill1: '<i class="fas fa-circle-check"></i> بناء وتطوير تطبيقات احترافية',
+      valPill2: '<i class="fas fa-circle-check"></i> إدارة وتوسيع المنتجات الرقمية',
+      valPill3: '<i class="fas fa-circle-check"></i> تحسين الأداء وتجربة المستخدم',
+      valPill4: '<i class="fas fa-circle-check"></i> الدعم الفني واستقرار الأنظمة',
+      valCta: "تواصل مع المستشار التقني الآن",
+      valVideoTag: '<i class="fas fa-shield-halved"></i> منهجية بناء وهندسة الأنظمة',
+      valVideoSub: '<i class="fas fa-microchip"></i> معايير برمجية عالمية',
+      s2Badge: '<i class="fab fa-flutter"></i> معمل هندسة الهواتف',
+      s2Title: 'بناء تطبيقات فلوتر <br><span class="glow-cyan-text">Native & Ultra-Smooth</span>',
+      s2Desc: "نجمع أجزاء التطبيق قطعة وراء قطعة: معمارية برمجية صلبة، سرعة استجابة مذهلة 60 إطار في الثانية، ودعم كامل لكافة أنظمة iOS و Android.",
+      s2Spec1Desc: "فصل تام للطبقات وسهولة التوسع المستقبلي",
+      s2Spec2Desc: "مزامنة بيانات لحظية وإشعارات فورية دقيقة",
+      s2Spec3Title: "جاهزية تامة لمتاجر التطبيقات",
+      s2Spec3Desc: "اعتماد كامل لمعايير App Store و Google Play",
+      s3Floater1Sub: "مدى & Apple Pay",
+      s3Floater1Title: "دفع فوري وآمن 100%",
+      s3Floater2Label: "معدل المبيعات",
+      s3Badge: '<i class="fas fa-store"></i> متجر المستقبل',
+      s3Title: 'متاجر إلكترونية <br><span class="glow-purple-text">تستقطب العملاء وتضاعف أرباحك</span>',
+      s3Desc: "نصمم متاجر احترافية بمحركات متطورة وسريعة جداً، مع تجربة شراء سلسة تشجع العميل على إتمام الطلب بنقرة واحدة فقط.",
+      s3Spec1Title: "تكامل بوابات الدفع والتقسيط",
+      s3Spec1Desc: "ربط رسمي مع ميسر، تابي، تمارا، وباي بال",
+      s3Spec2Title: "الربط الآلي لشركات الشحن",
+      s3Spec2Desc: "طباعة البوليصات والتتبع التلقائي للطلبات",
+      s3Spec3Title: "لوحة قيادة وتحليلات مبيعات حية",
+      s3Spec3Desc: "متابعة حركة المخزون والعملاء الأكثر ولاءً",
+      s4Badge: '<i class="fas fa-code"></i> المنصات السحابية',
+      s4Title: 'مواقع وتطبيقات ويب <span class="glow-cyan-text">تبني هويتك الرقمية</span>',
+      s4Desc: "هندسة متقدمة مبنية على أحدث تقنيات Next.js و React لسرعة تحميل فائقة وتوافق مطلق مع محركات البحث.",
+      s4Card1Title: "تطبيقات ويب فائقة السرعة",
+      s4Card1Desc: "لوحات تحكم تفاعلية، منصات SaaS، وتطبيقات إدارة الأعمال متكاملة الصلاحيات.",
+      s4Card2Title: "أعلى معايير الـ SEO والأداء",
+      s4Card2Desc: "صفحات فائقة السرعة تضمن ظهورك في المراتب الأولى على Google Core Vitals.",
+      s4Card3Title: "سيرفرات سحابية وحماية مشددة",
+      s4Card3Desc: "قواعد بيانات موثوقة ونظم توثيق أمنية عالية التحمل (Postgres, Node, Redis).",
       s5Badge: '<i class="fas fa-robot"></i> مصفوفة الأتمتة والذكاء الاصطناعي',
       s5Title: 'أنظمة وروبوتات ذكية <br><span class="glow-emerald-text">تعمل بدلاً منك 24 ساعة</span>',
-      s5Desc: 'نصمم مسارات عمل برمجية (Python, n8n, Webhooks, AI Agents) لربط خدماتك ببعضها وأتمتة الردود، الفواتير، ومزامنة البيانات تلقائياً دون أي تدخل بشري.',
-      s5Cta: 'استكشف حلول الأتمتة',
-      // Scene 6
+      s5Desc: "نصمم مسارات عمل برمجية (Python, n8n, Webhooks, AI Agents) لربط خدماتك ببعضها وأتمتة الردود، الفواتير، ومزامنة البيانات تلقائياً.",
+      s5Node1Title: "1. التقاط الحدث اللحظي",
+      s5Node1Desc: "(رسالة واتساب، طلب متجر، إشعار سحابي)",
+      s5Node2Title: "2. المعالجة بذكاء اصطناعي مخصص",
+      s5Node2Desc: "(تصنيف العميل، تحليل الطلب، تجهيز الرد)",
+      s5Node3Title: "3. التنفيذ والأرشفة اللحظية",
+      s5Node3Desc: "(إصدار فاتورة، تحديث المخزون، إشعار الفريق)",
       s6Badge: '<i class="fas fa-rocket"></i> محطة هبوط البوت والجاهزية',
       s6Title: 'جاهز لتحويل فكرتك إلى <br><span class="glow-cyan-text">واقع برمجـي استثنائـي؟</span>',
-      s6Desc: 'دعنا نبدأ في صياغة مشروعك القادم بنفس الدقة والسحر الذي رأيته في هذه الصفحة.',
-      waLabel: 'محادثة فورية',
-      waTitle: 'تواصل عبر واتساب',
-      emailLabel: 'استفسار أو طلب عرض سعر',
-      tgLabel: 'قناة وسرعة رد',
-      tgTitle: 'تواصل عبر تليجرام',
-      // Bot
-      botBubble: 'مرحباً بك! أنا رفيقك البرمجي، انزل بالسكرول لترى العالم وهو يُبنى قطعة قطعة 👇',
-      botTag: '<i class="fas fa-microchip"></i> منصة فن الذكية',
-      // Footer
-      footerCopy: 'جميع الحقوق محفوظة © 2026 فن البرمجية. صُنع بشغف هندسي فائق.'
+      s6Desc: "دعنا نبدأ في صياغة مشروعك القادم بنفس الدقة والسحر الذي رأيته في هذه الصفحة.",
+      s6WaSub: "محادثة فورية",
+      s6WaTitle: "تواصل عبر واتساب",
+      s6EmailSub: "استفسار أو طلب عرض سعر",
+      s6TgSub: "قناة وسرعة رد",
+      s6TgTitle: "تواصل عبر تليجرام",
+      s6PadStatus: '<i class="fas fa-check-circle"></i> منصة الانطلاق جاهزة 🚀',
+      footerSigLabel: "تصميم وتطوير:",
+      footerSigName: '<span class="magic-wand">🪄</span> فريق فن الإعلان',
+      footerCopyright: "منصة فـن للبرمجيات والأتمتة © 2026",
+      backToTop: "العودة للأعلى"
     },
     en: {
-      btnLabel: 'عربي',
-      btnTitle: 'تبديل إلى العربية / Switch to Arabic',
-      siteTitle: 'Fan Al-Barmajiah',
-      siteSub: 'Digital & AI Automation',
-      navHome: 'Home',
-      navAbout: 'About Us',
-      navServices: 'Services',
-      navBlog: 'Blog',
-      navCta: 'Request Project',
-      // Stepper
-      step0: 'Launchpad',
-      step1: 'Flutter Studio',
-      step2: 'Future Store',
-      step3: 'Web Platform',
-      step4: 'Automation Grid',
-      step5: 'Contact Dock',
-      // Scene 1
-      heroBadge: 'Integrated Software Engineering 2026',
-      heroTitle: 'We Engineer Your Digital Future <br><span class="glow-gradient-text">With Pure Precision</span>',
-      heroDesc: 'From high-velocity mobile applications to advanced e-commerce platforms and autonomous AI workflows — we craft complete digital ecosystems that scale your enterprise.',
-      heroCtaMain: 'Start Project Now',
-      heroCtaSecondary: 'Explore Services',
-      capsule1Title: 'Flutter Apps',
-      capsule1Sub: 'Native 120 FPS',
-      capsule2Title: 'Smart Stores',
-      capsule2Sub: 'High Conversion',
-      capsule3Title: 'Cloud Systems',
-      capsule3Sub: 'Speed & Resilience',
-      capsule4Title: 'AI & Automation',
-      capsule4Sub: '24/7 Smart Bots',
-      // Scene 2
-      s2Badge: '<i class="fas fa-layer-group"></i> Flutter App Studio',
-      s2Title: 'Ultra-Fast Mobile Apps <br><span class="glow-cyan-text">Fluid In Your Users Hands</span>',
-      s2Desc: 'We build reactive mobile apps powered by Flutter & Dart, delivering native-grade fluidity, delightful micro-interactions, and seamless cross-platform parity on iOS & Android.',
-      s2Cta: 'Explore Mobile Solutions',
-      // Scene 3
-      s3Badge: '<i class="fas fa-shopping-bag"></i> Future E-Commerce',
-      s3Title: 'Intelligent E-Commerce Platforms <br><span class="glow-purple-text">Built to Multiply Sales</span>',
-      s3Desc: 'High-converting digital storefronts integrated with modern payment gateways (Apple Pay, Mada, Visa, Tabby & Tamara), intelligent inventory routing, and military-grade security.',
-      s3Cta: 'Explore Store Solutions',
-      // Scene 4
-      s4Badge: '<i class="fas fa-cubes"></i> Cloud & Web Engineering',
-      s4Title: 'Advanced Web Applications <br><span class="glow-gold-text">With Blazing Cloud Performance</span>',
-      s4Desc: 'Full-stack enterprise web platforms engineered with scalable cloud infrastructure, guaranteeing sub-second load times and fluid digital experiences.',
-      s4Cta: 'Explore Web Architecture',
-      // Scene 5
+      pageTitle: "Fan | Digital Experiences & AI Automation Engine",
+      btnLabel: "عربي",
+      btnTitle: "تبديل إلى العربية / Switch to Arabic",
+      bubbleTag: '<i class="fas fa-microchip"></i> Fan Intelligent Platform',
+      bubbleMsg: "Welcome! I am your AI code companion. Scroll down to see the world built piece by piece 👇",
+      botLoader: "Loading 3D Model...",
+      siteTitle: 'Fan <span class="title-highlight">Software</span>',
+      navHome: "Home",
+      navAbout: "About Us",
+      navServices: "Services",
+      navBlog: "Blog",
+      navCta: "Request Project",
+      heroChip: "Integrated Software Engineering System 2026",
+      heroTitle: `We Don't Just Write Code..<br><span class="glow-cyan-text">We Engineer Living Software Systems</span>`,
+      heroDesc: 'Ultra-fluid <strong>Flutter</strong> apps, high-conversion <strong>e-commerce stores</strong>, modern <strong>cloud platforms</strong>, and intelligent <strong>automation bots</strong> that free you from routine tasks.',
+      capsule1: "Flutter Apps 60 FPS",
+      capsule2: "Smart E-Commerce Stores",
+      capsule3: "Modern Web Platforms",
+      capsule4: "Intelligent Automation",
+      valBadge: '<i class="fas fa-cube"></i> Sustainable Tech Partnership',
+      valTitle: 'Engineering Apps & Enterprise Systems <br><span class="glow-gold-text">Crafting Your Product for Leadership & Growth</span>',
+      valDesc: "We go beyond writing code: delivering a complete engineering ecosystem to architect, build, scale, and maintain your digital product from concept to launch and continuous expansion.",
+      valLabel: "Whether your goal is:",
+      valBullet1: '<i class="fas fa-circle-dot"></i> Launching a new app or platform and turning your vision into a complete digital product.',
+      valBullet2: '<i class="fas fa-circle-dot"></i> Modernizing legacy systems and upgrading infrastructure to world-class standards.',
+      valBullet3: '<i class="fas fa-circle-dot"></i> Overcoming speed bottlenecks, server stability, and UX friction.',
+      valBullet4: '<i class="fas fa-circle-dot"></i> Auditing, refactoring, and securing mission-critical codebases with utmost professionalism.',
+      valPill1: '<i class="fas fa-circle-check"></i> Enterprise App Engineering',
+      valPill2: '<i class="fas fa-circle-check"></i> Scaling Digital Products',
+      valPill3: '<i class="fas fa-circle-check"></i> Performance & UX Optimization',
+      valPill4: '<i class="fas fa-circle-check"></i> System Resilience & Support',
+      valCta: "Consult Our Tech Lead Now",
+      valVideoTag: '<i class="fas fa-shield-halved"></i> System Architecture Methodology',
+      valVideoSub: '<i class="fas fa-microchip"></i> World-Class Code Standards',
+      s2Badge: '<i class="fab fa-flutter"></i> Mobile Engineering Lab',
+      s2Title: 'Flutter Mobile Engineering <br><span class="glow-cyan-text">Native & Ultra-Smooth</span>',
+      s2Desc: "We architect mobile experiences piece by piece: robust state architecture, fluid 60/120 FPS performance, and flawless parity across iOS and Android.",
+      s2Spec1Desc: "Modular layers built for effortless long-term expansion",
+      s2Spec2Desc: "Instant data sync and ultra-targeted push notifications",
+      s2Spec3Title: "App Store & Play Store Readiness",
+      s2Spec3Desc: "Full compliance with Apple and Google Store standards",
+      s3Floater1Sub: "Mada & Apple Pay",
+      s3Floater1Title: "100% Instant & Secure Checkout",
+      s3Floater2Label: "Conversion Rate",
+      s3Badge: '<i class="fas fa-store"></i> Store of the Future',
+      s3Title: 'E-Commerce Platforms <br><span class="glow-purple-text">Attracting Buyers & Multiplying Revenue</span>',
+      s3Desc: "We engineer lightning-fast digital storefronts with friction-free checkout flows designed to turn visitors into repeat buyers.",
+      s3Spec1Title: "Payment & Installment Gateways",
+      s3Spec1Desc: "Official integrations: Moyasar, Tabby, Tamara & PayPal",
+      s3Spec2Title: "Automated Shipping Logistics",
+      s3Spec2Desc: "Automated waybills, live tracking, and courier dispatch",
+      s3Spec3Title: "Live Analytics & Sales Dashboard",
+      s3Spec3Desc: "Real-time inventory levels, customer insights, and metrics",
+      s4Badge: '<i class="fas fa-code"></i> Cloud Platforms',
+      s4Title: 'Web Platforms & Apps <span class="glow-cyan-text">Engineering Your Digital Identity</span>',
+      s4Desc: "Full-stack architecture powered by modern Next.js and React, delivering sub-second load times and flawless SEO rankings.",
+      s4Card1Title: "Ultra-Fast Web Applications",
+      s4Card1Desc: "Interactive admin portals, enterprise SaaS platforms, and role-based workflows.",
+      s4Card2Title: "Peak Performance & Core Web Vitals",
+      s4Card2Desc: "Optimized architecture ensuring top Google search rankings and perfect Lighthouse scores.",
+      s4Card3Title: "Cloud Infrastructure & Ironclad Security",
+      s4Card3Desc: "High-availability databases, encrypted auth, and scalable cloud microservices (Postgres, Node, Redis).",
       s5Badge: '<i class="fas fa-robot"></i> Automation & AI Matrix',
-      s5Title: 'Smart Systems & Autonomous Bots <br><span class="glow-emerald-text">Operating For You 24/7</span>',
-      s5Desc: 'We architect enterprise automation pipelines (Python, n8n, Webhooks, AI Agents) connecting workflows, invoices, instant customer messaging, and cross-platform synchronization.',
-      s5Cta: 'Explore Automation Solutions',
-      // Scene 6
+      s5Title: 'Intelligent Systems & AI Bots <br><span class="glow-emerald-text">Operating For You 24/7</span>',
+      s5Desc: "We build autonomous integration workflows (Python, n8n, Webhooks, AI Agents) to link your systems, automate replies, invoices, and data sync without human friction.",
+      s5Node1Title: "1. Real-Time Trigger Capture",
+      s5Node1Desc: "(WhatsApp message, store purchase, cloud webhook)",
+      s5Node2Title: "2. Tailored AI Processing",
+      s5Node2Desc: "(Customer intent, order analysis, response synthesis)",
+      s5Node3Title: "3. Execution & Instant Archiving",
+      s5Node3Desc: "(Generate invoice, update inventory, alert team)",
       s6Badge: '<i class="fas fa-rocket"></i> Bot Dock & Readiness Station',
       s6Title: 'Ready to Turn Your Vision into <br><span class="glow-cyan-text">An Extraordinary Software Reality?</span>',
-      s6Desc: 'Let us craft your next software breakthrough with the exact precision, velocity, and craftsmanship you experienced here.',
-      waLabel: 'Instant Chat',
-      waTitle: 'Chat on WhatsApp',
-      emailLabel: 'Inquiries & Proposals',
-      tgLabel: 'Fast Response Channel',
-      tgTitle: 'Chat on Telegram',
-      // Bot
-      botBubble: 'Welcome! I am your AI code companion. Scroll down to see the world build piece by piece 👇',
-      botTag: '<i class="fas fa-microchip"></i> Fan Intelligent Platform',
-      // Footer
-      footerCopy: 'All rights reserved © 2026 Fan Al-Barmajiah. Crafted with deep engineering passion.'
+      s6Desc: "Let us craft your next software breakthrough with the exact precision, velocity, and craftsmanship you experienced here.",
+      s6WaSub: "Instant Chat",
+      s6WaTitle: "Chat on WhatsApp",
+      s6EmailSub: "Inquiries & Quotations",
+      s6TgSub: "Fast Response Channel",
+      s6TgTitle: "Chat on Telegram",
+      s6PadStatus: '<i class="fas fa-check-circle"></i> Launchpad Ready for Takeoff 🚀',
+      footerSigLabel: "Engineered by:",
+      footerSigName: '<span class="magic-wand">🪄</span> Fan Al-Elan Team',
+      footerCopyright: "Fan Software & Automation Platform © 2026",
+      backToTop: "Back to Top"
     }
   };
 
   function applyLanguage(lang, animated = true) {
     const data = i18nContent[lang] || i18nContent.ar;
     
-    // Set HTML attributes
+    // Set document root attributes
     document.documentElement.lang = lang;
     document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
     document.body.classList.toggle('lang-en', lang === 'en');
     document.body.classList.toggle('lang-ar', lang === 'ar');
+    document.title = data.pageTitle;
     localStorage.setItem('fan_lang', lang);
 
-    // Update Lang Toggle Buttons (desktop and mobile)
+    // 1. Update Lang Toggle Buttons
     document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
       const labelEl = btn.querySelector('.lang-text');
       if (labelEl) labelEl.textContent = data.btnLabel;
@@ -1144,178 +1235,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 1. Navigation items (across all pages)
-    document.querySelectorAll('.site-title').forEach(el => el.textContent = data.siteTitle);
-    document.querySelectorAll('.site-sub').forEach(el => el.textContent = data.siteSub);
-    
-    document.querySelectorAll('a.nav-page-link[href="index.html"]').forEach(el => el.textContent = data.navHome);
-    document.querySelectorAll('a.nav-page-link[href="about.html"]').forEach(el => el.textContent = data.navAbout);
-    document.querySelectorAll('a.nav-page-link[href="services.html"]').forEach(el => el.textContent = data.navServices);
-    document.querySelectorAll('a.nav-page-link[href="blog.html"]').forEach(el => el.textContent = data.navBlog);
-    
-    document.querySelectorAll('.nav-cta-btn span, .mobile-only-cta span').forEach(el => {
-      el.textContent = data.navCta;
-    });
-
-    // 2. Stepper indicators tooltips
-    const step0 = document.querySelector('.step-indicator[data-index="0"]');
-    if (step0) step0.setAttribute('title', data.step0);
-    const step1 = document.querySelector('.step-indicator[data-index="1"]');
-    if (step1) step1.setAttribute('title', data.step1);
-    const step2 = document.querySelector('.step-indicator[data-index="2"]');
-    if (step2) step2.setAttribute('title', data.step2);
-    const step3 = document.querySelector('.step-indicator[data-index="3"]');
-    if (step3) step3.setAttribute('title', data.step3);
-    const step4 = document.querySelector('.step-indicator[data-index="4"]');
-    if (step4) step4.setAttribute('title', data.step4);
-    const step5 = document.querySelector('.step-indicator[data-index="5"]');
-    if (step5) step5.setAttribute('title', data.step5);
-
-    // 3. Scene 1 Elements (Hero & Orbiting Capsules)
-    const heroChip = document.querySelector('.hero-chip span:nth-child(2)');
-    if (heroChip) heroChip.textContent = data.heroBadge;
-    const heroHeading = document.querySelector('.hero-title');
-    if (heroHeading) heroHeading.innerHTML = data.heroTitle;
-    const heroDesc = document.querySelector('.hero-description');
-    if (heroDesc) heroDesc.textContent = data.heroDesc;
-    const heroCtaMain = document.querySelector('.hero-cta-group .primary-action span');
-    if (heroCtaMain) heroCtaMain.textContent = data.heroCtaMain;
-    const heroCtaSec = document.querySelector('.hero-cta-group .secondary-action span');
-    if (heroCtaSec) heroCtaSec.textContent = data.heroCtaSecondary;
-
-    // Orbiting capsules
-    const cap1 = document.querySelector('.capsule-1 .capsule-info');
-    if (cap1) {
-      const strong = cap1.querySelector('strong');
-      const span = cap1.querySelector('span');
-      if (strong) strong.textContent = data.capsule1Title;
-      if (span) span.textContent = data.capsule1Sub;
-    }
-    const cap2 = document.querySelector('.capsule-2 .capsule-info');
-    if (cap2) {
-      const strong = cap2.querySelector('strong');
-      const span = cap2.querySelector('span');
-      if (strong) strong.textContent = data.capsule2Title;
-      if (span) span.textContent = data.capsule2Sub;
-    }
-    const cap3 = document.querySelector('.capsule-3 .capsule-info');
-    if (cap3) {
-      const strong = cap3.querySelector('strong');
-      const span = cap3.querySelector('span');
-      if (strong) strong.textContent = data.capsule3Title;
-      if (span) span.textContent = data.capsule3Sub;
-    }
-    const cap4 = document.querySelector('.capsule-4 .capsule-info');
-    if (cap4) {
-      const strong = cap4.querySelector('strong');
-      const span = cap4.querySelector('span');
-      if (strong) strong.textContent = data.capsule4Title;
-      if (span) span.textContent = data.capsule4Sub;
-    }
-
-    // 4. Scene 2 (Flutter)
-    const s2 = document.getElementById('scene2');
-    if (s2) {
-      const badge = s2.querySelector('.scene-badge');
-      if (badge) badge.innerHTML = data.s2Badge;
-      const heading = s2.querySelector('.scene-heading');
-      if (heading) heading.innerHTML = data.s2Title;
-      const p = s2.querySelector('.scene-paragraph');
-      if (p) p.textContent = data.s2Desc;
-      const cta = s2.querySelector('.scene-action-btn span');
-      if (cta) cta.textContent = data.s2Cta;
-    }
-
-    // 5. Scene 3 (E-Commerce)
-    const s3 = document.getElementById('scene3');
-    if (s3) {
-      const badge = s3.querySelector('.scene-badge');
-      if (badge) badge.innerHTML = data.s3Badge;
-      const heading = s3.querySelector('.scene-heading');
-      if (heading) heading.innerHTML = data.s3Title;
-      const p = s3.querySelector('.scene-paragraph');
-      if (p) p.textContent = data.s3Desc;
-      const cta = s3.querySelector('.scene-action-btn span');
-      if (cta) cta.textContent = data.s3Cta;
-    }
-
-    // 6. Scene 4 (Web)
-    const s4 = document.getElementById('scene4');
-    if (s4) {
-      const badge = s4.querySelector('.scene-badge');
-      if (badge) badge.innerHTML = data.s4Badge;
-      const heading = s4.querySelector('.scene-heading');
-      if (heading) heading.innerHTML = data.s4Title;
-      const p = s4.querySelector('.scene-paragraph');
-      if (p) p.textContent = data.s4Desc;
-      const cta = s4.querySelector('.scene-action-btn span');
-      if (cta) cta.textContent = data.s4Cta;
-    }
-
-    // 7. Scene 5 (AI & Automation)
-    const s5 = document.getElementById('scene5');
-    if (s5) {
-      const badge = s5.querySelector('.scene-badge');
-      if (badge) badge.innerHTML = data.s5Badge;
-      const heading = s5.querySelector('.scene-heading');
-      if (heading) heading.innerHTML = data.s5Title;
-      const p = s5.querySelector('.scene-paragraph');
-      if (p) p.textContent = data.s5Desc;
-      const cta = s5.querySelector('.scene-action-btn span');
-      if (cta) cta.textContent = data.s5Cta;
-    }
-
-    // 8. Scene 6 (Contact)
-    const s6 = document.getElementById('scene6');
-    if (s6) {
-      const badge = s6.querySelector('.scene-badge');
-      if (badge) badge.innerHTML = data.s6Badge;
-      const heading = s6.querySelector('.scene-heading');
-      if (heading) heading.innerHTML = data.s6Title;
-      const p = s6.querySelector('.scene-paragraph');
-      if (p) p.textContent = data.s6Desc;
-      
-      const wa = s6.querySelector('.whatsapp-channel .channel-info');
-      if (wa) {
-        const span = wa.querySelector('span');
-        const strong = wa.querySelector('strong');
-        if (span) span.textContent = data.waLabel;
-        if (strong) strong.textContent = data.waTitle;
-      }
-      const email = s6.querySelector('.email-channel .channel-info span');
-      if (email) email.textContent = data.emailLabel;
-      const tg = s6.querySelector('.telegram-channel .channel-info');
-      if (tg) {
-        const span = tg.querySelector('span');
-        const strong = tg.querySelector('strong');
-        if (span) span.textContent = data.tgLabel;
-        if (strong) strong.textContent = data.tgTitle;
-      }
-    }
-
-    // 9. Bot Bubble & Tag
-    const botTag = document.getElementById('bubbleTag') || document.querySelector('.bubble-tag');
-    if (botTag) botTag.innerHTML = data.botTag;
-    const botMsg = document.getElementById('bubbleMsg');
-    if (botMsg) botMsg.textContent = data.botBubble;
-
-    // 10. Footer Copy
-    document.querySelectorAll('.footer-copy, .site-footer p').forEach(el => {
-      if (el.textContent.includes('©') || el.textContent.includes('حقوق')) {
-        el.textContent = data.footerCopy;
+    // 2. Translate all tagged elements with [data-i18n]
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (data[key] !== undefined) {
+        if (data[key].includes('<')) {
+          el.innerHTML = data[key];
+        } else {
+          el.textContent = data[key];
+        }
       }
     });
 
-    // 11. Breadcrumbs on subpages
-    document.querySelectorAll('.service-breadcrumb a[href="index.html"]').forEach(el => el.textContent = data.navHome);
-    document.querySelectorAll('.service-breadcrumb a[href="services.html"]').forEach(el => el.textContent = data.navServices);
+    // 3. Translate tooltips with [data-i18n-title]
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (data[key] !== undefined) {
+        el.setAttribute('title', data[key]);
+      }
+    });
+
+    // 4. Update Rotating Hero Chip immediately to current index
+    const chipText = document.getElementById('heroChipText');
+    if (chipText) {
+      const msgs = heroRotatingMessages[lang] || heroRotatingMessages.ar;
+      chipText.textContent = msgs[currentChipIndex % msgs.length];
+    }
   }
 
-  // Initialize saved language
+  // Initialize saved language or default to Arabic
   const savedLang = localStorage.getItem('fan_lang') || 'ar';
   applyLanguage(savedLang, false);
+  initHeroChipRotation();
 
-  // Bind click event to all language toggle buttons
+  // Bind click event to all language buttons
   document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const current = localStorage.getItem('fan_lang') || 'ar';
@@ -1323,5 +1276,4 @@ document.addEventListener('DOMContentLoaded', () => {
       applyLanguage(target, true);
     });
   });
-
 });
