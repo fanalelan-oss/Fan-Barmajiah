@@ -980,4 +980,348 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+
+  // =========================================================================
+  // 11. BILINGUAL INTERNATIONALIZATION (AR / EN) CONTROLLER
+  // =========================================================================
+  const i18nContent = {
+    ar: {
+      btnLabel: 'EN',
+      btnTitle: 'Switch to English / تبديل إلى الإنجليزية',
+      siteTitle: 'فن البرمجية',
+      siteSub: 'حلول رقمية وأتمتة',
+      navHome: 'الرئيسية',
+      navAbout: 'من نحن',
+      navServices: 'خدماتنا',
+      navBlog: 'المدونة',
+      navCta: 'طلب مشروع',
+      // Stepper
+      step0: 'منصة الانطلاق',
+      step1: 'معمل فلوتر',
+      step2: 'متجر المستقبل',
+      step3: 'منصة الويب',
+      step4: 'شبكة الأتمتة',
+      step5: 'محطة التواصل',
+      // Scene 1
+      heroBadge: 'نظام البناء البرمجي المتكامل 2026',
+      heroTitle: 'نصمم ونصنع مستقبلك الرقمي <br><span class="glow-gradient-text">بإتقان استثنائي</span>',
+      heroDesc: 'من تطبيقات الموبايل فائقة السرعة، إلى المتاجر الإلكترونية المتطورة، وأنظمة الأتمتة والذكاء الاصطناعي — نبني لك منظومة تقنية متكاملة ترتقي بأعمالك إلى آفاق غير مسبوقة.',
+      heroCtaMain: 'ابدأ مشروعك الآن',
+      heroCtaSecondary: 'استكشف خدماتنا',
+      capsule1Title: 'تطبيقات فلوتر',
+      capsule1Sub: 'أداء أصيل خارق',
+      capsule2Title: 'متاجر رقمية',
+      capsule2Sub: 'تحويل بيع استثنائي',
+      capsule3Title: 'هندسة سحابية',
+      capsule3Sub: 'سرعة وأمان فائق',
+      capsule4Title: 'أتمتة وذكاء',
+      capsule4Sub: 'روبوتات تعمل 24/7',
+      // Scene 2
+      s2Badge: '<i class="fas fa-layer-group"></i> معمل تطبيقات فلوتر',
+      s2Title: 'تطبيقات جوال خارقة السرعة <br><span class="glow-cyan-text">تنبض بالحياة في يد عميلك</span>',
+      s2Desc: 'نطور تطبيقات هجينة متطورة بتقنية Flutter وDart، تمنحك أداءً سلساً يضاهي التطبيقات الأصلية، مع واجهات تفاعلية مذهلة وتوافق تام عبر iOS وAndroid من قاعدة كود واحدة.',
+      s2Cta: 'استكشف تفاصيل التطبيقات',
+      // Scene 3
+      s3Badge: '<i class="fas fa-shopping-bag"></i> متجر المستقبل الرقمي',
+      s3Title: 'منصات تجارة إلكترونية ذكية <br><span class="glow-purple-text">مُصممة لمضاعفة مبيعاتك</span>',
+      s3Desc: 'نبني متاجر إلكترونية فائقة الاستجابة، مدمجة مع أحدث بوابات الدفع (Apple Pay، مدى، فيزا، تابي وتمارا)، مع نظام ذكي لإدارة المخزون والطلبات وأعلى معايير الأمان.',
+      s3Cta: 'استكشف حلول المتاجر',
+      // Scene 4
+      s4Badge: '<i class="fas fa-cubes"></i> منصة الويب وهندسة السحابة',
+      s4Title: 'مواقع وأنظمة ويب متقدمة <br><span class="glow-gold-text">بأداء سحابي فائق السرعة</span>',
+      s4Desc: 'تطوير منصات ويب تفاعلية بأنظمة Full-Stack الحديثة، مع بنية تحتية سحابية مرنة توفر سرعة تحميل فائقة وتجربة مستخدم ساحرة.',
+      s4Cta: 'استكشف هندسة الويب',
+      // Scene 5
+      s5Badge: '<i class="fas fa-robot"></i> مصفوفة الأتمتة والذكاء الاصطناعي',
+      s5Title: 'أنظمة وروبوتات ذكية <br><span class="glow-emerald-text">تعمل بدلاً منك 24 ساعة</span>',
+      s5Desc: 'نصمم مسارات عمل برمجية (Python, n8n, Webhooks, AI Agents) لربط خدماتك ببعضها وأتمتة الردود، الفواتير، ومزامنة البيانات تلقائياً دون أي تدخل بشري.',
+      s5Cta: 'استكشف حلول الأتمتة',
+      // Scene 6
+      s6Badge: '<i class="fas fa-rocket"></i> محطة هبوط البوت والجاهزية',
+      s6Title: 'جاهز لتحويل فكرتك إلى <br><span class="glow-cyan-text">واقع برمجـي استثنائـي؟</span>',
+      s6Desc: 'دعنا نبدأ في صياغة مشروعك القادم بنفس الدقة والسحر الذي رأيته في هذه الصفحة.',
+      waLabel: 'محادثة فورية',
+      waTitle: 'تواصل عبر واتساب',
+      emailLabel: 'استفسار أو طلب عرض سعر',
+      tgLabel: 'قناة وسرعة رد',
+      tgTitle: 'تواصل عبر تليجرام',
+      // Bot
+      botBubble: 'مرحباً بك! أنا رفيقك البرمجي، انزل بالسكرول لترى العالم وهو يُبنى قطعة قطعة 👇',
+      botTag: '<i class="fas fa-microchip"></i> منصة فن الذكية',
+      // Footer
+      footerCopy: 'جميع الحقوق محفوظة © 2026 فن البرمجية. صُنع بشغف هندسي فائق.'
+    },
+    en: {
+      btnLabel: 'عربي',
+      btnTitle: 'تبديل إلى العربية / Switch to Arabic',
+      siteTitle: 'Fan Al-Barmajiah',
+      siteSub: 'Digital & AI Automation',
+      navHome: 'Home',
+      navAbout: 'About Us',
+      navServices: 'Services',
+      navBlog: 'Blog',
+      navCta: 'Request Project',
+      // Stepper
+      step0: 'Launchpad',
+      step1: 'Flutter Studio',
+      step2: 'Future Store',
+      step3: 'Web Platform',
+      step4: 'Automation Grid',
+      step5: 'Contact Dock',
+      // Scene 1
+      heroBadge: 'Integrated Software Engineering 2026',
+      heroTitle: 'We Engineer Your Digital Future <br><span class="glow-gradient-text">With Pure Precision</span>',
+      heroDesc: 'From high-velocity mobile applications to advanced e-commerce platforms and autonomous AI workflows — we craft complete digital ecosystems that scale your enterprise.',
+      heroCtaMain: 'Start Project Now',
+      heroCtaSecondary: 'Explore Services',
+      capsule1Title: 'Flutter Apps',
+      capsule1Sub: 'Native 120 FPS',
+      capsule2Title: 'Smart Stores',
+      capsule2Sub: 'High Conversion',
+      capsule3Title: 'Cloud Systems',
+      capsule3Sub: 'Speed & Resilience',
+      capsule4Title: 'AI & Automation',
+      capsule4Sub: '24/7 Smart Bots',
+      // Scene 2
+      s2Badge: '<i class="fas fa-layer-group"></i> Flutter App Studio',
+      s2Title: 'Ultra-Fast Mobile Apps <br><span class="glow-cyan-text">Fluid In Your Users Hands</span>',
+      s2Desc: 'We build reactive mobile apps powered by Flutter & Dart, delivering native-grade fluidity, delightful micro-interactions, and seamless cross-platform parity on iOS & Android.',
+      s2Cta: 'Explore Mobile Solutions',
+      // Scene 3
+      s3Badge: '<i class="fas fa-shopping-bag"></i> Future E-Commerce',
+      s3Title: 'Intelligent E-Commerce Platforms <br><span class="glow-purple-text">Built to Multiply Sales</span>',
+      s3Desc: 'High-converting digital storefronts integrated with modern payment gateways (Apple Pay, Mada, Visa, Tabby & Tamara), intelligent inventory routing, and military-grade security.',
+      s3Cta: 'Explore Store Solutions',
+      // Scene 4
+      s4Badge: '<i class="fas fa-cubes"></i> Cloud & Web Engineering',
+      s4Title: 'Advanced Web Applications <br><span class="glow-gold-text">With Blazing Cloud Performance</span>',
+      s4Desc: 'Full-stack enterprise web platforms engineered with scalable cloud infrastructure, guaranteeing sub-second load times and fluid digital experiences.',
+      s4Cta: 'Explore Web Architecture',
+      // Scene 5
+      s5Badge: '<i class="fas fa-robot"></i> Automation & AI Matrix',
+      s5Title: 'Smart Systems & Autonomous Bots <br><span class="glow-emerald-text">Operating For You 24/7</span>',
+      s5Desc: 'We architect enterprise automation pipelines (Python, n8n, Webhooks, AI Agents) connecting workflows, invoices, instant customer messaging, and cross-platform synchronization.',
+      s5Cta: 'Explore Automation Solutions',
+      // Scene 6
+      s6Badge: '<i class="fas fa-rocket"></i> Bot Dock & Readiness Station',
+      s6Title: 'Ready to Turn Your Vision into <br><span class="glow-cyan-text">An Extraordinary Software Reality?</span>',
+      s6Desc: 'Let us craft your next software breakthrough with the exact precision, velocity, and craftsmanship you experienced here.',
+      waLabel: 'Instant Chat',
+      waTitle: 'Chat on WhatsApp',
+      emailLabel: 'Inquiries & Proposals',
+      tgLabel: 'Fast Response Channel',
+      tgTitle: 'Chat on Telegram',
+      // Bot
+      botBubble: 'Welcome! I am your AI code companion. Scroll down to see the world build piece by piece 👇',
+      botTag: '<i class="fas fa-microchip"></i> Fan Intelligent Platform',
+      // Footer
+      footerCopy: 'All rights reserved © 2026 Fan Al-Barmajiah. Crafted with deep engineering passion.'
+    }
+  };
+
+  function applyLanguage(lang, animated = true) {
+    const data = i18nContent[lang] || i18nContent.ar;
+    
+    // Set HTML attributes
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.body.classList.toggle('lang-ar', lang === 'ar');
+    localStorage.setItem('fan_lang', lang);
+
+    // Update Lang Toggle Buttons (desktop and mobile)
+    document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+      const labelEl = btn.querySelector('.lang-text');
+      if (labelEl) labelEl.textContent = data.btnLabel;
+      btn.setAttribute('title', data.btnTitle);
+      
+      if (animated && typeof gsap !== 'undefined') {
+        gsap.fromTo(btn, 
+          { scale: 0.82, rotate: lang === 'en' ? 15 : -15 }, 
+          { scale: 1, rotate: 0, duration: 0.45, ease: 'back.out(2.5)' }
+        );
+      }
+    });
+
+    // 1. Navigation items (across all pages)
+    document.querySelectorAll('.site-title').forEach(el => el.textContent = data.siteTitle);
+    document.querySelectorAll('.site-sub').forEach(el => el.textContent = data.siteSub);
+    
+    document.querySelectorAll('a.nav-page-link[href="index.html"]').forEach(el => el.textContent = data.navHome);
+    document.querySelectorAll('a.nav-page-link[href="about.html"]').forEach(el => el.textContent = data.navAbout);
+    document.querySelectorAll('a.nav-page-link[href="services.html"]').forEach(el => el.textContent = data.navServices);
+    document.querySelectorAll('a.nav-page-link[href="blog.html"]').forEach(el => el.textContent = data.navBlog);
+    
+    document.querySelectorAll('.nav-cta-btn span, .mobile-only-cta span').forEach(el => {
+      el.textContent = data.navCta;
+    });
+
+    // 2. Stepper indicators tooltips
+    const step0 = document.querySelector('.step-indicator[data-index="0"]');
+    if (step0) step0.setAttribute('title', data.step0);
+    const step1 = document.querySelector('.step-indicator[data-index="1"]');
+    if (step1) step1.setAttribute('title', data.step1);
+    const step2 = document.querySelector('.step-indicator[data-index="2"]');
+    if (step2) step2.setAttribute('title', data.step2);
+    const step3 = document.querySelector('.step-indicator[data-index="3"]');
+    if (step3) step3.setAttribute('title', data.step3);
+    const step4 = document.querySelector('.step-indicator[data-index="4"]');
+    if (step4) step4.setAttribute('title', data.step4);
+    const step5 = document.querySelector('.step-indicator[data-index="5"]');
+    if (step5) step5.setAttribute('title', data.step5);
+
+    // 3. Scene 1 Elements (Hero & Orbiting Capsules)
+    const heroChip = document.querySelector('.hero-chip span:nth-child(2)');
+    if (heroChip) heroChip.textContent = data.heroBadge;
+    const heroHeading = document.querySelector('.hero-title');
+    if (heroHeading) heroHeading.innerHTML = data.heroTitle;
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) heroDesc.textContent = data.heroDesc;
+    const heroCtaMain = document.querySelector('.hero-cta-group .primary-action span');
+    if (heroCtaMain) heroCtaMain.textContent = data.heroCtaMain;
+    const heroCtaSec = document.querySelector('.hero-cta-group .secondary-action span');
+    if (heroCtaSec) heroCtaSec.textContent = data.heroCtaSecondary;
+
+    // Orbiting capsules
+    const cap1 = document.querySelector('.capsule-1 .capsule-info');
+    if (cap1) {
+      const strong = cap1.querySelector('strong');
+      const span = cap1.querySelector('span');
+      if (strong) strong.textContent = data.capsule1Title;
+      if (span) span.textContent = data.capsule1Sub;
+    }
+    const cap2 = document.querySelector('.capsule-2 .capsule-info');
+    if (cap2) {
+      const strong = cap2.querySelector('strong');
+      const span = cap2.querySelector('span');
+      if (strong) strong.textContent = data.capsule2Title;
+      if (span) span.textContent = data.capsule2Sub;
+    }
+    const cap3 = document.querySelector('.capsule-3 .capsule-info');
+    if (cap3) {
+      const strong = cap3.querySelector('strong');
+      const span = cap3.querySelector('span');
+      if (strong) strong.textContent = data.capsule3Title;
+      if (span) span.textContent = data.capsule3Sub;
+    }
+    const cap4 = document.querySelector('.capsule-4 .capsule-info');
+    if (cap4) {
+      const strong = cap4.querySelector('strong');
+      const span = cap4.querySelector('span');
+      if (strong) strong.textContent = data.capsule4Title;
+      if (span) span.textContent = data.capsule4Sub;
+    }
+
+    // 4. Scene 2 (Flutter)
+    const s2 = document.getElementById('scene2');
+    if (s2) {
+      const badge = s2.querySelector('.scene-badge');
+      if (badge) badge.innerHTML = data.s2Badge;
+      const heading = s2.querySelector('.scene-heading');
+      if (heading) heading.innerHTML = data.s2Title;
+      const p = s2.querySelector('.scene-paragraph');
+      if (p) p.textContent = data.s2Desc;
+      const cta = s2.querySelector('.scene-action-btn span');
+      if (cta) cta.textContent = data.s2Cta;
+    }
+
+    // 5. Scene 3 (E-Commerce)
+    const s3 = document.getElementById('scene3');
+    if (s3) {
+      const badge = s3.querySelector('.scene-badge');
+      if (badge) badge.innerHTML = data.s3Badge;
+      const heading = s3.querySelector('.scene-heading');
+      if (heading) heading.innerHTML = data.s3Title;
+      const p = s3.querySelector('.scene-paragraph');
+      if (p) p.textContent = data.s3Desc;
+      const cta = s3.querySelector('.scene-action-btn span');
+      if (cta) cta.textContent = data.s3Cta;
+    }
+
+    // 6. Scene 4 (Web)
+    const s4 = document.getElementById('scene4');
+    if (s4) {
+      const badge = s4.querySelector('.scene-badge');
+      if (badge) badge.innerHTML = data.s4Badge;
+      const heading = s4.querySelector('.scene-heading');
+      if (heading) heading.innerHTML = data.s4Title;
+      const p = s4.querySelector('.scene-paragraph');
+      if (p) p.textContent = data.s4Desc;
+      const cta = s4.querySelector('.scene-action-btn span');
+      if (cta) cta.textContent = data.s4Cta;
+    }
+
+    // 7. Scene 5 (AI & Automation)
+    const s5 = document.getElementById('scene5');
+    if (s5) {
+      const badge = s5.querySelector('.scene-badge');
+      if (badge) badge.innerHTML = data.s5Badge;
+      const heading = s5.querySelector('.scene-heading');
+      if (heading) heading.innerHTML = data.s5Title;
+      const p = s5.querySelector('.scene-paragraph');
+      if (p) p.textContent = data.s5Desc;
+      const cta = s5.querySelector('.scene-action-btn span');
+      if (cta) cta.textContent = data.s5Cta;
+    }
+
+    // 8. Scene 6 (Contact)
+    const s6 = document.getElementById('scene6');
+    if (s6) {
+      const badge = s6.querySelector('.scene-badge');
+      if (badge) badge.innerHTML = data.s6Badge;
+      const heading = s6.querySelector('.scene-heading');
+      if (heading) heading.innerHTML = data.s6Title;
+      const p = s6.querySelector('.scene-paragraph');
+      if (p) p.textContent = data.s6Desc;
+      
+      const wa = s6.querySelector('.whatsapp-channel .channel-info');
+      if (wa) {
+        const span = wa.querySelector('span');
+        const strong = wa.querySelector('strong');
+        if (span) span.textContent = data.waLabel;
+        if (strong) strong.textContent = data.waTitle;
+      }
+      const email = s6.querySelector('.email-channel .channel-info span');
+      if (email) email.textContent = data.emailLabel;
+      const tg = s6.querySelector('.telegram-channel .channel-info');
+      if (tg) {
+        const span = tg.querySelector('span');
+        const strong = tg.querySelector('strong');
+        if (span) span.textContent = data.tgLabel;
+        if (strong) strong.textContent = data.tgTitle;
+      }
+    }
+
+    // 9. Bot Bubble & Tag
+    const botTag = document.getElementById('bubbleTag') || document.querySelector('.bubble-tag');
+    if (botTag) botTag.innerHTML = data.botTag;
+    const botMsg = document.getElementById('bubbleMsg');
+    if (botMsg) botMsg.textContent = data.botBubble;
+
+    // 10. Footer Copy
+    document.querySelectorAll('.footer-copy, .site-footer p').forEach(el => {
+      if (el.textContent.includes('©') || el.textContent.includes('حقوق')) {
+        el.textContent = data.footerCopy;
+      }
+    });
+
+    // 11. Breadcrumbs on subpages
+    document.querySelectorAll('.service-breadcrumb a[href="index.html"]').forEach(el => el.textContent = data.navHome);
+    document.querySelectorAll('.service-breadcrumb a[href="services.html"]').forEach(el => el.textContent = data.navServices);
+  }
+
+  // Initialize saved language
+  const savedLang = localStorage.getItem('fan_lang') || 'ar';
+  applyLanguage(savedLang, false);
+
+  // Bind click event to all language toggle buttons
+  document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = localStorage.getItem('fan_lang') || 'ar';
+      const target = (current === 'ar') ? 'en' : 'ar';
+      applyLanguage(target, true);
+    });
+  });
+
 });

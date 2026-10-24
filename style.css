@@ -328,6 +328,84 @@ body.light-mode .theme-toggle-floating .icon-moon {
   filter: drop-shadow(0 0 8px rgba(2, 132, 199, 0.4));
 }
 
+/* Desktop Unified Controls Group */
+.nav-controls-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* Bilingual Language Switcher Button (EN / عربي) */
+.lang-toggle-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.lang-toggle-btn i {
+  font-size: 0.95rem;
+  color: var(--cyan);
+  transition: transform 0.4s ease;
+}
+
+.lang-toggle-btn:hover {
+  background: rgba(0, 240, 255, 0.18);
+  border-color: rgba(0, 240, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 240, 255, 0.3);
+}
+
+.lang-toggle-btn:hover i {
+  transform: rotate(30deg);
+}
+
+.lang-toggle-btn:active {
+  transform: scale(0.96);
+}
+
+/* Light Mode for Lang Toggle */
+body.light-mode .lang-toggle-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .lang-toggle-btn i {
+  color: #0284c7;
+}
+
+body.light-mode .lang-toggle-btn:hover {
+  background: #ffffff;
+  border-color: #0284c7;
+  color: #0284c7;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
+}
+
+
 .nav-identity {
   position: relative;
   z-index: 2;
@@ -2548,6 +2626,19 @@ body.light-mode .theme-toggle-floating .icon-moon {
     font-size: 1.25rem !important;
   }
 
+  /* Mobile Language Toggle Button */
+  .lang-toggle-btn {
+    height: 36px !important;
+    padding: 0 10px !important;
+    font-size: 0.78rem !important;
+    gap: 4px !important;
+  }
+
+  .lang-toggle-btn i {
+    font-size: 0.88rem !important;
+  }
+
+
   /* Sliding Glass Mobile Dropdown Drawer */
   .nav-main-menu.open {
     display: flex !important;
@@ -3530,3 +3621,55 @@ body.light-mode .copyright-note {
 }
 
 
+
+
+/* =========================================================================
+   INTERNATIONALIZATION & LTR ENGLISH SUPPORT
+   ========================================================================= */
+html[lang="en"] body,
+body.lang-en {
+  direction: ltr !important;
+  text-align: left !important;
+  font-family: var(--font-en), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+html[lang="en"] .bubble-msg,
+body.lang-en .bubble-msg {
+  text-align: left !important;
+}
+
+html[lang="en"] .nav-cta-btn i,
+body.lang-en .nav-cta-btn i,
+html[lang="en"] .mobile-only-cta i,
+body.lang-en .mobile-only-cta i,
+html[lang="en"] .channel-btn .arrow-peek,
+body.lang-en .channel-btn .arrow-peek,
+html[lang="en"] .bento-explore-link i,
+body.lang-en .bento-explore-link i,
+html[lang="en"] .card-link-btn i,
+body.lang-en .card-link-btn i,
+html[lang="en"] .blog-read-more i,
+body.lang-en .blog-read-more i {
+  transform: rotate(180deg) !important;
+}
+
+html[lang="en"] .scene-badge i,
+body.lang-en .scene-badge i {
+  margin-left: 0 !important;
+  margin-right: 6px !important;
+}
+
+html[lang="en"] .timeline-step,
+body.lang-en .timeline-step {
+  text-align: left !important;
+}
+
+html[lang="en"] .service-breadcrumb,
+body.lang-en .service-breadcrumb {
+  direction: ltr !important;
+}
+
+html[lang="en"] .service-breadcrumb i,
+body.lang-en .service-breadcrumb i {
+  transform: rotate(180deg) !important;
+}
